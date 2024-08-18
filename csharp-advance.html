@@ -1,0 +1,3680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Advanced Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .answer {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .back-to-home {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+        }
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+    <div class="container">
+        <h1>C# Advanced Interview Questions</h1>
+
+        <!-- Example Question 1 -->
+        <div class="question">
+            <h2>1. What are design patterns and can you name a few commonly used ones?</h2>
+        </div>
+        <div class="answer">
+            <p>Design patterns are general repeatable solutions to common problems in software design. They are not ready-made solutions but templates for how to solve problems in various situations.</p>
+            <p>Some commonly used design patterns include:</p>
+            <ul>
+                <li><strong>Singleton:</strong> Ensures a class has only one instance and provides a global point of access to it.</li>
+                <li><strong>Factory:</strong> Creates objects without specifying the exact class of object that will be created.</li>
+                <li><strong>Repository:</strong> Mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.</li>
+                <li><strong>Decorator:</strong> Adds behavior to objects dynamically without altering their structure.</li>
+                <li><strong>Observer:</strong> Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.</li>
+            </ul>
+        </div>
+
+        <!-- Example Question 2 -->
+        <div class="question">
+            <h2>2. Explain the use of the async and await keywords in C#.</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>async</code> and <code>await</code> keywords in C# are used to work with asynchronous programming. The <code>async</code> keyword is used to modify a method, indicating that the method contains an <code>await</code> expression. The <code>await</code> keyword is used within an async method to pause its execution until the awaited task completes, allowing other tasks to run concurrently.</p>
+            <p>For example:</p>
+            <pre><code>public async Task DoWorkAsync()
+{
+    await Task.Delay(1000); // Simulates an asynchronous operation
+    Console.WriteLine("Work completed.");
+}</code></pre>
+        </div>
+
+       <!-- Question 3 -->
+       <div class="question">
+        <h2>3. What is a design pattern in C# and can you describe the Singleton pattern?</h2>
+    </div>
+    <div class="answer">
+        <p>A design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. The Singleton pattern is a type of design pattern that ensures a class has only one instance and provides a global point of access to it.</p>
+        <p>Implementation of Singleton Pattern:</p>
+        <pre><code>public class Singleton
+{
+private static Singleton instance;
+private static readonly object lockObject = new object();
+
+private Singleton() { }
+
+public static Singleton Instance
+{
+    get
+    {
+        if (instance == null)
+        {
+            lock (lockObject)
+            {
+                if (instance == null)
+                {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+}</code></pre>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h2>4. How does garbage collection work in .NET?</h2>
+    </div>
+    <div class="answer">
+        <p>Garbage collection in .NET is an automatic memory management feature that helps reclaim memory occupied by objects that are no longer in use. The .NET garbage collector (GC) works in the following way:</p>
+        <ul>
+            <li><strong>Generational Approach:</strong> Objects are divided into three generations based on their lifetime (Gen 0, Gen 1, Gen 2). New objects start in Gen 0. If they survive a GC cycle, they move to Gen 1 and then Gen 2.</li>
+            <li><strong>Mark and Sweep:</strong> During garbage collection, the GC marks all live objects and then sweeps away the unmarked objects.</li>
+            <li><strong>Compaction:</strong> The GC may compact memory to reduce fragmentation and make allocation more efficient.</li>
+        </ul>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h2>5. What are Expression Trees in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>Expression Trees represent code in a tree-like data structure, where each node of the tree is an expression. Expression Trees allow you to inspect, modify, and dynamically generate code. They are often used in LINQ providers to build dynamic queries.</p>
+        <p>Example of using Expression Trees:</p>
+        <pre><code>public class ExpressionTreeExample
+{
+public static void Main()
+{
+    Expression<Func<int, int>> square = x => x * x;
+    var compiled = square.Compile();
+    Console.WriteLine(compiled(5)); // Output: 25
+}
+}</code></pre>
+    </div>
+
+    <!-- Additional questions would follow the same structure -->
+    
+    <!-- Question 6 -->
+    <div class="question">
+        <h2>6. What is the difference between Task and Thread in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>A <code>Task</code> is an abstraction for asynchronous operations that provides a higher-level programming model than directly working with <code>Thread</code>. Tasks are managed by the Task Parallel Library (TPL) and offer features like cancellation, continuations, and parallelism.</p>
+        <p>A <code>Thread</code> represents a low-level, lightweight unit of execution and is used for multi-threaded programming. Threads are more complex to manage compared to Tasks, which handle thread management internally.</p>
+    </div>
+
+    <!-- Continue with more questions and answers -->
+     <!-- Question 7 -->
+     <div class="question">
+        <h2>7. What is the difference between `IEnumerable<T>` and `IQueryable<T>`?</h2>
+    </div>
+    <div class="answer">
+        <p><code>IEnumerable<T></code> is used for querying in-memory collections and provides a way to iterate over a collection. It executes queries in memory, meaning that all data is loaded into memory before the query is executed.</p>
+        <p><code>IQueryable<T></code> is used for querying data sources like databases and allows for deferred execution and query composition. It translates the query into the query language of the data source, such as SQL, and executes the query on the server side, which is more efficient for large datasets.</p>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h2>8. How does the `lock` statement work in C# and what are its alternatives?</h2>
+    </div>
+    <div class="answer">
+        <p>The <code>lock</code> statement is used to ensure that a block of code runs exclusively by acquiring a mutual-exclusion lock for a given object. It helps to prevent race conditions and ensures thread safety.</p>
+        <p>Alternatives to <code>lock</code> include:</p>
+        <ul>
+            <li><strong>Monitor:</strong> Provides a way to acquire and release locks manually using <code>Monitor.Enter</code> and <code>Monitor.Exit</code>.</li>
+            <li><strong>Mutex:</strong> A synchronization primitive that can be used across multiple processes.</li>
+            <li><strong>Semaphore:</strong> Controls access to a resource pool with a limited number of slots.</li>
+        </ul>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <h2>9. Explain the concept of `Span<T>` and `Memory<T>` in C#.</h2>
+    </div>
+    <div class="answer">
+        <p><code>Span<T></code> is a stack-only, contiguous region of memory that provides a way to work with slices of arrays or other contiguous memory regions efficiently. It avoids heap allocations and provides high-performance operations on slices of data.</p>
+        <p><code>Memory<T></code> is a heap-allocated counterpart to <code>Span<T></code> that provides similar functionality but can be used for asynchronous operations where stack-allocated <code>Span<T></code> cannot be used. <code>Memory<T></code> allows for slicing and accessing data while being managed by the garbage collector.</p>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <h2>10. What are `source generators` in C# and how are they used?</h2>
+    </div>
+    <div class="answer">
+        <p>Source generators are a feature introduced in C# 9.0 that allows developers to generate additional source code at compile-time based on the existing code. They are used to automate code generation tasks, reducing boilerplate and improving maintainability.</p>
+        <p>Source generators are typically implemented by creating a class that inherits from <code>ISourceGenerator</code> and using the <code>Generator</code> attribute to register the generator with the compiler. They analyze the code and produce new source files that are then compiled along with the rest of the application.</p>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question">
+        <h2>11. What is the purpose of the `dynamic` keyword in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>The <code>dynamic</code> keyword in C# is used to bypass compile-time type checking. It allows for operations to be resolved at runtime rather than at compile-time. This can be useful for interacting with COM objects, dynamic languages, or scenarios where types are not known at compile-time.</p>
+        <p>However, using <code>dynamic</code> comes with performance overhead and loss of compile-time type checking, which can lead to runtime errors if not handled carefully.</p>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question">
+        <h2>12. What are `records` in C# and how do they differ from classes?</h2>
+    </div>
+    <div class="answer">
+        <p>Records, introduced in C# 9.0, are a new reference type that is used for defining immutable data structures. Unlike classes, records come with built-in value-based equality, meaning that two records with the same data are considered equal.</p>
+        <p>Records automatically generate methods for value comparison, cloning, and deconstruction, which simplifies code for immutable data objects. They are defined using the <code>record</code> keyword:</p>
+        <pre><code>public record Person(string FirstName, string LastName);</code></pre>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question">
+        <h2>13. How can you implement custom serialization in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>Custom serialization in C# can be implemented by creating a class that implements the <code>ISerializable</code> interface and providing a custom implementation for the <code>GetObjectData</code> method. This allows you to control how objects are serialized and deserialized.</p>
+        <p>Example:</p>
+        <pre><code>[Serializable]
+public class Person : ISerializable
+{
+public string Name { get; set; }
+public int Age { get; set; }
+
+public Person() { }
+
+protected Person(SerializationInfo info, StreamingContext context)
+{
+    Name = info.GetString("Name");
+    Age = info.GetInt32("Age");
+}
+
+public void GetObjectData(SerializationInfo info, StreamingContext context)
+{
+    info.AddValue("Name", Name);
+    info.AddValue("Age", Age);
+}
+}</code></pre>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="question">
+        <h2>14. What is the difference between `value types` and `reference types` in C#?</h2>
+    </div>
+    <div class="answer">
+        <p><strong>Value Types:</strong> Value types hold their data directly and are stored on the stack. Examples include primitive types like <code>int</code>, <code>float</code>, and structs. When a value type is assigned to a new variable or passed to a method, a copy of the value is created.</p>
+        <p><strong>Reference Types:</strong> Reference types hold a reference to their data, which is stored on the heap. Examples include classes, arrays, and strings. When a reference type is assigned to a new variable or passed to a method, only the reference is copied, not the actual data.</p>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="question">
+        <h2>15. How do you use `Nullable<T>` types in C#?</h2>
+    </div>
+    <div class="answer">
+        <p><code>Nullable<T></code> is a structure that allows value types to be assigned null values. It is useful for representing the absence of a value for value types. You can use the <code>Nullable<T></code> structure or the shorthand syntax <code>T?</code>.</p>
+        <p>Example usage:</p>
+        <pre><code>int? age = null;
+if (age.HasValue)
+{
+Console.WriteLine($"Age is {age.Value}");
+}
+else
+{
+Console.WriteLine("Age is not specified.");
+}</code></pre>
+    </div>
+
+    <!-- Continue with more questions and answers -->
+       <!-- Question 16 -->
+       <div class="question">
+        <h2>16. How do you use `ref` and `out` parameters in C#?</h2>
+    </div>
+    <div class="answer">
+        <p><code>ref</code> and <code>out</code> are keywords used to pass arguments to methods by reference. The key difference between them is:</p>
+        <ul>
+            <li><strong><code>ref</code>:</strong> The parameter must be initialized before being passed to the method. It allows the method to modify the value and pass it back to the caller.</li>
+            <li><strong><code>out</code>:</strong> The parameter does not need to be initialized before being passed. It is required that the method assigns a value before returning.</li>
+        </ul>
+        <p>Example usage:</p>
+        <pre><code>public void UpdateValues(ref int value1, out int value2)
+{
+value1 += 10;
+value2 = 20;
+}</code></pre>
+    </div>
+
+    <!-- Question 17 -->
+    <div class="question">
+        <h2>17. Explain the concept of `async` streams in C#.</h2>
+    </div>
+    <div class="answer">
+        <p>As of C# 8.0, `async` streams are used to asynchronously iterate over sequences of data. They enable methods to return an <code>IAsyncEnumerable<T></code> which allows for processing data as it arrives without blocking.</p>
+        <p>Example:</p>
+        <pre><code>public async IAsyncEnumerable<int> GetNumbersAsync()
+{
+for (int i = 0; i < 10; i++)
+{
+    await Task.Delay(100); // Simulates asynchronous operation
+    yield return i;
+}
+}</code></pre>
+    </div>
+
+    <!-- Question 18 -->
+    <div class="question">
+        <h2>18. What are `local functions` in C# and how are they used?</h2>
+    </div>
+    <div class="answer">
+        <p>Local functions are methods defined within the body of another method. They provide a way to encapsulate logic that is used only within the containing method, improving readability and maintainability.</p>
+        <p>Example:</p>
+        <pre><code>public void ProcessData()
+{
+int Add(int a, int b) => a + b;
+Console.WriteLine(Add(5, 10));
+}</code></pre>
+    </div>
+
+    <!-- Question 19 -->
+    <div class="question">
+        <h2>19. How do `default` interface methods work in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>Default interface methods, introduced in C# 8.0, allow you to provide a default implementation for methods within an interface. This feature helps to add new methods to interfaces without breaking existing implementations.</p>
+        <p>Example:</p>
+        <pre><code>public interface ILogger
+{
+void Log(string message);
+
+void LogWarning(string message)
+{
+    Console.WriteLine($"Warning: {message}");
+}
+}</code></pre>
+    </div>
+
+    <!-- Question 20 -->
+    <div class="question">
+        <h2>20. What is the purpose of `default` keyword in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>The <code>default</code> keyword is used to obtain the default value of a type. For value types, it is the zero-initialized value (e.g., 0 for integers, false for booleans). For reference types, it returns <code>null</code>.</p>
+        <p>Example:</p>
+        <pre><code>int defaultInt = default; // 0
+string defaultString = default; // null</code></pre>
+    </div>
+
+    <!-- Question 21 -->
+    <div class="question">
+        <h2>21. What is `dependency injection` and how is it implemented in .NET Core?</h2>
+    </div>
+    <div class="answer">
+        <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. It allows for better modularity and easier testing.</p>
+        <p>In .NET Core, DI is implemented using built-in support in the <code>Microsoft.Extensions.DependencyInjection</code> namespace. You register services in the <code>ConfigureServices</code> method of the <code>Startup</code> class and then inject them into controllers or services via constructors.</p>
+        <p>Example:</p>
+        <pre><code>public void ConfigureServices(IServiceCollection services)
+{
+services.AddTransient<IMyService, MyService>();
+}
+
+public class MyController : Controller
+{
+private readonly IMyService _myService;
+
+public MyController(IMyService myService)
+{
+    _myService = myService;
+}
+}</code></pre>
+    </div>
+
+    <!-- Question 22 -->
+    <div class="question">
+        <h2>22. What is the `async` keyword used for in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>The <code>async</code> keyword is used to define a method as asynchronous, which allows it to use the <code>await</code> keyword to perform asynchronous operations without blocking the calling thread.</p>
+        <p>Example:</p>
+        <pre><code>public async Task<string> GetDataAsync()
+{
+await Task.Delay(1000); // Simulates an asynchronous operation
+return "Data retrieved";
+}</code></pre>
+    </div>
+
+    <!-- Question 23 -->
+    <div class="question">
+        <h2>23. What are `tuples` and how are they used in C#?</h2>
+    </div>
+    <div class="answer">
+        <p>Tuples are a data structure that can hold a fixed number of items, potentially of different types. They are useful for returning multiple values from a method or for grouping related data together.</p>
+        <p>Example:</p>
+        <pre><code>public (int, string) GetPersonInfo()
+{
+return (25, "John Doe");
+}
+
+var personInfo = GetPersonInfo();
+Console.WriteLine($"Age: {personInfo.Item1}, Name: {personInfo.Item2}");</code></pre>
+    </div>
+
+    <!-- Question 24 -->
+    <div class="question">
+        <h2>24. What are `attributes` in C# and how are they used?</h2>
+    </div>
+    <div class="answer">
+        <p>Attributes in C# are metadata that can be applied to various program elements like classes, methods, properties, etc. They provide additional information about the code to the compiler or runtime.</p>
+        <p>Example:</p>
+        <pre><code>[Obsolete("This method is obsolete.")]
+public void OldMethod()
+{
+// Old code
+}</code></pre>
+    </div>
+
+    <!-- Question 25 -->
+    <div class="question">
+        <h2>25. Explain the `using` statement and its purpose in C#.</h2>
+    </div>
+    <div class="answer">
+        <p>The <code>using</code> statement ensures that an object is disposed of properly once it is no longer needed. It is commonly used with objects that implement the <code>IDisposable</code> interface to release unmanaged resources like file handles or database connections.</p>
+        <p>Example:</p>
+        <pre><code>using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+// Use the stream
+} // stream is automatically closed and disposed</code></pre>
+    </div>
+
+    <!-- Continue with more questions and answers -->
+<!-- Question 26 -->
+<div class="question">
+    <h2>26. What is the difference between `Task` and `ValueTask`?</h2>
+</div>
+<div class="answer">
+    <p><code>Task</code> represents an asynchronous operation that may return a value or be void. It is used for most asynchronous programming scenarios in .NET.</p>
+    <p><code>ValueTask</code> is a value type that is used to avoid allocations when an asynchronous method often completes synchronously. It can be more efficient in scenarios where the result is usually available immediately, reducing heap allocations and improving performance.</p>
+    <p>Example:</p>
+    <pre><code>public ValueTask<int> GetValueAsync()
+{
+return new ValueTask<int>(42); // No allocation if result is available immediately
+}</code></pre>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <h2>27. Explain the concept of `async` and `await` in C# with an example.</h2>
+</div>
+<div class="answer">
+    <p>The <code>async</code> and <code>await</code> keywords are used to work with asynchronous methods. The <code>async</code> keyword marks a method as asynchronous, allowing it to use the <code>await</code> keyword to perform non-blocking operations.</p>
+    <p>The <code>await</code> keyword is used to asynchronously wait for a <code>Task</code> to complete and obtain its result without blocking the executing thread.</p>
+    <p>Example:</p>
+    <pre><code>public async Task<string> FetchDataAsync()
+{
+await Task.Delay(1000); // Simulate asynchronous operation
+return "Data fetched";
+}</code></pre>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <h2>28. How do you handle exceptions in asynchronous methods?</h2>
+</div>
+<div class="answer">
+    <p>Exceptions in asynchronous methods can be handled using <code>try</code>/<code>catch</code> blocks, similar to synchronous methods. When using <code>await</code>, if the awaited <code>Task</code> throws an exception, it is propagated back to the caller, where it can be caught and handled.</p>
+    <p>Example:</p>
+    <pre><code>public async Task ProcessDataAsync()
+{
+try
+{
+await Task.Run(() => throw new InvalidOperationException("An error occurred"));
+}
+catch (InvalidOperationException ex)
+{
+Console.WriteLine($"Caught exception: {ex.Message}");
+}
+}</code></pre>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <h2>29. What is a `deadlock` and how can you prevent it in C#?</h2>
+</div>
+<div class="answer">
+    <p>A deadlock occurs when two or more threads are waiting indefinitely for each other to release resources, resulting in a standstill. It can be prevented by following strategies such as:</p>
+    <ul>
+        <li><strong>Avoiding Nested Locks:</strong> Minimize the number of nested locks and ensure a consistent order of locking resources.</li>
+        <li><strong>Using Timeouts:</strong> Implement timeouts for acquiring locks to prevent indefinite waiting.</li>
+        <li><strong>Deadlock Detection:</strong> Use monitoring tools to detect and resolve deadlocks.</li>
+    </ul>
+    <p>Example of potential deadlock:</p>
+    <pre><code>private readonly object lock1 = new object();
+private readonly object lock2 = new object();
+
+public void MethodA()
+{
+lock (lock1)
+{
+Thread.Sleep(100); // Simulate some work
+lock (lock2)
+{
+    // Critical section
+}
+}
+}
+
+public void MethodB()
+{
+lock (lock2)
+{
+Thread.Sleep(100); // Simulate some work
+lock (lock1)
+{
+    // Critical section
+}
+}
+}</code></pre>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <h2>30. What are `interceptors` in C# and how can you use them?</h2>
+</div>
+<div class="answer">
+    <p>Interceptors are a design pattern used to insert additional behavior before, after, or around method calls. They are often used in conjunction with dependency injection frameworks to add cross-cutting concerns such as logging, validation, or transaction management.</p>
+    <p>In .NET, interceptors can be implemented using libraries such as Castle DynamicProxy or through aspects in Aspect-Oriented Programming (AOP).</p>
+    <p>Example using Castle DynamicProxy:</p>
+    <pre><code>public class LoggingInterceptor : IInterceptor
+{
+public void Intercept(IInvocation invocation)
+{
+Console.WriteLine($"Calling method {invocation.Method.Name}");
+invocation.Proceed();
+Console.WriteLine($"Method {invocation.Method.Name} completed");
+}
+}
+
+public void ConfigureServices(IServiceCollection services)
+{
+services.AddTransient<LoggingInterceptor>();
+services.AddTransient<IMyService>(provider =>
+{
+var proxyGenerator = new ProxyGenerator();
+return proxyGenerator.CreateInterfaceProxyWithoutTarget<IMyService>(provider.GetRequiredService<LoggingInterceptor>());
+});
+}</code></pre>
+</div>
+
+<!-- Question 31 -->
+<div class="question">
+    <h2>31. What are `expression-bodied members` in C# and when should you use them?</h2>
+</div>
+<div class="answer">
+    <p>Expression-bodied members, introduced in C# 6.0, provide a more concise syntax for methods, properties, and other members that consist of a single expression. They improve readability and reduce boilerplate code.</p>
+    <p>Example:</p>
+    <pre><code>public class Person
+{
+public string FirstName { get; set; }
+public string LastName { get; set; }
+
+public string FullName => $"{FirstName} {LastName}";
+
+public void Greet() => Console.WriteLine($"Hello, {FullName}!");
+}</code></pre>
+</div>
+
+<!-- Question 32 -->
+<div class="question">
+    <h2>32. How does `pattern matching` work in C# and what are its different types?</h2>
+</div>
+<div class="answer">
+    <p>Pattern matching, introduced in C# 7.0 and enhanced in later versions, allows you to match and deconstruct objects based on their types or values. It improves readability and reduces the need for complex conditional logic.</p>
+    <p>Types of pattern matching include:</p>
+    <ul>
+        <li><strong>Type Pattern:</strong> Matches an object against a type.</li>
+        <li><strong>Constant Pattern:</strong> Matches a specific constant value.</li>
+        <li><strong>Property Pattern:</strong> Matches objects based on their properties.</li>
+        <li><strong>Positional Pattern:</strong> Matches tuples or records based on their positions.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>public void ProcessObject(object obj)
+{
+switch (obj)
+{
+case int i:
+    Console.WriteLine($"Integer: {i}");
+    break;
+case string s when s.Length > 5:
+    Console.WriteLine($"Long string: {s}");
+    break;
+case Person { Age: > 18 } p:
+    Console.WriteLine($"Adult person: {p.Name}");
+    break;
+}
+}</code></pre>
+</div>
+
+<!-- Question 33 -->
+<div class="question">
+    <h2>33. What are `record types` in C# and how do they differ from classes?</h2>
+</div>
+<div class="answer">
+    <p>Record types, introduced in C# 9.0, are a special kind of reference type designed for immutable data. They provide built-in support for value-based equality, with features such as <code>deconstruct</code> and concise syntax for defining data objects.</p>
+    <p>Records differ from classes in the following ways:</p>
+    <ul>
+        <li><strong>Immutability:</strong> By default, record properties are read-only.</li>
+        <li><strong>Value-Based Equality:</strong> Records use value-based equality rather than reference-based.</li>
+        <li><strong>With-Expression:</strong> Records support <code>with</code> expressions to create modified copies.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>public record Person(string FirstName, string LastName);
+
+var person1 = new Person("John", "Doe");
+var person2 = person1 with { LastName = "Smith" };
+Console.WriteLine(person1); // Person { FirstName = John, LastName = Doe }
+Console.WriteLine(person2); // Person { FirstName = John, LastName = Smith }</code></pre>
+</div>
+
+<!-- Question 34 -->
+<div class="question">
+    <h2>34. How do `default values` work with `generics` in C#?</h2>
+</div>
+<div class="answer">
+    <p>In C#, generics do not have a default value that can be directly assigned. For value types, the default is the zero-initialized value, and for reference types, it is <code>null</code>.</p>
+    <p>To handle default values in generics, you can use the <code>default</code> keyword to obtain the default value for any type parameter.</p>
+    <p>Example:</p>
+    <pre><code>public T GetDefaultValue<T>()
+{
+return default;
+}</code></pre>
+</div>
+
+<!-- Question 35 -->
+<div class="question">
+    <h2>35. What is `dynamic` typing in C# and when should you use it?</h2>
+</div>
+<div class="answer">
+    <p>The <code>dynamic</code> type in C# allows for runtime type resolution, bypassing compile-time type checking. This can be useful for scenarios where types are not known until runtime or when interacting with COM objects or dynamic languages.</p>
+    <p>However, using <code>dynamic</code> can lead to runtime errors and loss of compile-time type safety, so it should be used sparingly.</p>
+    <p>Example:</p>
+    <pre><code>dynamic value = 10;
+Console.WriteLine(value + 5); // Output: 15
+value = "Hello";
+Console.WriteLine(value + " World!"); // Output: Hello World!</code></pre>
+</div>
+
+<!-- Continue with more questions and answers -->
+ <!-- Question 36 -->
+ <div class="question">
+    <h2>36. What is `Task.WhenAll` and `Task.WhenAny` used for in C#?</h2>
+</div>
+<div class="answer">
+    <p><code>Task.WhenAll</code> and <code>Task.WhenAny</code> are methods used to work with multiple tasks in asynchronous programming.</p>
+    <ul>
+        <li><strong><code>Task.WhenAll</code>:</strong> This method returns a single <code>Task</code> that completes when all of the provided tasks have completed. It is useful when you need to wait for multiple tasks to finish before proceeding.</li>
+        <li><strong><code>Task.WhenAny</code>:</strong> This method returns a task that completes when any one of the provided tasks completes. It is useful when you need to proceed as soon as any one of multiple tasks finishes.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>public async Task ProcessTasksAsync()
+{
+var task1 = Task.Delay(1000);
+var task2 = Task.Delay(2000);
+
+await Task.WhenAll(task1, task2); // Waits for both tasks to complete
+Console.WriteLine("All tasks completed");
+
+var firstTask = await Task.WhenAny(task1, task2); // Proceeds when any one task completes
+Console.WriteLine("At least one task completed");
+}</code></pre>
+</div>
+
+<!-- Question 37 -->
+<div class="question">
+    <h2>37. What are `nullable` types and how do they work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Nullable types in C# allow value types (like <code>int</code>, <code>double</code>, etc.) to represent <code>null</code> values, in addition to their normal range of values. They are represented using the <code>Nullable<T></code> generic type or the shorthand <code>T?</code>.</p>
+    <p>Example:</p>
+    <pre><code>int? age = null; // Nullable integer
+if (age.HasValue)
+{
+Console.WriteLine($"Age: {age.Value}");
+}
+else
+{
+Console.WriteLine("Age is not specified.");
+}</code></pre>
+</div>
+
+<!-- Question 38 -->
+<div class="question">
+    <h2>38. Explain the use of `yield` in C#.</h2>
+</div>
+<div class="answer">
+    <p>The <code>yield</code> keyword is used to return elements one at a time from an iterator method. It simplifies the implementation of custom iterators without the need to manually manage the state or the collection.</p>
+    <p>Example:</p>
+    <pre><code>public IEnumerable<int> GetNumbers()
+{
+yield return 1;
+yield return 2;
+yield return 3;
+}</code></pre>
+</div>
+
+<!-- Question 39 -->
+<div class="question">
+    <h2>39. What is `dependency injection` and how is it used in .NET Core?</h2>
+</div>
+<div class="answer">
+    <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into classes rather than having the class create or manage its dependencies. In .NET Core, DI is built-in and can be configured in the <code>Startup</code> class.</p>
+    <p>Example:</p>
+    <pre><code>public void ConfigureServices(IServiceCollection services)
+{
+services.AddScoped<IMyService, MyService>();
+services.AddControllers();
+}
+
+public class MyController : ControllerBase
+{
+private readonly IMyService _myService;
+
+public MyController(IMyService myService)
+{
+_myService = myService;
+}
+}</code></pre>
+</div>
+
+<!-- Question 40 -->
+<div class="question">
+    <h2>40. How do `extension methods` work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Extension methods allow you to add new methods to existing types without modifying their source code. They are defined as static methods in static classes, but they can be called as if they were instance methods on the extended type.</p>
+    <p>Example:</p>
+    <pre><code>public static class StringExtensions
+{
+public static bool IsNullOrEmpty(this string str)
+{
+return string.IsNullOrEmpty(str);
+}
+}
+
+// Usage
+string text = null;
+bool isEmpty = text.IsNullOrEmpty(); // Calls the extension method</code></pre>
+</div>
+
+<!-- Question 41 -->
+<div class="question">
+    <h2>41. What are `records` and how do they differ from classes in C#?</h2>
+</div>
+<div class="answer">
+    <p>Records, introduced in C# 9.0, are a special kind of class that is designed for immutable data. They provide a concise syntax for defining data objects and come with built-in support for value-based equality and deconstruction.</p>
+    <p>Differences from classes:</p>
+    <ul>
+        <li><strong>Immutability:</strong> Record properties are readonly by default.</li>
+        <li><strong>Value-Based Equality:</strong> Records use value-based equality comparison instead of reference equality.</li>
+        <li><strong>With-Expression:</strong> Records support the <code>with</code> expression to create modified copies.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>public record Person(string FirstName, string LastName);
+
+var person1 = new Person("John", "Doe");
+var person2 = person1 with { LastName = "Smith" };
+Console.WriteLine(person1); // Output: Person { FirstName = John, LastName = Doe }
+Console.WriteLine(person2); // Output: Person { FirstName = John, LastName = Smith }</code></pre>
+</div>
+
+<!-- Question 42 -->
+<div class="question">
+    <h2>42. What are `default interface methods` and why are they introduced?</h2>
+</div>
+<div class="answer">
+    <p>Default interface methods, introduced in C# 8.0, allow you to provide default implementations for methods in interfaces. This helps to evolve interfaces over time without breaking existing implementations.</p>
+    <p>Example:</p>
+    <pre><code>public interface ILogger
+{
+void Log(string message);
+
+void LogWarning(string message)
+{
+Console.WriteLine($"Warning: {message}");
+}
+}</code></pre>
+</div>
+
+<!-- Question 43 -->
+<div class="question">
+    <h2>43. How do `local functions` work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Local functions are methods defined within the body of another method. They can access the local variables of the containing method and can help to encapsulate and organize code that is used only within a specific context.</p>
+    <p>Example:</p>
+    <pre><code>public void ProcessData()
+{
+int Add(int a, int b) => a + b;
+Console.WriteLine(Add(5, 10));
+}</code></pre>
+</div>
+
+<!-- Question 44 -->
+<div class="question">
+    <h2>44. What is `async` programming and how does it differ from synchronous programming?</h2>
+</div>
+<div class="answer">
+    <p>Asynchronous programming allows for operations to run in the background while the main thread continues executing, improving responsiveness and performance, especially in I/O-bound operations. Synchronous programming, on the other hand, blocks the main thread until the operation completes.</p>
+    <p>Asynchronous programming uses <code>async</code> and <code>await</code> keywords, while synchronous programming executes tasks sequentially, potentially blocking the thread.</p>
+    <p>Example of asynchronous method:</p>
+    <pre><code>public async Task<int> FetchDataAsync()
+{
+await Task.Delay(1000); // Simulate async work
+return 42;
+}</code></pre>
+</div>
+
+<!-- Question 45 -->
+<div class="question">
+    <h2>45. What are `tuples` in C# and how are they used?</h2>
+</div>
+<div class="answer">
+    <p>Tuples are data structures that hold a fixed number of items of different types. They are useful for returning multiple values from a method or encapsulating related data.</p>
+    <p>Example:</p>
+    <pre><code>public (int, string) GetPersonData()
+{
+return (42, "John Doe");
+}
+
+var data = GetPersonData();
+Console.WriteLine($"ID: {data.Item1}, Name: {data.Item2}");</code></pre>
+</div>
+
+<!-- Continue with more questions and answers -->
+  <!-- Question 46 -->
+  <div class="question">
+    <h2>46. What is `dynamic` typing and how does it affect performance in C#?</h2>
+</div>
+<div class="answer">
+    <p><code>dynamic</code> typing allows for runtime type resolution and bypasses compile-time type checking. While it provides flexibility, it can lead to runtime errors and decreased performance due to the overhead of type resolution and dynamic method dispatch.</p>
+    <p>Example:</p>
+    <pre><code>dynamic obj = "Hello";
+Console.WriteLine(obj.Length); // Works if obj is a string, but could fail at runtime if obj is not a string</code></pre>
+</div>
+
+<!-- Question 47 -->
+<div class="question">
+    <h2>47. How does `reference` equality differ from `value` equality in C#?</h2>
+</div>
+<div class="answer">
+    <p>In C#, reference equality checks if two references point to the same object in memory. Value equality checks if two objects have the same value, which is typically used for value types and can be customized for reference types by overriding the <code>Equals</code> method.</p>
+    <p>Example:</p>
+    <pre><code>public class Person
+{
+public string Name { get; set; }
+
+public override bool Equals(object obj)
+{
+if (obj is Person other)
+{
+    return Name == other.Name;
+}
+return false;
+}
+
+public override int GetHashCode()
+{
+return Name?.GetHashCode() ?? 0;
+}
+}
+
+var person1 = new Person { Name = "John" };
+var person2 = new Person { Name = "John" };
+
+Console.WriteLine(person1 == person2); // False, reference equality
+Console.WriteLine(person1.Equals(person2)); // True, value equality</code></pre>
+</div>
+
+<!-- Question 48 -->
+<div class="question">
+    <h2>48. What is `memory management` in C# and how does garbage collection work?</h2>
+</div>
+<div class="answer">
+    <p>Memory management in C# is handled by the .NET runtime's garbage collector (GC), which automatically reclaims memory occupied by objects that are no longer in use. The GC uses a generational approach with different generations (0, 1, and 2) to optimize the collection process.</p>
+    <p>Example of GC usage:</p>
+    <pre><code>public void AllocateMemory()
+{
+var obj = new object();
+// obj will be eligible for garbage collection when it goes out of scope
+}</code></pre>
+</div>
+
+<!-- Question 49 -->
+<div class="question">
+    <h2>49. What are `concurrent collections` in C# and when should you use them?</h2>
+</div>
+<div class="answer">
+    <p>Concurrent collections are designed to be used in multi-threaded scenarios where multiple threads might be accessing or modifying the collection simultaneously. They provide thread-safe operations and avoid the need for explicit locking.</p>
+    <p>Examples include <code>ConcurrentDictionary</code>, <code>ConcurrentQueue</code>, and <code>ConcurrentBag</code>.</p>
+    <p>Example:</p>
+    <pre><code>var dictionary = new ConcurrentDictionary<int, string>();
+dictionary.TryAdd(1, "Value1");
+string value;
+if (dictionary.TryGetValue(1, out value))
+{
+Console.WriteLine(value); // Output: Value1
+}</code></pre>
+</div>
+
+<!-- Question 50 -->
+<div class="question">
+    <h2>50. What is `lazy initialization` and how can it be implemented in C#?</h2>
+</div>
+<div class="answer">
+    <p>Lazy initialization is a design pattern where an object's initialization is deferred until it is actually needed. This can be implemented using the <code>Lazy<T></code> class, which provides thread-safe lazy initialization.</p>
+    <p>Example:</p>
+    <pre><code>private readonly Lazy<ExpensiveObject> _expensiveObject = new Lazy<ExpensiveObject>(() => new ExpensiveObject());
+
+public ExpensiveObject ExpensiveObject => _expensiveObject.Value;</code></pre>
+</div>
+
+<!-- Question 51 -->
+<div class="question">
+    <h2>51. How do you use `attributes` in C# and what are some common use cases?</h2>
+</div>
+<div class="answer">
+    <p>Attributes in C# are metadata that can be applied to various program elements such as classes, methods, and properties. They provide a way to add declarative information that can be accessed at runtime using reflection.</p>
+    <p>Common use cases include:</p>
+    <ul>
+        <li><strong>Documentation:</strong> Providing additional information about elements.</li>
+        <li><strong>Configuration:</strong> Defining settings or behaviors for elements.</li>
+        <li><strong>Validation:</strong> Applying validation rules to properties or methods.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>[Obsolete("This method is deprecated")]
+public void OldMethod()
+{
+// Method implementation
+}</code></pre>
+</div>
+
+<!-- Question 52 -->
+<div class="question">
+    <h2>52. What are `tuples` and how do they differ from `out` parameters in C#?</h2>
+</div>
+<div class="answer">
+    <p>Tuples are data structures that allow you to group multiple values into a single object. They differ from <code>out</code> parameters in that they provide a way to return multiple values from a method without needing separate <code>out</code> parameters for each value.</p>
+    <p>Example of a tuple:</p>
+    <pre><code>public (int, string) GetPersonInfo()
+{
+return (1, "John Doe");
+}
+
+var personInfo = GetPersonInfo();
+Console.WriteLine(personInfo.Item1); // Output: 1
+Console.WriteLine(personInfo.Item2); // Output: John Doe</code></pre>
+</div>
+
+<!-- Question 53 -->
+<div class="question">
+    <h2>53. What is the purpose of `async` and `await` keywords in C#?</h2>
+</div>
+<div class="answer">
+    <p>The <code>async</code> and <code>await</code> keywords are used for asynchronous programming. The <code>async</code> keyword marks a method as asynchronous, allowing it to use the <code>await</code> keyword to perform non-blocking operations. The <code>await</code> keyword is used to asynchronously wait for a <code>Task</code> to complete.</p>
+    <p>Example:</p>
+    <pre><code>public async Task<string> FetchDataAsync()
+{
+await Task.Delay(1000); // Simulate async work
+return "Data fetched";
+}</code></pre>
+</div>
+
+<!-- Question 54 -->
+<div class="question">
+    <h2>54. How does `interface` inheritance work in C#?</h2>
+</div>
+<div class="answer">
+    <p>In C#, interfaces can inherit from other interfaces, allowing you to build up complex interfaces from simpler ones. A class implementing an interface must provide implementations for all members of that interface and any interfaces it inherits.</p>
+    <p>Example:</p>
+    <pre><code>public interface IShape
+{
+void Draw();
+}
+
+public interface IColoredShape : IShape
+{
+void SetColor(string color);
+}
+
+public class Circle : IColoredShape
+{
+public void Draw()
+{
+Console.WriteLine("Drawing circle");
+}
+
+public void SetColor(string color)
+{
+Console.WriteLine($"Setting color to {color}");
+}
+}</code></pre>
+</div>
+
+<!-- Question 55 -->
+<div class="question">
+    <h2>55. What is the purpose of the `using` statement in C#?</h2>
+</div>
+<div class="answer">
+    <p>The <code>using</code> statement is used to ensure that <code>IDisposable</code> objects are properly disposed of when they are no longer needed. It provides a convenient syntax for handling resources, ensuring that <code>Dispose</code> is called even if an exception occurs.</p>
+    <p>Example:</p>
+    <pre><code>using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+// Use the stream
+}
+// Stream is automatically disposed of here</code></pre>
+</div>
+
+<!-- Question 56 -->
+<div class="question">
+    <h2>56. What are `async streams` and how do you use them in C#?</h2>
+</div>
+<div class="answer">
+    <p>Async streams, introduced in C# 8.0, allow you to asynchronously iterate over a sequence of data. They are implemented using the <code>IAsyncEnumerable<T></code> interface and the <code>await foreach</code> loop.</p>
+    <p>Example:</p>
+    <pre><code>public async IAsyncEnumerable<int> GetNumbersAsync()
+{
+for (int i = 1; i <= 5; i++)
+{
+await Task.Delay(500); // Simulate async work
+yield return i;
+}
+}
+
+public async Task ProcessNumbersAsync()
+{
+await foreach (var number in GetNumbersAsync())
+{
+Console.WriteLine(number);
+}
+}</code></pre>
+</div>
+
+<!-- Question 57 -->
+<div class="question">
+    <h2>57. What are `default` interface methods and how do they work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Default interface methods, introduced in C# 8.0, allow interfaces to provide default implementations for methods. This feature helps in evolving interfaces without breaking existing implementations.</p>
+    <p>Example:</p>
+    <pre><code>public interface ILogger
+{
+void Log(string message);
+
+void LogWarning(string message)
+{
+Console.WriteLine($"Warning: {message}");
+}
+}</code></pre>
+</div>
+
+<!-- Question 58 -->
+<div class="question">
+    <h2>58. What is the `null-conditional` operator in C# and how is it used?</h2>
+</div>
+<div class="answer">
+    <p>The <code>?.</code> (null-conditional) operator is used to safely access members of an object that may be <code>null</code>. It returns <code>null</code> if the object is <code>null</code>, avoiding a <code>NullReferenceException</code>.</p>
+    <p>Example:</p>
+    <pre><code>string name = person?.Name; // Returns null if person is null</code></pre>
+</div>
+
+<!-- Question 59 -->
+<div class="question">
+    <h2>59. What is the purpose of the `ref` keyword in C#?</h2>
+</div>
+<div class="answer">
+    <p>The <code>ref</code> keyword is used to pass arguments by reference rather than by value. This allows the method to modify the value of the argument directly.</p>
+    <p>Example:</p>
+    <pre><code>public void UpdateValue(ref int number)
+{
+number = 42;
+}
+
+int value = 10;
+UpdateValue(ref value);
+Console.WriteLine(value); // Output: 42</code></pre>
+</div>
+
+<!-- Question 60 -->
+<div class="question">
+    <h2>60. What is `expression-bodied` syntax in C# and how is it used?</h2>
+</div>
+<div class="answer">
+    <p>Expression-bodied syntax allows you to define methods, properties, and other members using a more concise syntax. It is useful for simple members where a single expression is sufficient.</p>
+    <p>Example:</p>
+    <pre><code>public int Square(int x) => x * x;
+
+public string Name => "John Doe";</code></pre>
+</div>
+
+<!-- Continue with more questions and answers -->
+
+<!-- Question 61 -->
+<div class="question">
+    <h2>61. What are `expression trees` in C# and how are they used?</h2>
+</div>
+<div class="answer">
+    <p>Expression trees represent code in a tree-like data structure, where each node is an expression. They are used primarily in LINQ queries and can be inspected and manipulated at runtime.</p>
+    <p>Example:</p>
+    <pre><code>Expression<Func<int, int>> square = x => x * x;
+var lambda = square.Compile();
+Console.WriteLine(lambda(5)); // Output: 25</code></pre>
+</div>
+
+<!-- Question 62 -->
+<div class="question">
+    <h2>62. How do `attributes` work in C# and how can they be accessed?</h2>
+</div>
+<div class="answer">
+    <p>Attributes in C# are metadata applied to code elements. They are defined as classes that inherit from <code>Attribute</code> and can be accessed using reflection.</p>
+    <p>Example:</p>
+    <pre><code>[Obsolete("This method is deprecated")]
+public void OldMethod()
+{
+// Method implementation
+}
+
+var attributes = typeof(MyClass).GetMethod("OldMethod")
+.GetCustomAttributes(typeof(ObsoleteAttribute), false);
+
+if (attributes.Length > 0)
+{
+var attribute = (ObsoleteAttribute)attributes[0];
+Console.WriteLine(attribute.Message);
+}</code></pre>
+</div>
+
+<!-- Question 63 -->
+<div class="question">
+    <h2>63. What is `dependency injection` and how does it work in .NET Core?</h2>
+</div>
+<div class="answer">
+    <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC). It involves passing dependencies (e.g., services) to a class rather than the class creating them itself. .NET Core has built-in support for DI via the <code>IServiceCollection</code> interface.</p>
+    <p>Example:</p>
+    <pre><code>public void ConfigureServices(IServiceCollection services)
+{
+services.AddScoped<IMyService, MyService>();
+services.AddControllers();
+}
+
+public class MyController : ControllerBase
+{
+private readonly IMyService _myService;
+
+public MyController(IMyService myService)
+{
+_myService = myService;
+}
+}</code></pre>
+</div>
+
+<!-- Question 64 -->
+<div class="question">
+    <h2>64. What is the difference between `Task` and `ValueTask` in C#?</h2>
+</div>
+<div class="answer">
+    <p><code>Task</code> and <code>ValueTask</code> are used for asynchronous operations. <code>Task</code> is a reference type that represents an asynchronous operation, while <code>ValueTask</code> is a value type that can be used to reduce allocations when the result is already available synchronously.</p>
+    <p>Example:</p>
+    <pre><code>public async Task<int> GetValueAsync()
+{
+await Task.Delay(1000);
+return 42;
+}
+
+public ValueTask<int> GetValueValueTask()
+{
+return new ValueTask<int>(42);
+}</code></pre>
+</div>
+
+<!-- Question 65 -->
+<div class="question">
+    <h2>65. How do `nullable reference types` work in C# 8.0 and later?</h2>
+</div>
+<div class="answer">
+    <p>Nullable reference types, introduced in C# 8.0, allow you to express whether a reference type can be <code>null</code> or not. By default, reference types are considered nullable, but you can enable nullable reference type annotations to get compile-time warnings for potential null references.</p>
+    <p>Example:</p>
+    <pre><code>#nullable enable
+
+public class Person
+{
+public string? Name { get; set; } // Nullable reference type
+public int Age { get; set; }
+}</code></pre>
+</div>
+
+<!-- Question 66 -->
+<div class="question">
+    <h2>66. What is the `default` keyword used for in C#?</h2>
+</div>
+<div class="answer">
+    <p>The <code>default</code> keyword is used to obtain the default value of a type. For value types, it returns zero-initialized values, and for reference types, it returns <code>null</code>.</p>
+    <p>Example:</p>
+    <pre><code>int defaultValue = default(int); // 0
+string defaultString = default(string); // null</code></pre>
+</div>
+
+<!-- Question 67 -->
+<div class="question">
+    <h2>67. How does `string interpolation` work in C# and when should it be used?</h2>
+</div>
+<div class="answer">
+    <p>String interpolation allows you to embed expressions inside string literals using the <code>$</code> sign followed by curly braces. It is a more readable and convenient way to format strings compared to traditional concatenation.</p>
+    <p>Example:</p>
+    <pre><code>string name = "Alice";
+int age = 30;
+string message = $"Name: {name}, Age: {age}";
+Console.WriteLine(message); // Output: Name: Alice, Age: 30</code></pre>
+</div>
+
+<!-- Question 68 -->
+<div class="question">
+    <h2>68. What is `LINQ` and how is it used in C#?</h2>
+</div>
+<div class="answer">
+    <p>Language Integrated Query (LINQ) is a set of methods and syntax for querying and manipulating data in C#. It provides a unified way to work with different data sources such as arrays, collections, and databases.</p>
+    <p>Example:</p>
+    <pre><code>int[] numbers = { 1, 2, 3, 4, 5 };
+var evenNumbers = numbers.Where(n => n % 2 == 0);
+
+foreach (var number in evenNumbers)
+{
+Console.WriteLine(number); // Output: 2, 4
+}</code></pre>
+</div>
+
+<!-- Question 69 -->
+<div class="question">
+    <h2>69. What is the `yield` keyword in C# and how is it used?</h2>
+</div>
+<div class="answer">
+    <p>The <code>yield</code> keyword is used to provide a value to an enumerator object or to signal the end of the sequence. It is typically used in <code>iterator</code> methods to create custom collections or sequences.</p>
+    <p>Example:</p>
+    <pre><code>public IEnumerable<int> GetNumbers()
+{
+yield return 1;
+yield return 2;
+yield return 3;
+}</code></pre>
+</div>
+
+<!-- Question 70 -->
+<div class="question">
+    <h2>70. What are `extension methods` and how are they defined in C#?</h2>
+</div>
+<div class="answer">
+    <p>Extension methods allow you to add new methods to existing types without modifying their definition. They are defined as static methods in a static class and use the <code>this</code> keyword to specify the type they extend.</p>
+    <p>Example:</p>
+    <pre><code>public static class StringExtensions
+{
+public static bool IsNullOrEmpty(this string str)
+{
+return string.IsNullOrEmpty(str);
+}
+}</code></pre>
+</div>
+
+<!-- Question 71 -->
+<div class="question">
+    <h2>71. What is `method overloading` and how does it work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Method overloading allows multiple methods to have the same name but with different parameter lists. The appropriate method is selected based on the number and types of arguments passed.</p>
+    <p>Example:</p>
+    <pre><code>public class Calculator
+{
+public int Add(int a, int b)
+{
+return a + b;
+}
+
+public double Add(double a, double b)
+{
+return a + b;
+}
+}</code></pre>
+</div>
+
+<!-- Question 72 -->
+<div class="question">
+    <h2>72. How does `property` initialization work in C# and what are its benefits?</h2>
+</div>
+<div class="answer">
+    <p>Property initialization allows you to set default values for properties directly within the property definition. This makes it easier to create instances of a class with pre-defined values.</p>
+    <p>Example:</p>
+    <pre><code>public class Person
+{
+public string Name { get; set; } = "Unknown";
+public int Age { get; set; } = 0;
+}</code></pre>
+</div>
+
+<!-- Question 73 -->
+<div class="question">
+    <h2>73. What are `indexers` in C# and how are they used?</h2>
+</div>
+<div class="answer">
+    <p>Indexers allow instances of a class or struct to be indexed like arrays. They provide a way to access elements in a collection or data structure using an index.</p>
+    <p>Example:</p>
+    <pre><code>public class StringCollection
+{
+private string[] _items = new string[10];
+
+public string this[int index]
+{
+get => _items[index];
+set => _items[index] = value;
+}
+}</code></pre>
+</div>
+
+<!-- Question 74 -->
+<div class="question">
+    <h2>74. What is `dynamic` type in C# and how does it differ from `object` type?</h2>
+</div>
+<div class="answer">
+    <p>The <code>dynamic</code> type bypasses compile-time type checking and allows for operations that are resolved at runtime. The <code>object</code> type, on the other hand, is a base type for all other types and requires explicit casting for type-specific operations.</p>
+    <p>Example:</p>
+    <pre><code>dynamic obj = "Hello";
+Console.WriteLine(obj.Length); // Works if obj is a string
+
+object obj2 = "World";
+Console.WriteLine(((string)obj2).Length); // Requires explicit cast</code></pre>
+</div>
+
+<!-- Question 75 -->
+<div class="question">
+    <h2>75. What is the `default` keyword used for in C#?</h2>
+</div>
+<div class="answer">
+    <p>The <code>default</code> keyword is used to obtain the default value of a type. For value types, this is typically zero, and for reference types, this is <code>null</code>.</p>
+    <p>Example:</p>
+    <pre><code>int defaultValue = default(int); // 0
+string defaultString = default(string); // null</code></pre>
+</div>
+
+<!-- Continue with more questions and answers -->
+
+<!-- Question 76 -->
+<div class="question">
+    <h2>76. How does `thread synchronization` work in C#?</h2>
+</div>
+<div class="answer">
+    <p>Thread synchronization in C# ensures that multiple threads do not access shared resources simultaneously, which can lead to race conditions and data corruption. C# provides various synchronization primitives like <code>lock</code>, <code>Monitor</code>, <code>Mutex</code>, and <code>Semaphore</code> to manage access to shared resources.</p>
+    <p>Example:</p>
+    <pre><code>private readonly object _lock = new object();
+
+public void UpdateResource()
+{
+lock (_lock)
+{
+// Critical section
+}
+}</code></pre>
+</div>
+
+<!-- Question 77 -->
+<div class="question">
+    <h2>77. What is the difference between `abstract` class and `interface` in C#?</h2>
+</div>
+<div class="answer">
+    <p>An <code>abstract</code> class can provide default implementations for some of its methods and can contain fields, constructors, and destructors. An <code>interface</code> only provides method signatures and properties without any implementation. Classes can implement multiple interfaces but can only inherit from a single abstract class.</p>
+    <p>Example:</p>
+    <pre><code>public abstract class Animal
+{
+public abstract void MakeSound();
+
+public void Eat()
+{
+Console.WriteLine("Eating...");
+}
+}
+
+public interface IWalkable
+{
+void Walk();
+}
+
+public class Dog : Animal, IWalkable
+{
+public override void MakeSound()
+{
+Console.WriteLine("Bark");
+}
+
+public void Walk()
+{
+Console.WriteLine("Walking...");
+}
+}</code></pre>
+</div>
+
+<!-- Question 78 -->
+<div class="question">
+    <h2>78. How does `garbage collection` work in C# and how can you force it?</h2>
+</div>
+<div class="answer">
+    <p>Garbage collection in C# is an automatic process managed by the .NET runtime. It reclaims memory occupied by objects that are no longer referenced. You can force garbage collection using the <code>GC.Collect()</code> method, though it is generally recommended to let the GC manage memory automatically.</p>
+    <p>Example:</p>
+    <pre><code>GC.Collect();
+GC.WaitForPendingFinalizers();</code></pre>
+</div>
+
+<!-- Question 79 -->
+<div class="question">
+    <h2>79. What is the `Task Parallel Library` (TPL) in C# and how is it used?</h2>
+</div>
+<div class="answer">
+    <p>The Task Parallel Library (TPL) provides a set of APIs for parallel programming in C#. It simplifies the creation and management of concurrent tasks and makes it easier to handle parallelism and asynchronous programming.</p>
+    <p>Example:</p>
+    <pre><code>Task.Run(() =>
+{
+// Code to run in parallel
+});
+
+var result = await Task.WhenAll(task1, task2);</code></pre>
+</div>
+
+<!-- Question 80 -->
+<div class="question">
+    <h2>80. What are `generics` in C# and how do they improve type safety?</h2>
+</div>
+<div class="answer">
+    <p>Generics allow you to define classes, methods, and interfaces with a placeholder for the type of data they operate on. This improves type safety by allowing you to use the same code with different data types while avoiding runtime type errors and reducing the need for type casting.</p>
+    <p>Example:</p>
+    <pre><code>public class GenericList<T>
+{
+private List<T> _items = new List<T>();
+
+public void Add(T item)
+{
+_items.Add(item);
+}
+
+public T Get(int index)
+{
+return _items[index];
+}
+}</code></pre>
+</div>
+
+<!-- Continue with more questions and answers -->
+   <!-- Continue with more questions and answers -->
+
+        <!-- Question 81 -->
+        <div class="question">
+            <h2>81. What is `async/await` in C# and how does it simplify asynchronous programming?</h2>
+        </div>
+        <div class="answer">
+            <p>Async/await is a language feature in C# that simplifies asynchronous programming by allowing you to write asynchronous code that looks and behaves like synchronous code. The <code>async</code> keyword is used to define an asynchronous method, and the <code>await</code> keyword is used to pause the method execution until the awaited task completes.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<int> CalculateAsync()
+{
+    await Task.Delay(1000); // Simulate asynchronous work
+    return 42;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 82 -->
+        <div class="question">
+            <h2>82. What is the difference between `Task` and `Thread` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A <code>Task</code> represents an asynchronous operation and is part of the Task Parallel Library (TPL), which provides a higher-level abstraction for concurrent operations compared to threads. A <code>Thread</code> represents a lower-level construct that directly maps to an OS thread. Tasks are more lightweight and easier to manage than threads.</p>
+            <p>Example:</p>
+            <pre><code>Task.Run(() => { /* Code to run in background */ });
+Thread thread = new Thread(() => { /* Code to run in background */ });
+thread.Start();
+</code></pre>
+        </div>
+
+        <!-- Question 83 -->
+        <div class="question">
+            <h2>83. What are `lambda expressions` in C# and how are they used?</h2>
+        </div>
+        <div class="answer">
+            <p>Lambda expressions are a concise way to represent anonymous methods using a syntax that allows you to define inline functions. They are often used in LINQ queries and event handling.</p>
+            <p>Example:</p>
+            <pre><code>Func<int, int, int> add = (a, b) => a + b;
+int result = add(5, 3); // Output: 8
+</code></pre>
+        </div>
+
+        <!-- Question 84 -->
+        <div class="question">
+            <h2>84. What is `data binding` and how does it work in ASP.NET MVC?</h2>
+        </div>
+        <div class="answer">
+            <p>Data binding in ASP.NET MVC involves associating data from a model to a view, allowing data to be automatically populated and updated between the two. It simplifies the process of displaying and updating data on web pages.</p>
+            <p>Example:</p>
+            <pre><code>@model MyApp.Models.Person
+
+<p>Name: @Model.Name</p>
+<p>Age: @Model.Age</p>
+</code></pre>
+        </div>
+
+        <!-- Question 85 -->
+        <div class="question">
+            <h2>85. What is `dependency injection` and how does it differ from `inversion of control`?</h2>
+        </div>
+        <div class="answer">
+            <p>Dependency Injection (DI) is a specific form of Inversion of Control (IoC) where dependencies are provided to a class rather than the class creating them itself. IoC is a broader principle that refers to the reversal of control flow in a program, allowing frameworks to handle the control flow rather than the application code itself.</p>
+            <p>Example of DI:</p>
+            <pre><code>public class MyService
+{
+    private readonly IRepository _repository;
+
+    public MyService(IRepository repository)
+    {
+        _repository = repository;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 86 -->
+        <div class="question">
+            <h2>86. How do `filters` work in ASP.NET Core MVC?</h2>
+        </div>
+        <div class="answer">
+            <p>Filters in ASP.NET Core MVC are used to execute code before or after certain stages of the request processing pipeline. They can be used for tasks such as logging, authorization, and error handling.</p>
+            <p>Example:</p>
+            <pre><code>public class LoggingFilter : IActionFilter
+{
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        Console.WriteLine("Action executing");
+    }
+
+    public void OnActionExecuted(ActionExecutedContext context)
+    {
+        Console.WriteLine("Action executed");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 87 -->
+        <div class="question">
+            <h2>87. What is `model binding` in ASP.NET Core MVC?</h2>
+        </div>
+        <div class="answer">
+            <p>Model binding is the process by which ASP.NET Core MVC maps data from HTTP requests (e.g., form values, query strings) to action method parameters and model properties. It simplifies the process of retrieving data from requests and populating models.</p>
+            <p>Example:</p>
+            <pre><code>public IActionResult Create(Person person)
+{
+    // The person parameter is automatically populated from the request data
+    return View(person);
+}
+</code></pre>
+        </div>
+
+        <!-- Question 88 -->
+        <div class="question">
+            <h2>88. How do `view components` work in ASP.NET Core MVC?</h2>
+        </div>
+        <div class="answer">
+            <p>View Components are reusable components in ASP.NET Core MVC that encapsulate rendering logic and can be invoked from views. They are similar to partial views but offer more flexibility and support for parameters and complex logic.</p>
+            <p>Example:</p>
+            <pre><code>public class RecentPostsViewComponent : ViewComponent
+{
+    public IViewComponentResult Invoke()
+    {
+        var recentPosts = _postService.GetRecentPosts();
+        return View(recentPosts);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 89 -->
+        <div class="question">
+            <h2>89. What is `Entity Framework Core` and how does it work?</h2>
+        </div>
+        <div class="answer">
+            <p>Entity Framework Core (EF Core) is an Object-Relational Mapper (ORM) that provides a framework for working with databases using .NET objects. It simplifies database interactions by mapping database tables to .NET classes and enabling LINQ queries on those classes.</p>
+            <p>Example:</p>
+            <pre><code>public class AppDbContext : DbContext
+{
+    public DbSet<Person> People { get; set; }
+}
+
+public class Person
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+using (var context = new AppDbContext())
+{
+    var person = new Person { Name = "John Doe" };
+    context.People.Add(person);
+    context.SaveChanges();
+}
+</code></pre>
+        </div>
+
+        <!-- Question 90 -->
+        <div class="question">
+            <h2>90. What is the `Repository Pattern` and how is it implemented in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The Repository Pattern is a design pattern that separates data access logic from the business logic by providing an abstraction layer for data operations. It promotes the use of interfaces to define data operations, which can be implemented by various data access technologies.</p>
+            <p>Example:</p>
+            <pre><code>public interface IRepository<T>
+{
+    IEnumerable<T> GetAll();
+    T GetById(int id);
+    void Add(T entity);
+    void Delete(int id);
+}
+
+public class PersonRepository : IRepository<Person>
+{
+    private readonly AppDbContext _context;
+
+    public PersonRepository(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    public IEnumerable<Person> GetAll() => _context.People.ToList();
+    public Person GetById(int id) => _context.People.Find(id);
+    public void Add(Person entity) => _context.People.Add(entity);
+    public void Delete(int id) => _context.People.Remove(GetById(id));
+}
+</code></pre>
+        </div>
+
+        <!-- Continue with more questions and answers -->
+
+        <!-- Question 91 -->
+        <div class="question">
+            <h2>91. What is the difference between `ASP.NET Core` and `ASP.NET`?</h2>
+        </div>
+        <div class="answer">
+            <p>ASP.NET Core is a cross-platform, high-performance framework for building modern, cloud-based, and internet-connected applications. It is a rewrite of ASP.NET and is designed to be platform-agnostic, supporting Windows, macOS, and Linux. ASP.NET, on the other hand, is the older, Windows-only framework for building web applications.</p>
+            <p>Example of ASP.NET Core:</p>
+            <pre><code>public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthorization();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 92 -->
+        <div class="question">
+            <h2>92. What is `SignalR` and how is it used in ASP.NET Core?</h2>
+        </div>
+        <div class="answer">
+            <p>SignalR is a library for ASP.NET Core that enables real-time web functionality, allowing server code to send asynchronous notifications to client-side web applications. It simplifies the process of adding real-time features such as chat, live updates, and notifications to web applications.</p>
+            <p>Example:</p>
+            <pre><code>public class ChatHub : Hub
+{
+    public async Task SendMessage(string user, string message)
+    {
+        await Clients.All.SendAsync("ReceiveMessage", user, message);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 93 -->
+        <div class="question">
+            <h2>93. What is `Middleware` in ASP.NET Core?</h2>
+        </div>
+        <div class="answer">
+            <p>Middleware in ASP.NET Core is a component that is used to handle requests and responses in the HTTP pipeline. Middleware components are assembled into a pipeline that handles requests in sequence, allowing you to add functionality such as authentication, logging, and error handling.</p>
+            <p>Example:</p>
+            <pre><code>public class Startup
+{
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.Use(async (context, next) =>
+        {
+            Console.WriteLine("Request received");
+            await next();
+            Console.WriteLine("Response sent");
+        });
+
+        app.UseRouting();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 94 -->
+        <div class="question">
+            <h2>94. What is `ASP.NET Core Identity` and how is it used for authentication?</h2>
+        </div>
+        <div class="answer">
+            <p>ASP.NET Core Identity is a membership system that provides functionalities for managing user authentication and authorization. It includes features like user registration, login, role management, and external authentication providers.</p>
+            <p>Example:</p>
+            <pre><code>public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+        services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 95 -->
+        <div class="question">
+            <h2>95. How do `global using directives` work in C# 10 and later?</h2>
+        </div>
+        <div class="answer">
+            <p>Global using directives allow you to specify namespaces that are automatically included in all files of a project, eliminating the need to include them manually in each file. This feature simplifies code and reduces redundancy.</p>
+            <p>Example:</p>
+            <pre><code>// In a global using directive file (e.g., GlobalUsings.cs)
+global using System;
+global using System.Collections.Generic;
+</code></pre>
+        </div>
+
+        <!-- Question 96 -->
+        <div class="question">
+            <h2>96. What is the `Null-conditional` operator and how is it used?</h2>
+        </div>
+        <div class="answer">
+            <p>The null-conditional operator (<code>?.</code>) allows you to safely access members and methods of an object that might be <code>null</code>. If the object is <code>null</code>, the expression returns <code>null</code> instead of throwing a <code>NullReferenceException</code>.</p>
+            <p>Example:</p>
+            <pre><code>Person person = null;
+string name = person?.Name; // name will be null instead of throwing an exception
+</code></pre>
+        </div>
+
+        <!-- Question 97 -->
+        <div class="question">
+            <h2>97. How do `records` work in C# 9 and later?</h2>
+        </div>
+        <div class="answer">
+            <p>Records are a new reference type introduced in C# 9 designed for immutable data models. They provide a concise syntax for defining immutable data objects and support value-based equality, which simplifies the comparison and copying of objects.</p>
+            <p>Example:</p>
+            <pre><code>public record Person(string Name, int Age);
+
+var person = new Person("Alice", 30);
+var samePerson = new Person("Alice", 30);
+
+Console.WriteLine(person == samePerson); // Output: True
+</code></pre>
+        </div>
+
+        <!-- Question 98 -->
+        <div class="question">
+            <h2>98. What are `pattern matching` enhancements in C# 9 and later?</h2>
+        </div>
+        <div class="answer">
+            <p>Pattern matching enhancements in C# 9 and later include features such as the <code>is</code> keyword with patterns, positional patterns, and the <code>switch</code> expression. These features provide a more expressive and concise way to perform conditional logic based on object patterns.</p>
+            <p>Example:</p>
+            <pre><code>public void PrintDetails(object obj)
+{
+    if (obj is Person { Name: "Alice", Age: var age })
+    {
+        Console.WriteLine($"Alice is {age} years old");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 99 -->
+        <div class="question">
+            <h2>99. What is the `C# nullable` context and how does it work?</h2>
+        </div>
+        <div class="answer">
+            <p>The nullable context in C# provides a way to control how nullable reference types are handled. It helps to indicate whether reference types are allowed to be <code>null</code> and can be enabled or disabled at the project or file level.</p>
+            <p>Example:</p>
+            <pre><code>#nullable enable
+
+public class Person
+{
+    public string? Name { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person();
+        person.Name = null; // Allowed
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 100 -->
+        <div class="question">
+            <h2>100. How do `default interface methods` work in C# 8 and later?</h2>
+        </div>
+        <div class="answer">
+            <p>Default interface methods in C# 8 allow you to provide default implementations for methods in an interface. This helps to evolve interfaces without breaking existing implementations.</p>
+            <p>Example:</p>
+            <pre><code>public interface ILogger
+{
+    void Log(string message);
+
+    void LogError(string message)
+    {
+        Log($"ERROR: {message}");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Continue with more questions and answers -->
+
+        <!-- Question 101 -->
+        <div class="question">
+            <h2>101. What is `deconstruction` in C# and how is it used?</h2>
+        </div>
+        <div class="answer">
+            <p>Deconstruction in C# allows you to decompose a data structure into its component parts using a syntax that matches the shape of the data. It simplifies the extraction of values from tuples, records, and other data structures.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void Deconstruct(out string name, out int age)
+    {
+        name = Name;
+        age = Age;
+    }
+}
+
+var person = new Person { Name = "John", Age = 25 };
+var (name, age) = person;
+</code></pre>
+        </div>
+
+        <!-- Question 102 -->
+        <div class="question">
+            <h2>102. How do `local functions` work in C# and what are their benefits?</h2>
+        </div>
+        <div class="answer">
+            <p>Local functions are functions defined within the body of another method. They provide a way to organize code and encapsulate logic within a method while avoiding polluting the containing class with additional methods.</p>
+            <p>Example:</p>
+            <pre><code>public void Process()
+{
+    void Log(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    Log("Processing started");
+}
+</code></pre>
+        </div>
+
+        <!-- Question 103 -->
+        <div class="question">
+            <h2>103. What are `records` and `with-expressions` in C# 9?</h2>
+        </div>
+        <div class="answer">
+            <p>Records in C# 9 provide a way to define immutable data structures with value-based equality. With-expressions allow you to create a new record instance with some properties modified while keeping the rest unchanged.</p>
+            <p>Example:</p>
+            <pre><code>public record Person(string Name, int Age);
+
+var person1 = new Person("Alice", 30);
+var person2 = person1 with { Age = 31 };
+
+Console.WriteLine(person1); // Output: Person(Name: Alice, Age: 30)
+Console.WriteLine(person2); // Output: Person(Name: Alice, Age: 31)
+</code></pre>
+        </div>
+
+        <!-- Question 104 -->
+        <div class="question">
+            <h2>104. What is the `using` statement and how does it help in managing resources?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>using</code> statement ensures that resources are disposed of properly after use. It automatically calls the <code>Dispose</code> method of an object that implements <code>IDisposable</code> when the scope is exited, which helps in managing unmanaged resources.</p>
+            <p>Example:</p>
+            <pre><code>using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+    // Use the stream
+}
+// stream.Dispose() is called automatically here
+</code></pre>
+        </div>
+
+        <!-- Question 105 -->
+        <div class="question">
+            <h2>105. How does `value-based equality` work in C# with `struct` and `class`?</h2>
+        </div>
+        <div class="answer">
+            <p>In C#, structs use value-based equality by default, meaning that two struct instances are considered equal if all their fields are equal. Classes use reference-based equality by default, meaning that two class instances are considered equal if they reference the same object in memory, unless you override <code>Equals</code> method.</p>
+            <p>Example:</p>
+            <pre><code>public struct Point
+{
+    public int X { get; }
+    public int Y { get; }
+
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Point other)
+        {
+            return X == other.X && Y == other.Y;
+        }
+        return false;
+    }
+
+    public override int GetHashCode() => (X, Y).GetHashCode();
+}
+</code></pre>
+        </div>
+
+        <!-- Question 106 -->
+        <div class="question">
+            <h2>106. What is the `async` keyword in C# and how does it work?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>async</code> keyword is used to define an asynchronous method that returns a <code>Task</code> or <code>Task&lt;T&gt;</code>. It allows you to use the <code>await</code> keyword inside the method to asynchronously wait for the completion of tasks without blocking the calling thread.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<string> GetDataAsync()
+{
+    await Task.Delay(1000); // Simulate async work
+    return "Data";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 107 -->
+        <div class="question">
+            <h2>107. How do `extension methods` work in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Extension methods allow you to add new methods to existing types without modifying the original type. They are defined as static methods in a static class and use the <code>this</code> keyword to specify the type they extend.</p>
+            <p>Example:</p>
+            <pre><code>public static class StringExtensions
+{
+    public static bool IsNullOrEmpty(this string str)
+    {
+        return string.IsNullOrEmpty(str);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 108 -->
+        <div class="question">
+            <h2>108. What is `nullable` reference types in C# 8.0 and how does it help?</h2>
+        </div>
+        <div class="answer">
+            <p>Nullable reference types in C# 8.0 help to explicitly define whether a reference type can be <code>null</code> or not. By enabling nullable context, you can indicate that a reference type may or may not be <code>null</code>, improving code safety and reducing <code>NullReferenceException</code> issues.</p>
+            <p>Example:</p>
+            <pre><code>#nullable enable
+
+public class Person
+{
+    public string? Name { get; set; } // Nullable reference type
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person();
+        person.Name = null; // Allowed
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 109 -->
+        <div class="question">
+            <h2>109. What is `dynamic` typing in C# and when should it be used?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>dynamic</code> type in C# allows you to bypass compile-time type checking and defer type resolution until runtime. It is useful when working with data that has an unknown or flexible structure, such as interacting with COM objects or dynamic languages.</p>
+            <p>Example:</p>
+            <pre><code>dynamic obj = "Hello";
+Console.WriteLine(obj.Length); // Works at runtime
+</code></pre>
+        </div>
+
+        <!-- Question 110 -->
+        <div class="question">
+            <h2>110. How does `LINQ` work and what are some common LINQ methods?</h2>
+        </div>
+        <div class="answer">
+            <p>Language Integrated Query (LINQ) is a feature in C# that allows you to write queries directly within the language using a SQL-like syntax. It provides a set of standard query operators that work with various data sources, including arrays, collections, and databases.</p>
+            <p>Common LINQ methods include:</p>
+            <ul>
+                <li><code>Where</code>: Filters elements based on a predicate.</li>
+                <li><code>Select</code>: Projects each element into a new form.</li>
+                <li><code>OrderBy</code>: Sorts elements in ascending order.</li>
+                <li><code>GroupBy</code>: Groups elements based on a key.</li>
+                <li><code>First</code>: Returns the first element in a sequence.</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>var numbers = new List<int> { 1, 2, 3, 4, 5 };
+var evenNumbers = numbers.Where(n => n % 2 == 0);
+</code></pre>
+        </div>
+
+        <!-- Question 111 -->
+        <div class="question">
+            <h2>111. What is `yield return` in C# and how does it work?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>yield return</code> statement is used to return each element of a collection one at a time, which can be useful for creating custom iterators. It allows you to implement the <code>IEnumerable</code> interface and iterate over a collection without needing to create an intermediate collection.</p>
+            <p>Example:</p>
+            <pre><code>public IEnumerable<int> GetNumbers()
+{
+    yield return 1;
+    yield return 2;
+    yield return 3;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 112 -->
+        <div class="question">
+            <h2>112. What is `dependency injection` and how is it used in ASP.NET Core?</h2>
+        </div>
+        <div class="answer">
+            <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. In ASP.NET Core, DI is built into the framework, allowing you to register services and inject them into controllers or other services.</p>
+            <p>Example:</p>
+            <pre><code>public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddTransient<IMyService, MyService>();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseRouting();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
+    }
+}
+
+public interface IMyService { }
+
+public class MyService : IMyService { }
+</code></pre>
+        </div>
+
+        <!-- Question 113 -->
+        <div class="question">
+            <h2>113. What is the difference between `IEnumerable<T>` and `IQueryable<T>`?</h2>
+        </div>
+        <div class="answer">
+            <p><code>IEnumerable<T></code> is used for in-memory collections and is best suited for querying data that is already loaded into memory. It performs filtering, ordering, and other operations in-memory.</p>
+            <p><code>IQueryable<T></code> is designed for querying data from a data source (like a database) and allows queries to be translated into the appropriate query language (such as SQL). It performs filtering, ordering, and other operations on the data source, which can be more efficient for large datasets.</p>
+            <p>Example:</p>
+            <pre><code>// IEnumerable<T>
+var list = new List<int> { 1, 2, 3, 4 };
+var evenNumbers = list.Where(n => n % 2 == 0);
+
+// IQueryable<T>
+var query = context.People.Where(p => p.Age > 30);
+</code></pre>
+        </div>
+
+        <!-- Question 114 -->
+        <div class="question">
+            <h2>114. What are `async streams` and how are they used in C# 8.0?</h2>
+        </div>
+        <div class="answer">
+            <p>Async streams allow you to asynchronously enumerate over a sequence of data. They provide a way to asynchronously iterate over data sources using the <code>await foreach</code> statement.</p>
+            <p>Example:</p>
+            <pre><code>public async IAsyncEnumerable<int> GetNumbersAsync()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        await Task.Delay(100); // Simulate async work
+        yield return i;
+    }
+}
+
+public async Task ProcessNumbersAsync()
+{
+    await foreach (var number in GetNumbersAsync())
+    {
+        Console.WriteLine(number);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 115 -->
+        <div class="question">
+            <h2>115. What is `AOT compilation` and how does it relate to .NET?</h2>
+        </div>
+        <div class="answer">
+            <p>Ahead-of-Time (AOT) compilation refers to the process of compiling code into machine code before runtime. In .NET, AOT compilation can improve startup time and reduce memory usage by eliminating the need for Just-In-Time (JIT) compilation.</p>
+            <p>Example:</p>
+            <pre><code>// .NET 7 supports AOT compilation for single-file applications
+dotnet publish -c Release -r win-x64 /p:PublishReadyToRun=true
+</code></pre>
+        </div>
+
+        <!-- Question 116 -->
+        <div class="question">
+            <h2>116. What is the `new` keyword used for in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>new</code> keyword in C# is used to create instances of types, such as classes or structs. It is also used to hide members of a base class by defining new members with the same name in a derived class.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+}
+
+var person = new Person { Name = "Alice" }; // Creating a new instance
+
+public class Student : Person
+{
+    public new string Name { get; set; } // Hiding base class member
+}
+</code></pre>
+        </div>
+
+        <!-- Question 117 -->
+        <div class="question">
+            <h2>117. What is `boxing` and `unboxing` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Boxing is the process of converting a value type (like an <code>int</code>) to an object type. Unboxing is the process of converting an object type back to a value type. Boxing involves creating an object on the heap, while unboxing involves extracting the value from the object.</p>
+            <p>Example:</p>
+            <pre><code>int number = 42;
+object obj = number; // Boxing
+int unboxedNumber = (int)obj; // Unboxing
+</code></pre>
+        </div>
+    <div class="question">
+        <!-- Question 118 -->
+            <h2>118. What is the purpose of the `readonly` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `readonly` keyword in C# is used to indicate that a field can only be assigned a value during its declaration or in the constructor of the class in which it is declared. This ensures that the field is immutable after the object is created.</p>
+            <p>Example:</p>
+            <pre><code>public class MyClass
+{
+    public readonly int MyField;
+
+    public MyClass(int value)
+    {
+        MyField = value; // Assignment in constructor
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 119 -->
+        <div class="question">
+            <h2>119. How does `object initializers` work in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Object initializers in C# allow you to initialize an object's properties or fields at the time of its creation using a concise syntax. This feature makes it easier to create and set multiple properties without needing to use a constructor.</p>
+            <p>Example:</p>
+            <pre><code>var person = new Person
+{
+    Name = "Alice",
+    Age = 30
+};
+</code></pre>
+        </div>
+
+        <!-- Question 120 -->
+        <div class="question">
+            <h2>120. What is the `params` keyword and how is it used?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>params</code> keyword in C# allows you to specify a parameter that takes a variable number of arguments. It must be the last parameter in a method and enables you to pass a comma-separated list of arguments or an array of arguments.</p>
+            <p>Example:</p>
+            <pre><code>public void PrintNumbers(params int[] numbers)
+{
+    foreach (var number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+// Usage
+PrintNumbers(1, 2, 3, 4);
+</code></pre>
+        </div>
+
+         <!-- Question 121 -->
+         <div class="question">
+            <h2>121. What is the `const` keyword used for in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `const` keyword in C# is used to declare constants, which are immutable values known at compile time. Constants must be initialized at the time of declaration and cannot be modified later.</p>
+            <p>Example:</p>
+            <pre><code>public class Constants
+{
+    public const int MaxValue = 100;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 122 -->
+        <div class="question">
+            <h2>122. What is the `override` keyword used for in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `override` keyword is used to provide a new implementation for a virtual or abstract method inherited from a base class. This allows derived classes to customize or extend the behavior of inherited methods.</p>
+            <p>Example:</p>
+            <pre><code>public class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Some sound");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 123 -->
+        <div class="question">
+            <h2>123. What is `partial` class in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A `partial` class in C# allows you to split the definition of a class, struct, or interface across multiple files. This can be useful for organizing code and separating auto-generated code from manually written code.</p>
+            <p>Example:</p>
+            <pre><code>// File1.cs
+public partial class MyClass
+{
+    public void Method1() { }
+}
+
+// File2.cs
+public partial class MyClass
+{
+    public void Method2() { }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 124 -->
+        <div class="question">
+            <h2>124. How does the `static` keyword work in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `static` keyword is used to declare static members of a class, which belong to the class itself rather than to any specific instance. Static members are accessed directly via the class name.</p>
+            <p>Example:</p>
+            <pre><code>public class Utility
+{
+    public static void PrintMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+}
+
+// Usage
+Utility.PrintMessage("Hello, World!");
+</code></pre>
+        </div>
+
+        <!-- Question 125 -->
+        <div class="question">
+            <h2>125. What is `boxing` and `unboxing` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Boxing is the process of converting a value type to an object type, while unboxing is converting it back. Boxing involves wrapping a value type in an object, whereas unboxing extracts the value type from the object.</p>
+            <p>Example:</p>
+            <pre><code>int number = 10;
+object boxed = number; // Boxing
+int unboxed = (int)boxed; // Unboxing
+</code></pre>
+        </div>
+
+        <!-- Question 126 -->
+        <div class="question">
+            <h2>126. What is the `this` keyword used for in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `this` keyword refers to the current instance of the class or struct. It is used to access instance members and to differentiate between instance members and parameters or local variables with the same name.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+
+    public void SetName(string name)
+    {
+        this.Name = name; // Accessing instance member
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 127 -->
+        <div class="question">
+            <h2>127. What is the difference between `public`, `private`, `protected`, and `internal` access modifiers?</h2>
+        </div>
+        <div class="answer">
+            <p>In C#:</p>
+            <ul>
+                <li><code>public</code> - Accessible from any other class or assembly.</li>
+                <li><code>private</code> - Accessible only within the containing class or struct.</li>
+                <li><code>protected</code> - Accessible within the containing class and derived classes.</li>
+                <li><code>internal</code> - Accessible within the same assembly but not outside of it.</li>
+            </ul>
+        </div>
+
+        <!-- Question 128 -->
+        <div class="question">
+            <h2>128. What is the `default` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `default` keyword provides a default value for a given type. For value types, it returns the default value (e.g., 0 for int, false for bool). For reference types, it returns <code>null</code>.</p>
+            <p>Example:</p>
+            <pre><code>int defaultValue = default(int); // 0
+string defaultString = default(string); // null
+</code></pre>
+        </div>
+
+        <!-- Question 129 -->
+        <div class="question">
+            <h2>129. What is the `dynamic` keyword and how is it used?</h2>
+        </div>
+        <div class="answer">
+            <p>The `dynamic` keyword bypasses compile-time type checking and defers type resolution to runtime. It allows you to work with types whose structure is not known until runtime, such as interacting with COM objects or dynamic languages.</p>
+            <p>Example:</p>
+            <pre><code>dynamic obj = "Hello";
+Console.WriteLine(obj.Length); // Length is accessed dynamically at runtime
+</code></pre>
+        </div>
+
+        <!-- Question 130 -->
+        <div class="question">
+            <h2>130. What are `indexers` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Indexers in C# allow objects to be indexed in a manner similar to arrays. They are properties that take parameters and can be used to access elements within a class or struct.</p>
+            <p>Example:</p>
+            <pre><code>public class MyCollection
+{
+    private string[] items = new string[10];
+
+    public string this[int index]
+    {
+        get => items[index];
+        set => items[index] = value;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 131 -->
+        <div class="question">
+            <h2>131. How do `attributes` work in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Attributes in C# provide a way to add metadata to code elements such as classes, methods, and properties. They are defined by creating classes that derive from <code>System.Attribute</code> and are applied using square brackets.</p>
+            <p>Example:</p>
+            <pre><code>[Obsolete("This method is obsolete.")]
+public void OldMethod() { }
+</code></pre>
+        </div>
+
+        <!-- Question 132 -->
+        <div class="question">
+            <h2>132. What is the purpose of `using` directive in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `using` directive allows you to use types from a namespace without having to specify the full namespace path. It simplifies code by providing access to types within a namespace.</p>
+            <p>Example:</p>
+            <pre><code>using System;
+using System.Collections.Generic;
+
+public class Example
+{
+    public List<string> Items { get; set; }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 133 -->
+        <div class="question">
+            <h2>133. What is the difference between `==` and `Equals` method in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>==</code> operator compares the references of objects (for reference types) or values (for value types). The <code>Equals</code> method can be overridden to provide a value-based comparison for reference types, allowing for custom equality checks.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Person other)
+        {
+            return Name == other.Name;
+        }
+        return false;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 134 -->
+        <div class="question">
+            <h2>134. What is `async` and `await` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `async` keyword is used to define a method that performs asynchronous operations, and `await` is used within such methods to asynchronously wait for the completion of a task without blocking the thread.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<string> FetchDataAsync()
+{
+    await Task.Delay(1000); // Simulate a delay
+    return "Data";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 135 -->
+        <div class="question">
+            <h2>135. What is `ThreadPool` and how does it work in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `ThreadPool` in C# is a pool of worker threads that can be used to perform tasks asynchronously. It manages a pool of threads to perform background tasks, improving performance by reusing threads rather than creating and destroying them frequently.</p>
+            <p>Example:</p>
+            <pre><code>ThreadPool.QueueUserWorkItem(state =>
+{
+    // Perform background work here
+});
+</code></pre>
+        </div>
+
+        <!-- Question 136 -->
+        <div class="question">
+            <h2>136. What is the purpose of `lock` statement in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `lock` statement is used to ensure that a block of code runs exclusively by a single thread at a time. It helps prevent race conditions by locking a specific object so that only one thread can enter the critical section at a time.</p>
+            <p>Example:</p>
+            <pre><code>private readonly object lockObject = new object();
+
+public void CriticalSection()
+{
+    lock (lockObject)
+    {
+        // Critical code here
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 137 -->
+        <div class="question">
+            <h2>137. What is `Task` and how is it used in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `Task` class represents an asynchronous operation in C#. It is used to perform operations in the background and can be awaited to get the result once the task completes.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<string> DoWorkAsync()
+{
+    await Task.Delay(1000); // Simulate work
+    return "Work Done";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 138 -->
+        <div class="question">
+            <h2>138. What are `generics` in C# and why are they used?</h2>
+        </div>
+        <div class="answer">
+            <p>Generics in C# allow you to define classes, interfaces, and methods with placeholders for types. They provide type safety without needing to use object types and enable you to create reusable and type-safe code.</p>
+            <p>Example:</p>
+            <pre><code>public class GenericList<T>
+{
+    private List<T> items = new List<T>();
+
+    public void Add(T item)
+    {
+        items.Add(item);
+    }
+
+    public T Get(int index)
+    {
+        return items[index];
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 139 -->
+        <div class="question">
+            <h2>139. What is `null coalescing` in C# and how is it used?</h2>
+        </div>
+        <div class="answer">
+            <p>The null coalescing operator (`??`) is used to provide a default value when an expression evaluates to `null`. It simplifies handling null values by allowing you to specify a fallback value.</p>
+            <p>Example:</p>
+            <pre><code>string name = null;
+string displayName = name ?? "Default Name"; // "Default Name"
+</code></pre>
+        </div>
+
+        <!-- Question 140 -->
+        <div class="question">
+            <h2>140. What is `null conditional` operator in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The null conditional operator (`?.`) allows you to access members and methods of an object that might be null without throwing a `NullReferenceException`. It returns null if the object is null.</p>
+            <p>Example:</p>
+            <pre><code>Person person = null;
+string name = person?.Name; // name will be null
+</code></pre>
+        </div>
+
+        <!-- Question 141 -->
+        <div class="question">
+            <h2>141. What is `implicit` and `explicit` conversion in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Implicit conversion is performed automatically by the compiler when converting from a derived type to a base type. Explicit conversion requires a cast operator and is used when converting between incompatible types.</p>
+            <p>Example:</p>
+            <pre><code>public class Base { }
+public class Derived : Base { }
+
+Base baseObj = new Derived(); // Implicit conversion
+Derived derivedObj = (Derived)baseObj; // Explicit conversion
+</code></pre>
+        </div>
+
+        <!-- Question 142 -->
+        <div class="question">
+            <h2>142. What is the `params` keyword and how is it used in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `params` keyword allows a method to accept a variable number of arguments. It must be the last parameter in the method's parameter list and can be used to pass a comma-separated list of arguments or an array.</p>
+            <p>Example:</p>
+            <pre><code>public void PrintNumbers(params int[] numbers)
+{
+    foreach (var number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+// Usage
+PrintNumbers(1, 2, 3, 4);
+</code></pre>
+        </div>
+
+        <!-- Question 143 -->
+        <div class="question">
+            <h2>143. What is `yield return` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `yield return` statement is used to return each element of a collection one at a time. It allows you to create an iterator method that can be used to enumerate over a collection without creating a separate collection object.</p>
+            <p>Example:</p>
+            <pre><code>public IEnumerable<int> GetNumbers()
+{
+    yield return 1;
+    yield return 2;
+    yield return 3;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 144 -->
+        <div class="question">
+            <h2>144. How does `await` work in asynchronous methods?</h2>
+        </div>
+        <div class="answer">
+            <p>The `await` keyword is used within an asynchronous method to asynchronously wait for a task to complete. It does not block the thread but allows other tasks to run concurrently until the awaited task finishes.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<string> FetchDataAsync()
+{
+    await Task.Delay(1000); // Simulate a delay
+    return "Data";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 145 -->
+        <div class="question">
+            <h2>145. What are `tuples` and how are they used in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Tuples are a data structure that can hold a fixed-size collection of elements of various types. They provide a way to return multiple values from a method without using out parameters or custom classes.</p>
+            <p>Example:</p>
+            <pre><code>public (int, string) GetPerson()
+{
+    return (30, "Alice");
+}
+
+var person = GetPerson();
+Console.WriteLine(person.Item1); // 30
+Console.WriteLine(person.Item2); // Alice
+</code></pre>
+        </div>
+
+        <!-- Question 146 -->
+        <div class="question">
+            <h2>146. What is `expression-bodied` member in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Expression-bodied members allow you to provide a concise syntax for methods, properties, and other members that consist of a single expression. They use the `=>` operator to define the member body.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+
+    public string Greeting => $"Hello, {Name}!";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 147 -->
+        <div class="question">
+            <h2>147. How do you use `LINQ` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>LINQ (Language Integrated Query) allows you to query collections of data in a declarative manner using query syntax or method syntax. It provides a way to work with data from various sources like arrays, lists, and databases.</p>
+            <p>Example:</p>
+            <pre><code>// Query syntax
+var evenNumbers = from num in numbers
+                  where num % 2 == 0
+                  select num;
+
+// Method syntax
+var evenNumbers = numbers.Where(num => num % 2 == 0);
+</code></pre>
+        </div>
+
+        <!-- Question 148 -->
+        <div class="question">
+            <h2>148. What is `interface` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An interface in C# defines a contract that classes can implement. It specifies methods, properties, and events without providing implementations. Classes that implement the interface must provide implementations for the members defined in the interface.</p>
+            <p>Example:</p>
+            <pre><code>public interface IShape
+{
+    double CalculateArea();
+}
+
+public class Rectangle : IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 149 -->
+        <div class="question">
+            <h2>149. What is the `using` statement used for in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `using` statement is used to automatically dispose of objects that implement the <code>IDisposable</code> interface when they are no longer needed. It ensures that resources are properly released, reducing the risk of resource leaks.</p>
+            <p>Example:</p>
+            <pre><code>using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+    // Use the stream
+}
+</code></pre>
+        </div>
+
+        <!-- Question 150 -->
+        <div class="question">
+            <h2>150. What are `lambda expressions` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Lambda expressions provide a concise syntax for defining anonymous methods. They are used primarily in LINQ queries and for creating delegates or expression trees.</p>
+            <p>Example:</p>
+            <pre><code>Func<int, int, int> add = (a, b) => a + b;
+int result = add(5, 10); // 15
+</code></pre>
+        </div>
+
+        <!-- Question 151 -->
+        <div class="question">
+            <h2>151. What is `method overloading` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Method overloading allows multiple methods with the same name but different parameter lists to be defined in a class. The compiler distinguishes between these methods based on the number or types of parameters.</p>
+            <p>Example:</p>
+            <pre><code>public class MathOperations
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 152 -->
+        <div class="question">
+            <h2>152. What is `method overriding` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Method overriding allows a derived class to provide a specific implementation for a method that is already defined in its base class. The base method must be marked as `virtual` or `abstract`, and the derived method must use the `override` keyword.</p>
+            <p>Example:</p>
+            <pre><code>public class Base
+{
+    public virtual void Display()
+    {
+        Console.WriteLine("Base class display");
+    }
+}
+
+public class Derived : Base
+{
+    public override void Display()
+    {
+        Console.WriteLine("Derived class display");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 153 -->
+        <div class="question">
+            <h2>153. What is `event` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An event in C# is a special delegate that is used to provide notifications. Events are typically used to signal when something of interest occurs, such as a user action or a change in state.</p>
+            <p>Example:</p>
+            <pre><code>public class Publisher
+{
+    public event EventHandler Notify;
+
+    protected virtual void OnNotify(EventArgs e)
+    {
+        Notify?.Invoke(this, e);
+    }
+}
+
+public class Subscriber
+{
+    public void OnNotify(object sender, EventArgs e)
+    {
+        Console.WriteLine("Event triggered");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 154 -->
+        <div class="question">
+            <h2>154. What is `string interpolation` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>String interpolation allows you to embed expressions inside string literals using the <code>$"</code> syntax. It provides a readable and convenient way to format strings without needing to use concatenation or format specifiers.</p>
+            <p>Example:</p>
+            <pre><code>string name = "Alice";
+int age = 30;
+string message = $"Name: {name}, Age: {age}";
+</code></pre>
+        </div>
+
+        <!-- Question 155 -->
+        <div class="question">
+            <h2>155. What is `declaration` of variables in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Declaration of variables in C# involves specifying a variable's type and name. Variables must be declared before they are used, and they can be initialized with a value at the time of declaration.</p>
+            <p>Example:</p>
+            <pre><code>int age = 30;
+string name = "Alice";
+</code></pre>
+        </div>
+
+        <!-- Question 156 -->
+        <div class="question">
+            <h2>156. What is `inheritance` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Inheritance allows a class to inherit members (fields, methods, properties) from another class. The derived class inherits the base class's members and can also add new members or override existing ones.</p>
+            <p>Example:</p>
+            <pre><code>public class Animal
+{
+    public void Eat() { }
+}
+
+public class Dog : Animal
+{
+    public void Bark() { }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 157 -->
+        <div class="question">
+            <h2>157. What is `polymorphism` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Polymorphism allows objects to be treated as instances of their base class rather than their actual class. It enables method overriding and method overloading, allowing for different implementations of the same method.</p>
+            <p>Example:</p>
+            <pre><code>public class Animal
+{
+    public virtual void MakeSound() { }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+
+public class Cat : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Meow");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 158 -->
+        <div class="question">
+            <h2>158. What is `encapsulation` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Encapsulation is the concept of wrapping data and methods that operate on the data into a single unit, a class. It hides the internal state of the object from the outside world and provides access through public methods and properties.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    private string name;
+
+    public string Name
+    {
+        get => name;
+        set
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                name = value;
+            }
+        }
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 159 -->
+        <div class="question">
+            <h2>159. What is `data abstraction` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Data abstraction refers to the concept of hiding the complex implementation details of a class and exposing only the necessary parts of the object. It allows you to define abstract classes and methods that derived classes must implement.</p>
+            <p>Example:</p>
+            <pre><code>public abstract class Shape
+{
+    public abstract double CalculateArea();
+}
+
+public class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 160 -->
+        <div class="question">
+            <h2>160. What is `constructor` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A constructor is a special method in a class that is called when an instance of the class is created. It is used to initialize the object's state. Constructors have the same name as the class and do not return a value.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public string Name { get; set; }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 161 -->
+        <div class="question">
+            <h2>161. What is `destructor` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A destructor is a special method that is called when an object is destroyed. It is used to clean up resources before the object is removed from memory. In C#, destructors are defined using the `~` symbol followed by the class name.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    ~Person()
+    {
+        // Cleanup code
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 162 -->
+        <div class="question">
+            <h2>162. What is `interface` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An interface in C# defines a contract that classes can implement. It specifies methods, properties, and events without providing implementations. Classes that implement the interface must provide implementations for the members defined in the interface.</p>
+            <p>Example:</p>
+            <pre><code>public interface IShape
+{
+    double CalculateArea();
+}
+
+public class Rectangle : IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 163 -->
+        <div class="question">
+            <h2>163. What is `abstract class` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An abstract class is a class that cannot be instantiated directly and is designed to be inherited by other classes. It can contain abstract methods that must be implemented by derived classes, as well as concrete methods with implementations.</p>
+            <p>Example:</p>
+            <pre><code>public abstract class Animal
+{
+    public abstract void MakeSound();
+
+    public void Eat()
+    {
+        // Eating logic
+    }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 164 -->
+        <div class="question">
+            <h2>164. What is `access modifier` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Access modifiers in C# control the visibility and accessibility of class members. Common access modifiers include:</p>
+            <ul>
+                <li><code>public</code>: Accessible from any other code.</li>
+                <li><code>private</code>: Accessible only within the containing class.</li>
+                <li><code>protected</code>: Accessible within the containing class and by derived classes.</li>
+                <li><code>internal</code>: Accessible only within the same assembly.</li>
+                <li><code>protected internal</code>: Accessible within the same assembly and by derived classes.</li>
+            </ul>
+        </div>
+
+        <!-- Question 165 -->
+        <div class="question">
+            <h2>165. What is `partial class` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A partial class allows a class definition to be split across multiple files. This can be useful for organizing large classes or for generating code that is separated from user-written code.</p>
+            <p>Example:</p>
+            <pre><code>// File1.cs
+public partial class Person
+{
+    public string Name { get; set; }
+}
+
+// File2.cs
+public partial class Person
+{
+    public int Age { get; set; }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 166 -->
+        <div class="question">
+            <h2>166. What is `enum` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An `enum` (short for enumeration) is a distinct value type that defines a set of named constants. Enums are used to represent a set of related values in a readable and manageable way.</p>
+            <p>Example:</p>
+            <pre><code>public enum Days
+{
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+</code></pre>
+        </div>
+
+        <!-- Question 167 -->
+        <div class="question">
+            <h2>167. What is `delegate` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A delegate is a type that represents references to methods with a particular parameter list and return type. It allows methods to be passed as parameters and enables event handling and callback mechanisms.</p>
+            <p>Example:</p>
+            <pre><code>public delegate void Notify(string message);
+
+public class Notification
+{
+    public Notify OnNotify { get; set; }
+    
+    public void Trigger(string message)
+    {
+        OnNotify?.Invoke(message);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 168 -->
+        <div class="question">
+            <h2>168. What is `event` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An event is a special kind of delegate used to provide notifications. It allows a class to notify other classes or objects when something of interest occurs. Events are typically used to signal changes or actions.</p>
+            <p>Example:</p>
+            <pre><code>public class Button
+{
+    public event EventHandler Click;
+
+    protected virtual void OnClick(EventArgs e)
+    {
+        Click?.Invoke(this, e);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 169 -->
+        <div class="question">
+            <h2>169. What is `property` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A property in C# is a member of a class or struct that provides a mechanism to read, write, or compute the values of private fields. Properties are used to encapsulate data and provide controlled access to it.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    private string name;
+
+    public string Name
+    {
+        get => name;
+        set => name = value;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 170 -->
+        <div class="question">
+            <h2>170. What is `indexer` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An indexer allows objects to be indexed like arrays. It provides a way to access elements in an object using array-like syntax. Indexers are defined using the `this` keyword.</p>
+            <p>Example:</p>
+            <pre><code>public class StringCollection
+{
+    private List<string> strings = new List<string>();
+
+    public string this[int index]
+    {
+        get => strings[index];
+        set => strings[index] = value;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 171 -->
+        <div class="question">
+            <h2>171. What is `object` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `object` class is the base class for all types in C#. It is the ultimate base class from which all other types (both value types and reference types) are derived. Every type in C# implicitly inherits from `object`.</p>
+            <p>Example:</p>
+            <pre><code>object obj = "Hello";
+Console.WriteLine(obj.ToString());
+</code></pre>
+        </div>
+
+        <!-- Question 172 -->
+        <div class="question">
+            <h2>172. What is `type casting` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Type casting in C# is the process of converting a variable from one type to another. It can be explicit (using cast operators) or implicit (when the compiler performs the conversion automatically).</p>
+            <p>Example:</p>
+            <pre><code>int number = 42;
+double doubleNumber = (double)number; // Explicit cast
+</code></pre>
+        </div>
+
+        <!-- Question 173 -->
+        <div class="question">
+            <h2>173. What is `boxing` and `unboxing` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Boxing is the process of converting a value type (such as `int`) to an `object` type or to an interface type implemented by the value type. Unboxing is the reverse process, converting an `object` type back to a value type.</p>
+            <p>Example:</p>
+            <pre><code>int number = 42;
+object obj = number; // Boxing
+
+int unboxedNumber = (int)obj; // Unboxing
+</code></pre>
+        </div>
+
+        <!-- Question 174 -->
+        <div class="question">
+            <h2>174. What is `null` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>`null` represents the absence of a value or object. It is used to indicate that a reference type variable does not refer to any object or that a variable has not been initialized.</p>
+            <p>Example:</p>
+            <pre><code>string text = null;
+if (text == null)
+{
+    Console.WriteLine("The text is null");
+}
+</code></pre>
+        </div>
+
+        <!-- Question 175 -->
+        <div class="question">
+            <h2>175. What is `default` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `default` keyword is used to get the default value of a type. For reference types, it returns `null`. For value types, it returns the zero-initialized value.</p>
+            <p>Example:</p>
+            <pre><code>int defaultValue = default(int); // 0
+string defaultString = default(string); // null
+</code></pre>
+        </div>
+
+        <!-- Question 176 -->
+        <div class="question">
+            <h2>176. What is `readonly` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `readonly` keyword is used to define fields that can only be assigned a value at the time of declaration or in a constructor. After initialization, the value of a `readonly` field cannot be changed.</p>
+            <p>Example:</p>
+            <pre><code>public class Person
+{
+    public readonly string Name;
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 177 -->
+        <div class="question">
+            <h2>177. What is `const` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `const` keyword is used to define constants that are known at compile-time and cannot be changed. Unlike `readonly` fields, `const` fields must be initialized at the time of declaration.</p>
+            <p>Example:</p>
+            <pre><code>public class MathConstants
+{
+    public const double Pi = 3.14159;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 178 -->
+        <div class="question">
+            <h2>178. What is `static` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `static` keyword is used to define members that belong to the class itself rather than to any specific instance. Static members can be accessed without creating an instance of the class.</p>
+            <p>Example:</p>
+            <pre><code>public class MathUtilities
+{
+    public static double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 179 -->
+        <div class="question">
+            <h2>179. What is `async` and `await` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `async` and `await` keywords are used to work with asynchronous programming. `async` marks a method as asynchronous, allowing it to perform non-blocking operations. `await` is used to wait for the completion of an asynchronous task without blocking the thread.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<string> FetchDataAsync()
+{
+    await Task.Delay(1000); // Simulate async work
+    return "Data fetched";
+}
+</code></pre>
+        </div>
+
+        <!-- Question 180 -->
+        <div class="question">
+            <h2>180. What is `Task` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A `Task` represents an asynchronous operation in C#. It is used to handle asynchronous operations and is part of the `System.Threading.Tasks` namespace. Tasks provide a way to work with asynchronous code in a more manageable and readable way.</p>
+            <p>Example:</p>
+            <pre><code>public async Task DoWorkAsync()
+{
+    await Task.Run(() => 
+    {
+        // Perform some work
+    });
+}
+</code></pre>
+        </div>
+
+        <!-- Question 181 -->
+        <div class="question">
+            <h2>181. What is `async` method in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>An `async` method is a method that is marked with the `async` keyword. It allows the use of `await` within its body to perform asynchronous operations. An `async` method typically returns a `Task` or `Task<T>` object.</p>
+            <p>Example:</p>
+            <pre><code>public async Task<int> CalculateAsync()
+{
+    await Task.Delay(1000); // Simulate async work
+    return 42;
+}
+</code></pre>
+        </div>
+
+        <!-- Question 182 -->
+        <div class="question">
+            <h2>182. What is `await` keyword in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `await` keyword is used inside an `async` method to wait for the completion of an asynchronous task. It allows the method to be paused until the awaited task completes, without blocking the calling thread.</p>
+            <p>Example:</p>
+            <pre><code>public async Task FetchDataAsync()
+{
+    await Task.Delay(1000); // Simulate async work
+}
+</code></pre>
+        </div>
+
+        <!-- Question 183 -->
+        <div class="question">
+            <h2>183. What is `Thread` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A `Thread` represents a single path of execution in a program. Threads are used to perform tasks concurrently, allowing multiple operations to be executed simultaneously.</p>
+            <p>Example:</p>
+            <pre><code>Thread thread = new Thread(() => 
+{
+    // Perform some work
+});
+thread.Start();
+</code></pre>
+        </div>
+
+        <!-- Question 184 -->
+        <div class="question">
+            <h2>184. What is `lock` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `lock` statement is used to ensure that a block of code runs only by one thread at a time. It is used to prevent race conditions and ensure thread safety when accessing shared resources.</p>
+            <p>Example:</p>
+            <pre><code>private readonly object _lock = new object();
+
+public void SafeMethod()
+{
+    lock (_lock)
+    {
+        // Critical section code
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 185 -->
+        <div class="question">
+            <h2>185. What is `Monitor` class in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The `Monitor` class provides a way to synchronize access to a code block by acquiring and releasing locks on objects. It provides more control over locking than the `lock` statement and allows for advanced synchronization techniques.</p>
+            <p>Example:</p>
+            <pre><code>private readonly object _monitorLock = new object();
+
+public void SafeMethod()
+{
+    Monitor.Enter(_monitorLock);
+    try
+    {
+        // Critical section code
+    }
+    finally
+    {
+        Monitor.Exit(_monitorLock);
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 186 -->
+        <div class="question">
+            <h2>186. What is `Semaphore` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A `Semaphore` is a synchronization primitive that limits the number of threads that can access a resource or execute a block of code concurrently. It is used to manage access to shared resources and avoid resource contention.</p>
+            <p>Example:</p>
+            <pre><code>private static readonly Semaphore semaphore = new Semaphore(2, 2); // Initial and maximum count
+
+public void AccessResource()
+{
+    semaphore.WaitOne();
+    try
+    {
+        // Access the resource
+    }
+    finally
+    {
+        semaphore.Release();
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 187 -->
+        <div class="question">
+            <h2>187. What is `Mutex` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>A `Mutex` is a synchronization primitive that can be used to manage access to a resource or section of code by multiple threads or processes. Unlike `Semaphore`, a `Mutex` is designed to provide mutual exclusion across processes as well as threads.</p>
+            <p>Example:</p>
+            <pre><code>private static readonly Mutex mutex = new Mutex();
+
+public void AccessResource()
+{
+    mutex.WaitOne();
+    try
+    {
+        // Access the resource
+    }
+    finally
+    {
+        mutex.ReleaseMutex();
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Question 188 -->
+        <div class="question">
+            <h2>188. What is `Task Parallel Library (TPL)` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>The Task Parallel Library (TPL) is a set of public types and APIs in the `System.Threading.Tasks` namespace that make it easier to work with asynchronous and parallel programming. It provides a higher-level abstraction for managing and executing parallel tasks compared to raw threads.</p>
+            <p>Example:</p>
+            <pre><code>public void ParallelProcessing()
+{
+    Parallel.For(0, 10, i =>
+    {
+        // Perform parallel processing
+    });
+}
+</code></pre>
+        </div>
+
+        <!-- Question 189 -->
+        <div class="question">
+            <h2>189. What is `Concurrent Collection` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>Concurrent collections are thread-safe collections designed to handle concurrent read and write operations. They are part of the `System.Collections.Concurrent` namespace and provide efficient data structures for multi-threaded applications.</p>
+            <p>Example:</p>
+            <pre><code>ConcurrentDictionary<int, string> dictionary = new ConcurrentDictionary<int, string>();
+
+dictionary.TryAdd(1, "Value1");
+</code></pre>
+        </div>
+
+        <!-- Question 190 -->
+        <div class="question">
+            <h2>190. What is `PLINQ` in C#?</h2>
+        </div>
+        <div class="answer">
+            <p>PLINQ (Parallel LINQ) is an extension of LINQ that enables parallel processing of queries. It allows you to run LINQ queries in parallel, making use of multiple processors or cores to improve performance.</p>
+            <p>Example:</p>
+            <pre><code>var numbers = Enumerable.Range(1, 1000);
+var parallelQuery = numbers.AsParallel().Where(n => n % 2 == 0);
+</code></pre>
+        </div>
+<!-- Question 191 -->
+<div class="question">
+    <h2>191. What is `CancellationToken` in C#?</h2>
+</div>
+<div class="answer">
+    <p>A `CancellationToken` is used to propagate notification that operations should be canceled. It is used in asynchronous programming to cooperatively cancel ongoing operations.</p>
+    <p>Example:</p>
+    <pre><code>public async Task DoWorkAsync(CancellationToken token)
+{
+for (int i = 0; i < 100; i++)
+{
+token.ThrowIfCancellationRequested();
+await Task.Delay(100); // Simulate work
+}
+}
+</code></pre>
+</div>
+
+<!-- Question 192 -->
+<div class="question">
+    <h2>192. What is `IEnumerable` in C#?</h2>
+</div>
+<div class="answer">
+    <p>`IEnumerable` is an interface that defines a single method `GetEnumerator` which returns an `IEnumerator`. It allows for iteration over a collection without exposing its underlying representation.</p>
+    <p>Example:</p>
+    <pre><code>public class MyCollection : IEnumerable<int>
+{
+private List<int> _items = new List<int>();
+
+public IEnumerator<int> GetEnumerator()
+{
+return _items.GetEnumerator();
+}
+
+IEnumerator IEnumerable.GetEnumerator()
+{
+return GetEnumerator();
+}
+}
+</code></pre>
+</div>
+
+<!-- Question 193 -->
+<div class="question">
+    <h2>193. What is `IEnumerator` in C#?</h2>
+</div>
+<div class="answer">
+    <p>`IEnumerator` is an interface that supports a simple iteration over a collection. It provides methods to iterate through the collection, including `MoveNext`, `Reset`, and `Current`.</p>
+    <p>Example:</p>
+    <pre><code>public class MyEnumerator : IEnumerator<int>
+{
+private int[] _items;
+private int _position = -1;
+
+public MyEnumerator(int[] items)
+{
+_items = items;
+}
+
+public bool MoveNext()
+{
+_position++;
+return (_position < _items.Length);
+}
+
+public void Reset()
+{
+_position = -1;
+}
+
+public int Current
+{
+get
+{
+    if (_position < 0 || _position >= _items.Length)
+        throw new InvalidOperationException();
+    return _items[_position];
+}
+}
+
+object IEnumerator.Current => Current;
+
+public void Dispose() { }
+}
+</code></pre>
+</div>
+
+<!-- Question 194 -->
+<div class="question">
+    <h2>194. What is `LINQ` in C#?</h2>
+</div>
+<div class="answer">
+    <p>LINQ (Language Integrated Query) is a set of methods and syntax in C# that enables querying of data from various sources, such as arrays, collections, databases, and XML, using a consistent query syntax.</p>
+    <p>Example:</p>
+    <pre><code>var numbers = new List<int> { 1, 2, 3, 4, 5 };
+var evenNumbers = numbers.Where(n => n % 2 == 0);
+</code></pre>
+</div>
+
+<!-- Question 195 -->
+<div class="question">
+    <h2>195. What is `IQueryable` in C#?</h2>
+</div>
+<div class="answer">
+    <p>`IQueryable` is an interface that extends `IEnumerable` and is used for querying data from a data source. It supports deferred execution, allowing queries to be composed before they are executed.</p>
+    <p>Example:</p>
+    <pre><code>public class MyDataContext
+{
+public IQueryable<int> Numbers { get; set; }
+}
+</code></pre>
+</div>
+
+<!-- Question 196 -->
+<div class="question">
+    <h2>196. What is `Expression Trees` in C#?</h2>
+</div>
+<div class="answer">
+    <p>Expression Trees represent code in a tree-like data structure where each node is an expression. They allow for the construction of code dynamically and are used in LINQ queries to build and execute queries.</p>
+    <p>Example:</p>
+    <pre><code>Expression<Func<int, bool>> expr = n => n > 5;
+var compiled = expr.Compile();
+bool result = compiled(10); // True
+</code></pre>
+</div>
+
+<!-- Question 197 -->
+<div class="question">
+    <h2>197. What is `Dynamic` in C#?</h2>
+</div>
+<div class="answer">
+    <p>The `dynamic` type in C# bypasses compile-time type checking, allowing operations on objects without knowing their type until runtime. This is useful for scenarios where types are not known at compile time.</p>
+    <p>Example:</p>
+    <pre><code>dynamic value = 10;
+Console.WriteLine(value.ToString()); // Works at runtime
+</code></pre>
+</div>
+
+<!-- Question 198 -->
+<div class="question">
+    <h2>198. What is `Nullable Types` in C#?</h2>
+</div>
+<div class="answer">
+    <p>Nullable types allow value types (such as `int`, `bool`, etc.) to represent null values. This is useful for scenarios where a value might be absent or not applicable.</p>
+    <p>Example:</p>
+    <pre><code>int? nullableInt = null;
+if (nullableInt.HasValue)
+{
+Console.WriteLine(nullableInt.Value);
+}
+</code></pre>
+</div>
+
+<!-- Question 199 -->
+<div class="question">
+    <h2>199. What is `Attributes` in C#?</h2>
+</div>
+<div class="answer">
+    <p>Attributes are metadata that can be added to program elements (classes, methods, properties, etc.). They provide additional information and can be used for various purposes, including configuration and code generation.</p>
+    <p>Example:</p>
+    <pre><code>[Obsolete("This method is obsolete.")]
+public void OldMethod()
+{
+}
+</code></pre>
+</div>
+
+<!-- Question 200 -->
+<div class="question">
+    <h2>200. What is `Reflection` in C#?</h2>
+</div>
+<div class="answer">
+    <p>Reflection is a feature in C# that allows inspection and manipulation of object types and members at runtime. It provides information about assemblies, modules, and types and allows dynamic invocation of methods and access to fields and properties.</p>
+    <p>Example:</p>
+    <pre><code>Type type = typeof(Person);
+Console.WriteLine(type.FullName);
+var properties = type.GetProperties();
+foreach (var property in properties)
+{
+Console.WriteLine(property.Name);
+}
+</code></pre>
+</div>
+
+        
+        </body>
+    </div>
+</body>
+</html>

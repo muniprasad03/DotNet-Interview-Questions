@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASP.NET MVC Top 200 Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            color: #fff;
+            background-color: #333;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 0.5em;
+        }
+        main {
+            padding: 1em;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .qa {
+            margin-bottom: 1.5em;
+        }
+        .qa h2 {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .qa p {
+            margin: 0;
+            padding: 0.5em 0;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC Top 200 Interview Questions and Answers</h1>
+    </header>
+    <nav>
+        <a href="index.html">Back to Home</a>
+    </nav>
+    <main>
+        <!-- Questions and Answers Section -->
+        
+        <div class="qa">
+            <h2>1. What is ASP.NET MVC?</h2>
+            <p>ASP.NET MVC (Model-View-Controller) is a framework for building web applications using the MVC design pattern. It separates an application into three main components: the Model (data), the View (UI), and the Controller (logic), allowing for a more organized and scalable approach to web development.</p>
+        </div>
+
+        <div class="qa">
+            <h2>2. What are the key benefits of using ASP.NET MVC?</h2>
+            <p>Key benefits of ASP.NET MVC include:
+            <ul>
+                <li>Separation of concerns through the MVC design pattern</li>
+                <li>Full control over HTML and JavaScript</li>
+                <li>Support for test-driven development (TDD)</li>
+                <li>Flexible routing</li>
+                <li>Integration with modern client-side frameworks</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="qa">
+            <h2>3. What is the difference between ASP.NET MVC and ASP.NET Web Forms?</h2>
+            <p>ASP.NET MVC provides a more structured and testable approach by separating concerns into Models, Views, and Controllers, whereas ASP.NET Web Forms uses a page-centric approach with tightly coupled code and UI. MVC offers more control over HTML and JavaScript, while Web Forms uses server controls and view state.</p>
+        </div>
+
+        <div class="qa">
+            <h2>4. Explain the MVC design pattern.</h2>
+            <p>The MVC design pattern consists of:
+            <ul>
+                <li>Model: Represents the data and business logic of the application.</li>
+                <li>View: Displays the data from the model and sends user commands to the controller.</li>
+                <li>Controller: Handles user input and interactions, updates the model, and selects the view to render the response.</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="qa">
+            <h2>5. What is the purpose of the Controller in ASP.NET MVC?</h2>
+            <p>The Controller in ASP.NET MVC handles incoming requests, processes them, and returns responses. It interacts with the Model to retrieve or update data and selects the appropriate View to render the response to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>6. What is a View in ASP.NET MVC?</h2>
+            <p>A View in ASP.NET MVC is responsible for rendering the user interface (UI) by displaying data from the Model. It consists of HTML markup and can include embedded C# code to dynamically generate content based on the data provided by the Controller.</p>
+        </div>
+
+        <div class="qa">
+            <h2>7. What is a Model in ASP.NET MVC?</h2>
+            <p>A Model in ASP.NET MVC represents the data and business logic of the application. It is responsible for retrieving, manipulating, and storing data. Models can include classes, properties, and methods that define the application's data structure and behavior.</p>
+        </div>
+
+        <div class="qa">
+            <h2>8. What is Routing in ASP.NET MVC?</h2>
+            <p>Routing in ASP.NET MVC is the process of mapping URLs to controller actions. It allows you to define URL patterns and route requests to the appropriate controller and action method. Routing is configured in the RouteConfig class or attribute-based routing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>9. How does the ASP.NET MVC routing system work?</h2>
+            <p>The ASP.NET MVC routing system works by matching incoming URL requests to defined route patterns. When a request is received, the routing engine checks the URL against the registered routes and determines which controller and action method should handle the request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>10. What are route constraints in ASP.NET MVC?</h2>
+            <p>Route constraints are conditions that must be met for a route to be matched. They are used to restrict the types of values that can be passed in a route parameter. Constraints can be applied to routes to enforce rules such as integer values, specific formats, or custom logic.</p>
+        </div>
+
+        <!-- Continue with more questions up to 200 -->
+        <!-- For brevity, let's add just a few more as examples -->
+
+        <div class="qa">
+            <h2>11. What is the role of the "ViewModel" in ASP.NET MVC?</h2>
+            <p>The ViewModel in ASP.NET MVC is a class that represents the data required by a view. It combines data from one or more models into a single object tailored for the view, often including additional properties or logic specific to the view's requirements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>12. What are "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are reusable components that render a portion of a view. They allow you to break down complex views into smaller, manageable pieces and can be used to share common UI elements across multiple views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>13. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping form data, query strings, and route data to action method parameters or model properties. It enables the controller to receive data from the client and convert it into strongly-typed objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>14. How can you validate user input in ASP.NET MVC?</h2>
+            <p>User input can be validated using data annotations, which are attributes applied to model properties. You can also use custom validation attributes or implement the IValidatableObject interface for more complex validation scenarios.</p>
+        </div>
+
+        <div class="qa">
+            <h2>15. What is "Data Annotation" in ASP.NET MVC?</h2>
+            <p>Data Annotations are attributes that you can apply to model properties to specify validation rules, formatting, and display information. They provide a declarative way to define validation requirements and other metadata for model properties.</p>
+        </div>
+
+        <!-- Continue with the rest of the questions up to 200 -->
+         <!-- Questions and Answers Section -->
+        
+         <div class="qa">
+            <h2>16. What are "Action Filters" in ASP.NET MVC?</h2>
+            <p>Action Filters are attributes that allow you to execute code before or after an action method executes. They provide a way to add cross-cutting concerns, such as logging, authentication, or error handling, to your controller actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>17. What is "TempData" in ASP.NET MVC?</h2>
+            <p>TempData is a dictionary object that allows you to store data temporarily between requests. It is useful for passing data from one request to another, especially during redirects, and is automatically cleared after being read.</p>
+        </div>
+
+        <div class="qa">
+            <h2>18. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows you to pass data from a controller to a view. It provides a way to transfer data between components without using strongly-typed models and is accessible only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>19. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object that allows you to pass data from a controller to a view using key-value pairs. It is similar to ViewBag but requires explicit type casting for complex types and is accessible only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>20. What are "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are reusable components that render a portion of a view. They allow you to break down complex views into smaller, manageable pieces and can be used to share common UI elements across multiple views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>21. What is "Strongly Typed Views" in ASP.NET MVC?</h2>
+            <p>Strongly Typed Views are views that are bound to a specific model type. This allows you to take advantage of IntelliSense, compile-time checking, and type safety in your views, improving maintainability and reducing runtime errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>22. What is the "Default Route" in ASP.NET MVC?</h2>
+            <p>The Default Route is a predefined route configuration in ASP.NET MVC that maps incoming requests to controller actions based on a URL pattern. The default route typically follows the pattern "{controller}/{action}/{id}", allowing for standard routing conventions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>23. How does "Dependency Injection" work in ASP.NET MVC?</h2>
+            <p>Dependency Injection (DI) is a design pattern used to manage dependencies between objects. In ASP.NET MVC, DI is achieved through constructor injection, property injection, or method injection. It allows for better testability and loose coupling between components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>24. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping form data, query strings, and route data to action method parameters or model properties. It enables the controller to receive data from the client and convert it into strongly-typed objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>25. What are "Data Annotations" in ASP.NET MVC?</h2>
+            <p>Data Annotations are attributes that you apply to model properties to specify validation rules, display formatting, and other metadata. They provide a way to declaratively define validation requirements and formatting options for your model properties.</p>
+        </div>
+
+        <div class="qa">
+            <h2>26. What is "Custom Model Binding" in ASP.NET MVC?</h2>
+            <p>Custom Model Binding allows you to create your own model binders to handle complex or custom data types. By implementing the IModelBinder interface, you can define how data is bound to model properties or action parameters beyond the default behavior.</p>
+        </div>
+
+        <div class="qa">
+            <h2>27. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is a base class for all result types returned by controller actions in ASP.NET MVC. It represents the result of an action method and can be used to return various types of responses, such as views, JSON data, or file downloads.</p>
+        </div>
+
+        <div class="qa">
+            <h2>28. What is "RedirectToAction" in ASP.NET MVC?</h2>
+            <p>RedirectToAction is a method used in controller actions to redirect the user to a different action method within the same or another controller. It provides a way to redirect users and maintain the application flow while preserving the URL.</p>
+        </div>
+
+        <div class="qa">
+            <h2>29. What is "ActionName" attribute in ASP.NET MVC?</h2>
+            <p>The ActionName attribute allows you to specify an alternative name for an action method. This enables you to define multiple routes that map to the same method, providing flexibility in how the action method is invoked.</p>
+        </div>
+
+        <div class="qa">
+            <h2>30. What is "View Engine" in ASP.NET MVC?</h2>
+            <p>The View Engine is responsible for rendering views in ASP.NET MVC. The default view engine is Razor, which uses a combination of HTML and C# code to generate dynamic content. Other view engines, such as WebForms, can also be used.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>31. What is "Razor View Engine" in ASP.NET MVC?</h2>
+            <p>The Razor View Engine is a markup syntax used to create dynamic web pages in ASP.NET MVC. It allows you to embed C# code within HTML using a streamlined syntax, making it easier to create dynamic and responsive views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>32. What is "Model-View-Controller (MVC) Design Pattern"?</h2>
+            <p>The Model-View-Controller (MVC) Design Pattern separates an application into three main components:
+            <ul>
+                <li>Model: Manages data and business logic.</li>
+                <li>View: Displays data and provides a user interface.</li>
+                <li>Controller: Handles user input and interacts with the model to produce the view.</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="qa">
+            <h2>33. What is "Attribute Routing" in ASP.NET MVC?</h2>
+            <p>Attribute Routing allows you to define routes directly on controller actions using attributes. It provides more control over routing compared to conventional routing by allowing you to specify route templates and constraints directly on the action methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>34. What is "Convention-based Routing" in ASP.NET MVC?</h2>
+            <p>Convention-based Routing is a routing approach where routes are defined based on conventions rather than explicit route definitions. This approach uses patterns and conventions to automatically map URLs to controllers and actions, simplifying route configuration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>35. What is "Form Collection" in ASP.NET MVC?</h2>
+            <p>Form Collection is a collection of form values submitted by the client. It can be accessed through the Request.Form property in the controller and provides a way to retrieve form data without binding it to a model.</p>
+        </div>
+
+        <div class="qa">
+            <h2>36. What is "HttpContext" in ASP.NET MVC?</h2>
+            <p>HttpContext provides information about the current HTTP request and response. It includes properties such as Request, Response, Session, and Server, which allow you to interact with the request and response objects and manage state information.</p>
+        </div>
+
+        <div class="qa">
+            <h2>37. What is "Session State" in ASP.NET MVC?</h2>
+            <p>Session State is a feature that allows you to store and retrieve user-specific data across multiple requests. It is used to maintain user state and can be stored in various modes, including in-memory, out-of-process, or SQL Server.</p>
+        </div>
+
+        <div class="qa">
+            <h2>38. What are "Action Methods" in ASP.NET MVC?</h2>
+            <p>Action Methods are methods within a controller class that handle incoming requests. They process user input, interact with the model, and return an ActionResult that determines how the response is generated and sent to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>39. What is "Dependency Resolver" in ASP.NET MVC?</h2>
+            <p>Dependency Resolver is a service that provides a way to resolve and manage dependencies in ASP.NET MVC. It is used to implement dependency injection and configure services and repositories that are needed by controllers and other components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>40. What are "Bundling and Minification" in ASP.NET MVC?</h2>
+            <p>Bundling and Minification are techniques used to improve the performance of web applications. Bundling combines multiple files into a single file, and minification removes unnecessary characters from files to reduce their size and improve load times.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>41. What is "Action Method Return Types" in ASP.NET MVC?</h2>
+            <p>Action methods in ASP.NET MVC can return various types of ActionResult, including:
+            <ul>
+                <li>ViewResult: Renders a view.</li>
+                <li>JsonResult: Returns JSON data.</li>
+                <li>RedirectResult: Redirects to another URL.</li>
+                <li>FileResult: Returns a file to the client.</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="qa">
+            <h2>42. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows you to pass data from a controller to a view. It is used to transfer data that does not require a strongly-typed model, and its data is available only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>43. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object that allows you to pass data from a controller to a view. It uses key-value pairs to store and retrieve data and is available only for the current request. Unlike ViewBag, ViewData requires explicit type casting for complex types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>44. What is "ModelState" in ASP.NET MVC?</h2>
+            <p>ModelState is a collection of state information for model binding and validation. It contains information about the validity of the model and any errors that occurred during model binding or validation. It is used to check if the model is valid and to handle validation errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>45. What is "HTML Helpers" in ASP.NET MVC?</h2>
+            <p>HTML Helpers are methods provided by ASP.NET MVC to generate HTML markup in views. They simplify the process of creating form elements, links, and other HTML components. Examples include Html.TextBox, Html.DropDownList, and Html.CheckBox.</p>
+        </div>
+
+        <div class="qa">
+            <h2>46. What is "Custom HTML Helpers" in ASP.NET MVC?</h2>
+            <p>Custom HTML Helpers are user-defined methods that extend the functionality of built-in HTML Helpers. You can create custom HTML Helpers to generate specific HTML markup or perform custom logic by defining static methods in a static class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>47. What is "Model-View-ViewModel (MVVM) Pattern"?</h2>
+            <p>The Model-View-ViewModel (MVVM) pattern is similar to the MVC pattern but includes an additional ViewModel layer. The ViewModel acts as an intermediary between the Model and the View, providing a way to handle the presentation logic and data binding.</p>
+        </div>
+
+        <div class="qa">
+            <h2>48. What is "Attribute-based Routing" in ASP.NET MVC?</h2>
+            <p>Attribute-based Routing allows you to define routes directly on controller actions using attributes. This approach offers more flexibility in defining routes and makes it easier to understand and maintain route configurations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>49. What is "Custom Route Constraints" in ASP.NET MVC?</h2>
+            <p>Custom Route Constraints are used to enforce rules or conditions on route parameters. By implementing the IRouteConstraint interface, you can create custom constraints to validate route parameters, ensuring that they meet specific criteria.</p>
+        </div>
+
+        <div class="qa">
+            <h2>50. What is "Anti-Forgery Token" in ASP.NET MVC?</h2>
+            <p>An Anti-Forgery Token is a security feature used to prevent Cross-Site Request Forgery (CSRF) attacks. It involves generating a unique token that is included in forms and validated on the server to ensure that the request is legitimate and originates from the expected source.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>51. What is "Async Controller Actions" in ASP.NET MVC?</h2>
+            <p>Async Controller Actions are actions that are executed asynchronously. By using async and await keywords, you can perform long-running tasks, such as database queries or web requests, without blocking the main thread, improving application responsiveness and scalability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>52. What is "Exception Handling" in ASP.NET MVC?</h2>
+            <p>Exception Handling in ASP.NET MVC involves managing errors that occur during the execution of controller actions. You can use try-catch blocks, custom error pages, or the HandleError attribute to catch and handle exceptions and provide a user-friendly error experience.</p>
+        </div>
+
+        <div class="qa">
+            <h2>53. What is "Global.asax" file in ASP.NET MVC?</h2>
+            <p>The Global.asax file, also known as the ASP.NET Application file, is used to handle application-level events, such as Application_Start, Application_End, and Application_Error. It allows you to configure global settings and perform initialization tasks for your ASP.NET MVC application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>54. What is "Filters" in ASP.NET MVC?</h2>
+            <p>Filters are attributes that provide a way to add cross-cutting concerns to controller actions, such as authentication, authorization, logging, and error handling. They can be applied at the action or controller level and include built-in filters like Authorize, HandleError, and OutputCache.</p>
+        </div>
+
+        <div class="qa">
+            <h2>55. What is "Caching" in ASP.NET MVC?</h2>
+            <p>Caching is a technique used to improve application performance by storing frequently accessed data or content in memory. In ASP.NET MVC, you can use caching techniques such as OutputCache and DataCache to reduce the load on the server and improve response times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>56. What is "Static Files" in ASP.NET MVC?</h2>
+            <p>Static Files are files such as HTML, CSS, JavaScript, and image files that do not change dynamically. They are served directly to the client by the web server without requiring server-side processing or rendering.</p>
+        </div>
+
+        <div class="qa">
+            <h2>57. What is "Web API" in ASP.NET MVC?</h2>
+            <p>Web API is a framework for building HTTP-based services that can be consumed by a variety of clients, including web browsers, mobile devices, and other web services. It provides a way to create RESTful services using standard HTTP methods and JSON or XML data formats.</p>
+        </div>
+
+        <div class="qa">
+            <h2>58. What is "SignalR" in ASP.NET MVC?</h2>
+            <p>SignalR is a library that allows for real-time communication between server and client. It provides functionality for push notifications, chat applications, and live data updates by using WebSockets or other transport methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>59. What is "Areas" in ASP.NET MVC?</h2>
+            <p>Areas are a feature in ASP.NET MVC that allows you to partition your application into separate functional sections. Each area can have its own controllers, views, and models, helping to organize and manage large applications more effectively.</p>
+        </div>
+
+        <div class="qa">
+            <h2>60. What is "URL Routing" in ASP.NET MVC?</h2>
+            <p>URL Routing is a mechanism that maps incoming URLs to controller actions. It allows you to define URL patterns and specify how they should be processed by the application, enabling cleaner and more user-friendly URLs.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>61. What is "Custom Action Results" in ASP.NET MVC?</h2>
+            <p>Custom Action Results allow you to create your own result types by implementing the IActionResult interface. This provides flexibility in how you generate and return responses from controller actions, such as custom data formats or complex processing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>62. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation is the process of checking if the data in a model meets the defined validation rules. ASP.NET MVC provides built-in validation attributes, such as Required, Range, and RegularExpression, to validate model properties and ensure data integrity.</p>
+        </div>
+
+        <div class="qa">
+            <h2>63. What is "ViewModel" in ASP.NET MVC?</h2>
+            <p>ViewModel is a class that represents the data and behavior required by a view. It acts as a bridge between the model and the view, combining data from multiple models or providing additional properties needed for rendering the view.</p>
+        </div>
+
+        <div class="qa">
+            <h2>64. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping form data, query string parameters, and route data to action method parameters or model properties. It enables you to work with strongly-typed objects in controller actions by automatically binding incoming data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>65. What is "Web Forms" in ASP.NET MVC?</h2>
+            <p>Web Forms is an older ASP.NET framework for building dynamic web applications with a drag-and-drop designer and event-driven programming model. ASP.NET MVC is a more modern framework that provides a more flexible and testable approach to web application development.</p>
+        </div>
+
+        <div class="qa">
+            <h2>66. What is "JavaScript Unobtrusive Validation" in ASP.NET MVC?</h2>
+            <p>JavaScript Unobtrusive Validation is a feature that allows client-side validation of form inputs using JavaScript. It integrates with jQuery validation and uses HTML5 data attributes to define validation rules, providing a better user experience without cluttering the HTML with validation logic.</p>
+        </div>
+
+        <div class="qa">
+            <h2>67. What is "HTTP Methods" in ASP.NET MVC?</h2>
+            <p>HTTP Methods are standard request methods used to perform actions on resources. Common HTTP methods include GET (retrieve data), POST (submit data), PUT (update data), DELETE (remove data), and PATCH (partially update data). ASP.NET MVC supports these methods to handle various types of requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>68. What is "Resource Bundling" in ASP.NET MVC?</h2>
+            <p>Resource Bundling is a technique used to bundle multiple files (e.g., CSS or JavaScript) into a single file to reduce the number of HTTP requests. It improves application performance by reducing load times and optimizing resource delivery.</p>
+        </div>
+
+        <div class="qa">
+            <h2>69. What is "Filter Attribute" in ASP.NET MVC?</h2>
+            <p>Filter Attributes are special attributes applied to controller actions or entire controllers to add cross-cutting functionality such as logging, authentication, or caching. They are used to apply pre- or post-processing logic to actions and can be customized or extended.</p>
+        </div>
+
+        <div class="qa">
+            <h2>70. What is "Resource Localization" in ASP.NET MVC?</h2>
+            <p>Resource Localization is the process of providing localized content based on the user's culture or language settings. ASP.NET MVC supports localization through resource files (.resx), allowing you to display content in different languages and regional formats.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>71. What is "Dependency Injection Container" in ASP.NET MVC?</h2>
+            <p>The Dependency Injection Container is a component that manages the creation and lifetime of service instances and their dependencies. In ASP.NET MVC, it is used to configure and resolve dependencies for controllers and other services, promoting loose coupling and testability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>72. What is "URL Helper" in ASP.NET MVC?</h2>
+            <p>URL Helper is a utility class that provides methods to generate URLs for controller actions, static content, and route links. It helps in constructing URLs based on route definitions and ensures that URLs are consistent with the application's routing configuration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>73. What is "Routing Priority" in ASP.NET MVC?</h2>
+            <p>Routing Priority determines the order in which routes are evaluated by the routing engine. Routes with higher priority are matched first. By configuring route priorities, you can control which routes are selected for incoming requests and ensure that specific routes take precedence.</p>
+        </div>
+
+        <div class="qa">
+            <h2>74. What is "Model-View-Controller (MVC) Architecture"?</h2>
+            <p>The Model-View-Controller (MVC) Architecture is a design pattern that separates an application into three main components:
+            <ul>
+                <li>Model: Manages data and business logic.</li>
+                <li>View: Renders the user interface.</li>
+                <li>Controller: Handles user input and interacts with the model to produce the view.</li>
+            </ul>
+            </p>
+        </div>
+
+        <div class="qa">
+            <h2>75. What is "View Data" in ASP.NET MVC?</h2>
+            <p>View Data is a dictionary that allows you to pass data from a controller to a view using key-value pairs. It provides a way to transfer data that is needed for rendering a view and is available only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>76. What is "RedirectToRoute" in ASP.NET MVC?</h2>
+            <p>RedirectToRoute is a method that redirects the user to a specified route. It allows you to perform redirections based on route names and parameters, providing a way to control navigation within your application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>77. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping data from the request to action method parameters or model properties. It allows you to work with strongly-typed objects and simplifies data retrieval and processing in controller actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>78. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object that allows you to pass data from a controller to a view using key-value pairs. It is similar to ViewBag but requires explicit type casting for complex types and is available only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>79. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows you to pass data from a controller to a view. It provides a way to transfer data between components without using strongly-typed models and is accessible only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>80. What is "Model State" in ASP.NET MVC?</h2>
+            <p>Model State is a collection of state information related to model binding and validation. It contains information about the validity of the model and any errors that occurred during binding or validation, allowing you to handle validation errors effectively.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>81. What is "Session State" in ASP.NET MVC?</h2>
+            <p>Session State is a feature that allows you to store and retrieve user-specific data across multiple requests. It is used to maintain state information for a user session and can be stored in various modes, including in-memory, out-of-process, or SQL Server.</p>
+        </div>
+
+        <div class="qa">
+            <h2>82. What is "Data Annotations" in ASP.NET MVC?</h2>
+            <p>Data Annotations are attributes used to add metadata to model properties. They provide a way to specify validation rules, display formats, and other behaviors directly on model classes, making it easier to enforce data integrity and control how data is displayed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>83. What is "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are reusable view components that can be rendered within other views. They allow you to break down complex views into smaller, manageable pieces and promote code reusability by encapsulating common UI elements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>84. What is "View Components" in ASP.NET MVC?</h2>
+            <p>View Components are similar to partial views but offer more flexibility and can include logic to prepare the data they render. They are used to encapsulate complex rendering logic and can be invoked from views or other view components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>85. What is "Action Filters" in ASP.NET MVC?</h2>
+            <p>Action Filters are attributes that allow you to run code before or after an action method executes. They can be used to implement cross-cutting concerns such as logging, authorization, and error handling, and can be applied globally, at the controller level, or on individual actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>86. What is "Result Filters" in ASP.NET MVC?</h2>
+            <p>Result Filters are attributes that allow you to run code before or after a result is executed. They are used to modify or inspect the response before it is sent to the client, providing a way to add functionality such as caching or content compression.</p>
+        </div>
+
+        <div class="qa">
+            <h2>87. What is "Exception Filters" in ASP.NET MVC?</h2>
+            <p>Exception Filters are attributes that handle unhandled exceptions that occur during the execution of an action. They allow you to catch exceptions and provide a custom error handling mechanism, such as logging the error or displaying a user-friendly error page.</p>
+        </div>
+
+        <div class="qa">
+            <h2>88. What is "Authorization Filters" in ASP.NET MVC?</h2>
+            <p>Authorization Filters are attributes used to control access to actions or controllers based on user roles or permissions. They can enforce authentication and authorization rules and help secure the application by restricting access to certain resources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>89. What is "Custom Error Pages" in ASP.NET MVC?</h2>
+            <p>Custom Error Pages are user-defined error pages that are displayed when an unhandled exception occurs. They provide a way to show friendly error messages or redirect users to a specific page, improving the user experience when errors occur.</p>
+        </div>
+
+        <div class="qa">
+            <h2>90. What is "Output Caching" in ASP.NET MVC?</h2>
+            <p>Output Caching is a technique that stores the rendered output of a controller action in cache memory. It helps improve performance by reducing the need to re-render content for subsequent requests, based on configurable caching policies.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+
+        <div class="qa">
+            <h2>91. What is "Bundle Config" in ASP.NET MVC?</h2>
+            <p>Bundle Config is used to configure bundling and minification settings for static resources, such as CSS and JavaScript files. It allows you to define bundles, specify file paths, and enable minification to optimize resource delivery.</p>
+        </div>
+
+        <div class="qa">
+            <h2>92. What is "Anti-Forgery Token" in ASP.NET MVC?</h2>
+            <p>An Anti-Forgery Token is a security feature that helps prevent Cross-Site Request Forgery (CSRF) attacks. It involves generating a unique token that is included in forms and validated on the server to ensure the request is legitimate.</p>
+        </div>
+
+        <div class="qa">
+            <h2>93. What is "URL Routing" in ASP.NET MVC?</h2>
+            <p>URL Routing is a mechanism that maps URLs to controller actions based on defined routes. It allows for cleaner, more readable URLs and provides flexibility in routing requests to the appropriate handlers in your application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>94. What is "Route Constraint" in ASP.NET MVC?</h2>
+            <p>Route Constraints are conditions that must be satisfied for a route to be selected. They are used to validate route parameters and ensure that they meet specific criteria before the route is matched and processed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>95. What is "Resource Bundling" in ASP.NET MVC?</h2>
+            <p>Resource Bundling is a technique used to combine multiple files into a single bundle, reducing the number of HTTP requests required to load a page. This improves performance by minimizing the overhead associated with multiple file requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>96. What is "BundleConfig.cs" in ASP.NET MVC?</h2>
+            <p>BundleConfig.cs is a configuration file used to define and register bundles for bundling and minification. It contains settings for combining and minifying CSS and JavaScript files to optimize resource delivery and improve application performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>97. What is "Web.config" in ASP.NET MVC?</h2>
+            <p>Web.config is an XML configuration file used to define application settings, connection strings, and other configuration options for an ASP.NET MVC application. It is used to manage various aspects of application behavior and environment settings.</p>
+        </div>
+
+        <div class="qa">
+            <h2>98. What is "Global.asax" in ASP.NET MVC?</h2>
+            <p>Global.asax is an optional file used to handle application-level events, such as Application_Start, Application_End, and Application_Error. It allows you to configure global settings and perform initialization tasks for your ASP.NET MVC application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>99. What is "Data Annotations" in ASP.NET MVC?</h2>
+            <p>Data Annotations are attributes used to add metadata to model properties. They provide a way to enforce validation rules, specify display formats, and configure other behaviors directly on model classes, simplifying data validation and display.</p>
+        </div>
+
+        <div class="qa">
+            <h2>100. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation involves checking if the data in a model meets defined validation rules. ASP.NET MVC provides built-in validation attributes to validate model properties and ensure data integrity, helping to handle validation errors effectively.</p>
+        </div>
+
+        <!-- Continue with the remaining questions up to 200 -->
+         <!-- Continue with the remaining questions up to 200 -->
+
+         <div class="qa">
+            <h2>101. What is "Web API" in ASP.NET MVC?</h2>
+            <p>Web API is a framework for building HTTP-based services that can be consumed by various clients, such as web browsers, mobile devices, and other web services. It allows the creation of RESTful services using standard HTTP methods and formats like JSON and XML.</p>
+        </div>
+
+        <div class="qa">
+            <h2>102. What is "SignalR" in ASP.NET MVC?</h2>
+            <p>SignalR is a library for adding real-time web functionality to applications. It enables server-side code to push content to connected clients instantly. This is useful for creating chat applications, real-time dashboards, and live updates.</p>
+        </div>
+
+        <div class="qa">
+            <h2>103. What is "Routing in ASP.NET MVC"?</h2>
+            <p>Routing in ASP.NET MVC is a mechanism for mapping incoming requests to controller actions. Routes are defined in the RouteConfig file and use URL patterns to determine how requests should be handled by the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>104. What is "Areas" in ASP.NET MVC?</h2>
+            <p>Areas in ASP.NET MVC allow you to partition your application into separate functional sections. Each area can have its own controllers, views, and models, helping to organize and manage large applications more effectively.</p>
+        </div>
+
+        <div class="qa">
+            <h2>105. What is "Dependency Injection" in ASP.NET MVC?</h2>
+            <p>Dependency Injection is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into classes rather than having the class create its own dependencies. It promotes loose coupling and enhances testability and maintainability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>106. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is a base class for all result types returned by action methods. It includes different types such as ViewResult, JsonResult, RedirectResult, and FileResult, each of which represents a different type of response sent to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>107. What is "ViewModel" in ASP.NET MVC?</h2>
+            <p>ViewModel is a model specifically designed to be used by a view. It often combines data from multiple models and includes properties needed to render the view. It helps in shaping data according to the needs of the view.</p>
+        </div>
+
+        <div class="qa">
+            <h2>108. What is "Data Annotations" in ASP.NET MVC?</h2>
+            <p>Data Annotations are attributes used to add metadata to model properties, such as validation rules, display names, and formats. They provide a way to enforce validation rules and control how data is displayed and processed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>109. What is "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are reusable view components that can be rendered within other views. They allow for modularizing the UI by breaking down complex views into smaller, manageable parts that can be reused across different views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>110. What is "Custom HTML Helpers" in ASP.NET MVC?</h2>
+            <p>Custom HTML Helpers are user-defined methods that extend the functionality of built-in HTML Helpers. They are created by defining static methods in a static class and can generate complex HTML markup or perform custom logic in views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>111. What is "URL Helper" in ASP.NET MVC?</h2>
+            <p>URL Helper is a utility class used to generate URLs based on routes, actions, or static content. It provides methods to create URLs dynamically, ensuring that links are properly constructed according to the routing configuration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>112. What is "Output Caching" in ASP.NET MVC?</h2>
+            <p>Output Caching is a technique that stores the result of a controller action in memory. It helps improve performance by avoiding repeated processing for identical requests, reducing server load and response time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>113. What is "Exception Handling" in ASP.NET MVC?</h2>
+            <p>Exception Handling in ASP.NET MVC involves managing errors that occur during the execution of actions. You can handle exceptions using try-catch blocks, global exception handlers, or custom error pages to provide a better user experience.</p>
+        </div>
+
+        <div class="qa">
+            <h2>114. What is "Bundling and Minification" in ASP.NET MVC?</h2>
+            <p>Bundling and Minification are techniques used to optimize the delivery of static resources. Bundling combines multiple CSS or JavaScript files into a single bundle, and minification removes unnecessary characters to reduce file size and improve load times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>115. What is "Filter Pipeline" in ASP.NET MVC?</h2>
+            <p>The Filter Pipeline is the sequence in which filters are executed during a request. Filters can be applied globally, at the controller level, or at the action level, and they run in a specific order to handle cross-cutting concerns like authentication, logging, and caching.</p>
+        </div>
+
+        <div class="qa">
+            <h2>116. What is "HttpContext" in ASP.NET MVC?</h2>
+            <p>HttpContext provides access to information about the current HTTP request and response. It includes properties such as Request, Response, Session, and Server, which allow interaction with the request and response objects and manage state information.</p>
+        </div>
+
+        <div class="qa">
+            <h2>117. What is "Session State" in ASP.NET MVC?</h2>
+            <p>Session State is a feature that allows storage and retrieval of user-specific data across multiple requests. It is used to maintain user state and can be configured to use in-memory, out-of-process, or SQL Server storage modes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>118. What is "Request Lifecycle" in ASP.NET MVC?</h2>
+            <p>The Request Lifecycle in ASP.NET MVC describes the sequence of events that occur when a request is made to the server. It includes stages like routing, controller instantiation, action execution, and result rendering.</p>
+        </div>
+
+        <div class="qa">
+            <h2>119. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object used to pass data from a controller to a view using key-value pairs. It is available only for the current request and is accessed using string keys to retrieve values.</p>
+        </div>
+
+        <div class="qa">
+            <h2>120. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property used to pass data from a controller to a view. It is similar to ViewData but provides a dynamic way of accessing data without requiring explicit type casting.</p>
+        </div>
+
+        <div class="qa">
+            <h2>121. What is "Action Filters" in ASP.NET MVC?</h2>
+            <p>Action Filters are attributes that run code before or after the execution of an action method. They are used to handle cross-cutting concerns such as logging, authentication, and error handling, and can be applied globally or at the controller/action level.</p>
+        </div>
+
+        <div class="qa">
+            <h2>122. What is "Result Filters" in ASP.NET MVC?</h2>
+            <p>Result Filters are attributes that allow you to run code before or after the execution of a result. They can be used to modify or inspect the response before it is sent to the client, providing a way to add functionality such as caching or content modification.</p>
+        </div>
+
+        <div class="qa">
+            <h2>123. What is "Exception Filters" in ASP.NET MVC?</h2>
+            <p>Exception Filters are attributes that handle unhandled exceptions that occur during the execution of an action. They provide a way to catch exceptions, log them, and show user-friendly error messages or redirect users to an error page.</p>
+        </div>
+
+        <div class="qa">
+            <h2>124. What is "Authorization Filters" in ASP.NET MVC?</h2>
+            <p>Authorization Filters are attributes that control access to actions or controllers based on user roles or permissions. They enforce authentication and authorization rules to secure resources and ensure that only authorized users can access specific parts of the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>125. What is "BundleConfig" in ASP.NET MVC?</h2>
+            <p>BundleConfig is used to configure bundling and minification for static resources such as CSS and JavaScript files. It allows you to define bundles and specify the files to be included, optimizing resource delivery for improved performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>126. What is "Anti-Forgery Token" in ASP.NET MVC?</h2>
+            <p>Anti-Forgery Token is a security feature that prevents Cross-Site Request Forgery (CSRF) attacks. It involves generating a unique token that is included in forms and validated on the server to ensure that requests are legitimate and originated from the expected user.</p>
+        </div>
+
+        <div class="qa">
+            <h2>127. What is "Web.config" in ASP.NET MVC?</h2>
+            <p>Web.config is an XML configuration file used to define application settings, connection strings, and other configuration options. It manages various aspects of application behavior and environment settings, such as authentication and custom error pages.</p>
+        </div>
+
+        <div class="qa">
+            <h2>128. What is "Global.asax" in ASP.NET MVC?</h2>
+            <p>Global.asax is an optional file used to handle application-level events, such as Application_Start, Application_End, and Application_Error. It is used for application-wide configuration and initialization tasks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>129. What is "Route Constraint" in ASP.NET MVC?</h2>
+            <p>Route Constraints are conditions applied to route parameters to ensure that they meet specific criteria before a route is matched. They are used to validate parameters and control routing behavior based on parameter values.</p>
+        </div>
+
+        <div class="qa">
+            <h2>130. What is "Resource Bundling" in ASP.NET MVC?</h2>
+            <p>Resource Bundling is a technique for combining multiple files, such as CSS or JavaScript, into a single bundle to reduce the number of HTTP requests. This optimization improves performance by decreasing load times and reducing network traffic.</p>
+        </div>
+
+        <div class="qa">
+            <h2>131. What is "View Components" in ASP.NET MVC?</h2>
+            <p>View Components are a way to encapsulate reusable rendering logic that can be invoked from views or other view components. They offer more flexibility than partial views and include logic to prepare and pass data to the view.</p>
+        </div>
+
+        <div class="qa">
+            <h2>132. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping form data, query string parameters, and route data to action method parameters or model properties. It enables strongly-typed object handling in controller actions and simplifies data retrieval.</p>
+        </div>
+
+        <div class="qa">
+            <h2>133. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation involves checking if the data in a model meets the defined validation rules. ASP.NET MVC provides built-in validation attributes to validate model properties and ensure data integrity before processing or saving the data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>134. What is "HTML Helpers" in ASP.NET MVC?</h2>
+            <p>HTML Helpers are methods that generate HTML markup and are used in views to simplify the creation of HTML elements. They help in rendering form elements, links, and other HTML tags with additional features and properties.</p>
+        </div>
+
+        <div class="qa">
+            <h2>135. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary used to pass data from a controller to a view. It is available for the duration of the request and allows you to transfer data using key-value pairs. It requires explicit type casting when dealing with complex types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>136. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property used to pass data from a controller to a view. It offers a flexible way to access data without requiring explicit type casting and is available only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>137. What is "RedirectToAction" in ASP.NET MVC?</h2>
+            <p>RedirectToAction is a method used to redirect a user to a different action method. It allows you to specify the target action, controller, and route values, facilitating navigation and redirection within the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>138. What is "ActionName" attribute in ASP.NET MVC?</h2>
+            <p>The ActionName attribute is used to specify an alternate name for an action method. It allows you to define a different URL pattern for the action method, which can be useful for creating user-friendly or SEO-friendly URLs.</p>
+        </div>
+
+        <div class="qa">
+            <h2>139. What is "HttpGet" attribute in ASP.NET MVC?</h2>
+            <p>The HttpGet attribute specifies that an action method should handle HTTP GET requests. It is used to indicate that the action method responds to GET requests and is typically used for retrieving data or displaying content.</p>
+        </div>
+
+        <div class="qa">
+            <h2>140. What is "HttpPost" attribute in ASP.NET MVC?</h2>
+            <p>The HttpPost attribute specifies that an action method should handle HTTP POST requests. It is used to indicate that the action method processes data sent from a form or other sources and is typically used for creating or updating data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>141. What is "FormCollection" in ASP.NET MVC?</h2>
+            <p>FormCollection is a class used to retrieve form values in an action method. It provides access to form data submitted by the client, allowing you to read and process the values from HTTP POST requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>142. What is "ModelState" in ASP.NET MVC?</h2>
+            <p>ModelState is a collection that contains information about the model binding and validation process. It includes details about any errors or validation issues that occurred during binding, allowing you to handle and display validation errors effectively.</p>
+        </div>
+
+        <div class="qa">
+            <h2>143. What is "HTML Encoding" in ASP.NET MVC?</h2>
+            <p>HTML Encoding is the process of converting characters into their HTML entity equivalents to prevent injection attacks and ensure proper display of content. It is used to encode special characters in HTML to avoid security vulnerabilities and rendering issues.</p>
+        </div>
+
+        <div class="qa">
+            <h2>144. What is "JavaScript Unobtrusive Validation" in ASP.NET MVC?</h2>
+            <p>JavaScript Unobtrusive Validation is a feature that integrates client-side validation with jQuery. It uses HTML5 data attributes to define validation rules and applies JavaScript validation without cluttering HTML markup with validation code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>145. What is "Action Method" in ASP.NET MVC?</h2>
+            <p>An Action Method is a public method in a controller class that handles incoming requests and returns an ActionResult. It processes user input, interacts with models, and returns a result, such as a view, JSON data, or a redirect.</p>
+        </div>
+
+        <div class="qa">
+            <h2>146. What is "HttpContext" in ASP.NET MVC?</h2>
+            <p>HttpContext provides access to information about the current HTTP request and response. It includes properties such as Request, Response, Session, and Server, which allow interaction with the request and response objects and manage state information.</p>
+        </div>
+
+        <div class="qa">
+            <h2>147. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping data from HTTP requests to action method parameters or model properties. It enables the use of strongly-typed objects and simplifies data retrieval and manipulation in controller actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>148. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation is the process of ensuring that model data meets the defined validation rules. ASP.NET MVC provides built-in validation attributes that help enforce data integrity and handle validation errors effectively.</p>
+        </div>
+
+        <div class="qa">
+            <h2>149. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is the base class for all result types returned by action methods. It includes types like ViewResult, JsonResult, RedirectResult, and FileResult, each representing a different kind of response sent to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>150. What is "RedirectToAction" in ASP.NET MVC?</h2>
+            <p>RedirectToAction is a method used to redirect to a different action method, either within the same or a different controller. It allows you to navigate to a different URL and pass route values, enabling flexible application navigation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>151. What is "View Components" in ASP.NET MVC?</h2>
+            <p>View Components are similar to partial views but offer more flexibility. They include logic to prepare data and render content, making them suitable for complex rendering tasks that require additional processing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>152. What is "ControllerBase" in ASP.NET MVC?</h2>
+            <p>ControllerBase is the base class for controllers that do not need view rendering. It provides methods for handling HTTP requests and responses but does not include view-related functionality. It is used in scenarios where controllers only return data, such as in Web API applications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>153. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is an abstract class that represents the result of an action method. It provides different types of results like ViewResult, JsonResult, and RedirectResult, each of which specifies the type of response sent to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>154. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows you to pass data from a controller to a view. It uses a dynamic type, which means you do not need to define the properties in advance. It is useful for passing data that does not require strong typing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>155. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object that allows you to pass data from a controller to a view using key-value pairs. It is useful for transferring data that needs to be strongly typed and is available for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>156. What is "TempData" in ASP.NET MVC?</h2>
+            <p>TempData is used to store data that needs to persist for a single request and then be cleared. It is often used to pass data between action methods or redirect operations and is available for one-time use.</p>
+        </div>
+
+        <div class="qa">
+            <h2>157. What is "HTML Helpers" in ASP.NET MVC?</h2>
+            <p>HTML Helpers are methods that generate HTML markup in views. They help in creating form elements, links, and other HTML tags with additional features, making it easier to render complex HTML structures.</p>
+        </div>
+
+        <div class="qa">
+            <h2>158. What is "Unobtrusive JavaScript" in ASP.NET MVC?</h2>
+            <p>Unobtrusive JavaScript refers to the practice of separating JavaScript code from HTML markup. In ASP.NET MVC, it involves using data attributes and external JavaScript files to enhance client-side functionality without mixing code directly into HTML.</p>
+        </div>
+
+        <div class="qa">
+            <h2>159. What is "Content Negotiation" in ASP.NET MVC?</h2>
+            <p>Content Negotiation is the process of selecting the appropriate response format based on the client’s request. It involves determining the format (e.g., JSON, XML) based on the Accept header in the HTTP request and responding accordingly.</p>
+        </div>
+
+        <div class="qa">
+            <h2>160. What is "Url.Action" in ASP.NET MVC?</h2>
+            <p>Url.Action is a method used to generate a URL for a specific action method. It allows you to create URLs dynamically based on the action, controller, and route values, helping to construct links to different parts of the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>161. What is "Script Bundles" in ASP.NET MVC?</h2>
+            <p>Script Bundles are used to bundle and minify JavaScript files for improved performance. They combine multiple JavaScript files into a single bundle and apply minification to reduce file size, enhancing the application's load time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>162. What is "Css Bundles" in ASP.NET MVC?</h2>
+            <p>Css Bundles are used to bundle and minify CSS files, similar to script bundles. They combine multiple CSS files into a single bundle and apply minification to reduce the number of HTTP requests and file size, improving page load performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>163. What is "Bundling" in ASP.NET MVC?</h2>
+            <p>Bundling is the process of combining multiple CSS or JavaScript files into a single file. This reduces the number of HTTP requests required to load a page, improving performance by decreasing network overhead and page load times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>164. What is "Minification" in ASP.NET MVC?</h2>
+            <p>Minification is the process of removing unnecessary characters from CSS and JavaScript files, such as whitespace and comments, without affecting functionality. It reduces file size and improves load times by minimizing the amount of data transferred over the network.</p>
+        </div>
+
+        <div class="qa">
+            <h2>165. What is "HTML Encoding" in ASP.NET MVC?</h2>
+            <p>HTML Encoding is the process of converting special characters into their HTML entity equivalents to prevent injection attacks and ensure proper rendering. It helps avoid security vulnerabilities and display issues by encoding characters like <, >, and &.</p>
+        </div>
+
+        <div class="qa">
+            <h2>166. What is "Anti-Forgery Token" in ASP.NET MVC?</h2>
+            <p>Anti-Forgery Token is a security feature used to prevent Cross-Site Request Forgery (CSRF) attacks. It involves generating a unique token that is included in forms and validated on the server to ensure that requests are legitimate and come from the intended user.</p>
+        </div>
+
+        <div class="qa">
+            <h2>167. What is "Application_Start" in ASP.NET MVC?</h2>
+            <p>Application_Start is an event in the Global.asax file that is fired when the application is first started. It is used to perform application-wide initialization tasks, such as configuring routes, registering filters, and setting up dependency injection.</p>
+        </div>
+
+        <div class="qa">
+            <h2>168. What is "Application_End" in ASP.NET MVC?</h2>
+            <p>Application_End is an event in the Global.asax file that is fired when the application is shutting down. It is used to perform cleanup tasks, such as closing database connections, releasing resources, and saving state information.</p>
+        </div>
+
+        <div class="qa">
+            <h2>169. What is "Application_Error" in ASP.NET MVC?</h2>
+            <p>Application_Error is an event in the Global.asax file that is triggered when an unhandled exception occurs. It is used to handle exceptions globally, log error details, and provide custom error handling or redirection to error pages.</p>
+        </div>
+
+        <div class="qa">
+            <h2>170. What is "Session State" in ASP.NET MVC?</h2>
+            <p>Session State is a feature used to store user-specific data across multiple requests. It allows data to be maintained between requests, such as user preferences or authentication information, and can be configured to use in-memory, out-of-process, or SQL Server storage modes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>171. What is "Request Validation" in ASP.NET MVC?</h2>
+            <p>Request Validation is a security feature that prevents potentially dangerous content from being submitted in requests, such as script tags or malicious input. It helps protect the application from Cross-Site Scripting (XSS) attacks by validating and filtering incoming request data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>172. What is "Form Collection" in ASP.NET MVC?</h2>
+            <p>FormCollection is a class used to retrieve form values submitted by the client. It provides access to form data as key-value pairs and allows you to process or manipulate the data within action methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>173. What is "TempData" in ASP.NET MVC?</h2>
+            <p>TempData is used to store data that needs to be persisted across a single request or redirect. It is often used to pass data between action methods or controllers and is automatically cleared after it is read.</p>
+        </div>
+
+        <div class="qa">
+            <h2>174. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property used to pass data from a controller to a view. It uses a dynamic type, allowing you to access data without strong typing. It is available only for the current request and provides a flexible way to share data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>175. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object that allows you to pass data from a controller to a view using key-value pairs. It is available for the duration of the request and requires explicit type casting when working with complex data types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>176. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping form data, query string parameters, and route data to action method parameters or model properties. It allows you to work with strongly-typed objects and simplifies data retrieval in controller actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>177. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation involves checking if the data in a model meets defined validation rules. It helps ensure data integrity by using built-in or custom validation attributes and handling validation errors effectively.</p>
+        </div>
+
+        <div class="qa">
+            <h2>178. What is "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are reusable view components that can be rendered inside other views. They allow you to break down complex views into smaller, manageable pieces and promote code reusability and maintainability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>179. What is "Layout Pages" in ASP.NET MVC?</h2>
+            <p>Layout Pages are used to define a common layout and structure for multiple views. They help maintain a consistent look and feel across different pages by providing a shared template for header, footer, and navigation elements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>180. What is "HTML Encoding" in ASP.NET MVC?</h2>
+            <p>HTML Encoding is the process of converting special characters into HTML entities to prevent injection attacks and ensure proper rendering of content. It protects against security vulnerabilities and ensures that characters like <, >, and & are correctly displayed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>181. What is "Unobtrusive JavaScript" in ASP.NET MVC?</h2>
+            <p>Unobtrusive JavaScript refers to the practice of keeping JavaScript code separate from HTML markup. It involves using external JavaScript files and data attributes to enhance client-side behavior without mixing JavaScript directly into HTML.</p>
+        </div>
+
+        <div class="qa">
+            <h2>182. What is "Client-Side Validation" in ASP.NET MVC?</h2>
+            <p>Client-Side Validation involves validating user input on the client before it is submitted to the server. It provides immediate feedback to users and can prevent invalid data from being sent to the server, improving user experience and reducing server load.</p>
+        </div>
+
+        <div class="qa">
+            <h2>183. What is "Server-Side Validation" in ASP.NET MVC?</h2>
+            <p>Server-Side Validation is the process of validating user input on the server after it has been submitted. It ensures data integrity and security by checking for validation rules and errors before processing or saving the data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>184. What is "Partial Views" in ASP.NET MVC?</h2>
+            <p>Partial Views are components that can be rendered within other views to reuse UI elements. They help organize and modularize view code by encapsulating reusable portions of HTML and Razor syntax.</p>
+        </div>
+
+        <div class="qa">
+            <h2>185. What is "Layout Pages" in ASP.NET MVC?</h2>
+            <p>Layout Pages are templates that define a common structure for multiple views. They provide a consistent look and feel by including common elements like headers, footers, and navigation menus across different views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>186. What is "Unobtrusive JavaScript" in ASP.NET MVC?</h2>
+            <p>Unobtrusive JavaScript is a technique that separates JavaScript code from HTML. It involves using data attributes and external JavaScript files to apply behavior and functionality, promoting cleaner and more maintainable code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>187. What is "Content Delivery Network (CDN)" in ASP.NET MVC?</h2>
+            <p>A Content Delivery Network (CDN) is a distributed network of servers that deliver web content to users based on their geographic location. It helps improve performance by caching and serving static files like JavaScript, CSS, and images from servers closer to the user.</p>
+        </div>
+
+        <div class="qa">
+            <h2>188. What is "Minification" in ASP.NET MVC?</h2>
+            <p>Minification is the process of reducing the size of files by removing unnecessary characters, such as whitespace and comments, without changing their functionality. This improves performance by decreasing file sizes and load times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>189. What is "Bundling" in ASP.NET MVC?</h2>
+            <p>Bundling is the process of combining multiple CSS or JavaScript files into a single file. It reduces the number of HTTP requests required to load a page, enhancing performance by decreasing network overhead and page load times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>190. What is "Script Bundles" in ASP.NET MVC?</h2>
+            <p>Script Bundles are used to bundle and minify JavaScript files, improving performance by reducing the number of HTTP requests and the size of the files transferred over the network. They help streamline JavaScript delivery and enhance page load times.</p>
+        </div>
+
+        <div class="qa">
+            <h2>191. What is "Css Bundles" in ASP.NET MVC?</h2>
+            <p>Css Bundles are used to combine and minify CSS files into a single bundle. This reduces the number of HTTP requests and file sizes, improving performance and page load times by minimizing the amount of data transferred.</p>
+        </div>
+
+        <div class="qa">
+            <h2>192. What is "Resource Bundling" in ASP.NET MVC?</h2>
+            <p>Resource Bundling involves combining multiple CSS or JavaScript files into single bundles. This reduces the number of HTTP requests and file sizes, leading to improved performance by decreasing page load times and network traffic.</p>
+        </div>
+
+        <div class="qa">
+            <h2>193. What is "View Components" in ASP.NET MVC?</h2>
+            <p>View Components are used to create reusable and encapsulated pieces of rendering logic. They offer more flexibility than partial views by including data preparation and rendering logic, making them suitable for complex or frequently used UI components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>194. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary used to pass data from a controller to a view using key-value pairs. It is accessible only during the current request and requires explicit type casting when working with complex data types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>195. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows passing data from a controller to a view. It uses a dynamic type for flexible access and is available only for the current request, making it suitable for temporary or one-time data sharing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>196. What is "TempData" in ASP.NET MVC?</h2>
+            <p>TempData is a dictionary used to store data that needs to persist for a single request and then be cleared. It is often used for passing data between actions or redirects and is cleared after it is read.</p>
+        </div>
+
+        <div class="qa">
+            <h2>197. What is "Model Binding" in ASP.NET MVC?</h2>
+            <p>Model Binding is the process of mapping HTTP request data to action method parameters or model properties. It simplifies handling form submissions and query strings by converting raw data into strongly-typed objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>198. What is "Model Validation" in ASP.NET MVC?</h2>
+            <p>Model Validation ensures that data in models meets specified validation criteria. It uses built-in or custom validation attributes to enforce rules and handle errors, maintaining data integrity and providing feedback to users.</p>
+        </div>
+
+        <div class="qa">
+            <h2>199. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is the base class for all result types returned by action methods. It includes different types like ViewResult, JsonResult, RedirectResult, and FileResult, each representing a different type of response sent to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>200. What is "RedirectToAction" in ASP.NET MVC?</h2>
+            <p>RedirectToAction is a method used to redirect the user to a different action method, either within the same or a different controller. It helps in navigating to different parts of the application and can pass route values as needed.</p>
+        </div>
+    </main>
+    
+</body>
+</html>

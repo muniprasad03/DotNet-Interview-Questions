@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Interview Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: #fff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            padding: 15px;
+            margin: 0;
+            background-color: #007bff;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid #495057;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li a:hover {
+            background-color: #495057;
+            border-radius: 4px;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+        }
+        .header {
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-info img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .user-info span {
+            margin-right: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .card p {
+            margin-bottom: 0;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        /* Footer Styles */
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding on top and bottom */
+    text-align: center; /* Center align text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .container {
+    max-width: 1200px; /* Max width of the footer content */
+    margin: 0 auto; /* Center align container */
+    padding: 0 20px; /* Padding on left and right */
+}
+
+.footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size */
+}
+
+.footer .footer-links {
+    list-style: none; /* Remove list bullets */
+    padding: 0; /* Remove padding */
+    margin: 10px 0 0; /* Margin for spacing */
+}
+
+.footer .footer-links li {
+    display: inline; /* Display list items inline */
+    margin: 0 10px; /* Space between items */
+}
+
+.footer .footer-links a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Font size */
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+      
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>.NET Interview</h2>
+        <ul>
+                <li><a href="cSharp.html">C#</a></li>
+                <li><a href="csharp-advance.html">C# advanced</a></li>
+                <li><a href="oops.html">C# OOPS</a></li>
+                <li><a href="oops-prinicples.html">C# OOPS-2</a></li>
+                <li><a href="DataStuctures.html">Data Strctures</a></li>
+                <li><a href="coding-Top100.html">C# coding Advance</a></li>
+                <li><a href="interview-questions.html">Coding</a></li>
+                <li><a href="coding.html">Coding-2</a></li>
+                <li><a href="aspnet-mvc-interview-questions.html">MVC</a></li>
+                <li><a href="action-filters.html">MVC Action Filters</a></li>
+                <li><a href="DotnetCore.html">Core</a></li>
+                <li><a href="webapi.html">WebApi</a></li>
+                <li><a href="sql.html">SQL</a></li>
+                <li><a href="angular.html">Angular</a></li>
+                <li><a href="javscript.html">JavaScript</a></li>
+                <li><a href="CYIENT.html">CYIENT</a></li>
+                <li><a href="EF-LINQ-Dapper.html">EntityFrameworkCore</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <img src="https://via.placeholder.com/40" alt="User Avatar">
+                <span>John Doe</span>
+                <a href="#" class="btn-primary">Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Welcome to the .NET Interview Dashboard</h3>
+            <p>This is the main area where you can navigate through various categories of interview questions and answers. Use the sidebar to explore different topics related to C#, ASP.NET, and more.</p>
+            <a href="#" class="btn-primary">Explore Questions</a>
+        </div>
+
+        <div class="card">
+            <h3>Latest Updates</h3>
+            <p>Stay updated with the latest questions and trends in .NET development. Check out new additions and improvements to the question database regularly.</p>
+        </div>
+
+        <div class="card">
+            <h3>Popular Categories</h3>
+            <ul>              
+
+                <li><a href="cSharp.html">C#</a></li>
+                <li><a href="oops.html">C# OOPS</a></li>
+                <li><a href="interview-questions.html">Coding</a></li>
+                <li><a href="aspnet-mvc-interview-questions.html">MVC</a></li>
+                <li><a href="DotnetCore.html">Core</a></li>
+                <li><a href="webapi.html">WebApi</a></li>
+                <li><a href="sql.html">SQL</a></li>
+                <li><a href="angular.html">Angular</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+     
+    </div>
+</footer>
+    </div>
+   
+</body>
+
+</html>

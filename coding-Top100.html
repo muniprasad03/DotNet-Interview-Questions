@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 C# Coding Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .header {
+            background: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #0056b3;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .header a:hover {
+            background: #004494;
+        }
+        .question-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .question-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .question-header {
+            padding: 15px;
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border-bottom: 1px solid #0056b3;
+        }
+        .answer {
+            display: none;
+            padding: 15px;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        .answer p {
+            margin: 0;
+        }
+        .answer pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionHeaders = document.querySelectorAll('.question-header');
+            questionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const answer = header.nextElementSibling;
+                    answer.style.display = answer.style.display === 'none' || answer.style.display === '' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Top 100 C# Coding Interview Questions</h1>
+            <a href="index.html">Back to Home</a>
+        </div>
+
+        <!-- Question and Answer Sections -->
+
+        <div class="question-card">
+            <div class="question-header">1. What is the difference between `ref` and `out` parameters in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `ref` and `out` keywords are used to pass arguments by reference. However, there are some differences:</p>
+                <ul>
+                    <li><strong>Initialization:</strong> Variables passed as `ref` must be initialized before being passed to the method, while variables passed as `out` do not need to be initialized.</li>
+                    <li><strong>Assignment:</strong> `ref` parameters need to be assigned a value before they are passed, while `out` parameters must be assigned a value within the method.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">2. What is the difference between `IEnumerable` and `ICollection`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p><strong>IEnumerable:</strong> Represents a forward-only cursor to iterate through a collection of items.</p>
+                <p><strong>ICollection:</strong> Represents a collection of objects that can be individually accessed by index. It also provides additional methods for adding, removing, and checking for items.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">3. How does garbage collection work in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>C# uses an automatic garbage collection mechanism to manage memory. The garbage collector (GC) automatically releases memory that is no longer in use, helping to prevent memory leaks. It works by periodically identifying and freeing objects that are no longer referenced by the application.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">4. What is the difference between `abstract` class and `interface` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>An `abstract` class can provide some implementation, whereas an `interface` cannot provide implementation. A class can inherit from only one `abstract` class but can implement multiple interfaces.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">5. What is the purpose of the `using` statement in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `using` statement is used to ensure that an object is disposed of properly once it is no longer needed, which is particularly useful for managing resources like file handles and database connections.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">6. What is the difference between `String` and `StringBuilder` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>`String` is immutable, meaning that once a `String` object is created, it cannot be changed. `StringBuilder` is mutable and provides a more efficient way to modify strings when performing a lot of operations.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">7. What are `delegates` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Delegates are type-safe function pointers that allow methods to be passed as parameters. They can be used to define callback methods and event handlers.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">8. How does exception handling work in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Exception handling in C# is done using `try`, `catch`, and `finally` blocks. The `try` block contains the code that might throw an exception, the `catch` block handles the exception, and the `finally` block is used for cleanup code that runs regardless of whether an exception was thrown.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">9. What is LINQ in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>LINQ (Language Integrated Query) provides a consistent query experience across various types of data sources. It allows querying collections, databases, XML, and other data sources using a unified syntax.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">10. What is the difference between `==` and `Equals` method in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>`==` is used to compare the reference equality of objects, while the `Equals` method is used to compare the content or value of objects. The behavior of `Equals` can be overridden in classes to provide custom equality checks.</p>
+            </div>
+        </div>
+
+        <!-- Continue adding questions up to 100 -->
+
+        <div class="question-card">
+            <div class="question-header">11. What is the difference between `public`, `protected`, and `private` access modifiers?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p><strong>Public:</strong> Accessible from any class or object.</p>
+                <p><strong>Protected:</strong> Accessible within the same class or in derived classes.</p>
+                <p><strong>Private:</strong> Accessible only within the same class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">12. What is the purpose
+
+ of `async` and `await` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `async` and `await` keywords are used to simplify asynchronous programming in C#. They allow for the writing of asynchronous code that is easier to read and maintain, enabling non-blocking operations and improving performance.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">13. What are `attributes` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Attributes are metadata added to code elements (such as classes, methods, or properties) to provide additional information about the element. They can be used to influence behavior, provide information for reflection, or modify code generation.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">14. What is `dependency injection`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. It allows for the decoupling of classes by injecting dependencies from outside rather than creating them internally.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">15. Explain the `foreach` loop in C#.</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `foreach` loop is used to iterate over a collection or array in a read-only manner. It provides a simple way to access each element without needing an explicit index.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">16. What is the `dynamic` type in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `dynamic` type bypasses compile-time type checking and defers type checking to runtime. It is useful when working with objects whose types are not known until runtime.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">17. What is a `static` class in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `static` class is a class that cannot be instantiated and can only contain static members. It is used for grouping methods that do not need to maintain any state.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">18. What is the difference between `Task` and `Thread`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `Task` represents an asynchronous operation, while a `Thread` represents a lightweight process. `Task` provides higher-level abstractions for asynchronous programming and better integration with the `async` and `await` keywords.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">19. What is a `constructor` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A constructor is a special method in a class that is called when an instance of the class is created. It is used to initialize objects and allocate resources.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">20. What is the `object` type in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `object` type is the base type for all types in C#. It can hold any data type and is used to store objects of different types in a single variable.</p>
+            </div>
+        </div>
+
+        <!-- Continue adding questions up to 100 -->
+
+        <div class="question-card">
+            <div class="question-header">21. What is the purpose of `sealed` class in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `sealed` class is a class that cannot be inherited. It is used to prevent further derivation and to enforce that a class cannot be used as a base class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">22. What are `indexers` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Indexers allow objects to be indexed like arrays. They enable an instance of a class or struct to be indexed with the `[]` operator.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">23. What is the `override` keyword used for in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `override` keyword is used to extend or modify the abstract or virtual implementation of a method defined in a base class. It is used in derived classes to provide specific implementations for inherited methods.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">24. What is the difference between `abstract` and `virtual` methods?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>An `abstract` method must be implemented in derived classes and does not provide any implementation in the base class. A `virtual` method provides a default implementation that can be overridden in derived classes.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">25. How do `properties` differ from `fields` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Properties provide a way to encapsulate and control access to the fields of a class. They can have getter and setter methods, whereas fields are direct members of a class and are usually private.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">26. What is `encapsulation` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Encapsulation is the concept of wrapping data and methods into a single unit, such as a class, and restricting direct access to some of the object's components. It is achieved using access modifiers.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">27. What is `inheritance` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Inheritance allows a class to inherit members (fields, methods, and properties) from another class. It is used to create a new class based on an existing class and to reuse code.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">28. What are `events` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Events are a way for objects to communicate with each other. They allow an object to notify other objects when something of interest occurs. Events are typically used with delegates to provide a publish/subscribe mechanism.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">29. What is the `static` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `static` keyword defines members that belong to the class itself rather than to any specific instance. Static members are shared among all instances of the class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">30. What is a `namespace` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `namespace` is a way to organize code into logical groups. It provides a way to avoid naming conflicts by grouping related classes, interfaces, and other types together.</p>
+            </div>
+        </div>
+
+        <!-- Continue adding questions up to 100 -->
+
+        <div class="question-card">
+            <div class="question-header">31. What is a `class` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `class` is a blueprint for creating objects. It defines a data structure that includes data members (fields) and functions (methods) that operate on the data.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">32. What is the `new` keyword used for in C#?</div>
+            <div class="answer">
+                <p
+
+><strong>Answer:</strong></p>
+                <p>The `new` keyword is used to create objects and allocate memory for them. It is also used to hide members of a base class in a derived class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">33. What is `polymorphism` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Polymorphism allows objects of different classes to be treated as objects of a common base class. It enables method overriding and interface implementation, allowing methods to do different things based on the object they are acting upon.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">34. What is the `this` keyword in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `this` keyword refers to the current instance of a class. It is used to access members of the current object and to distinguish between instance members and method parameters with the same name.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">35. What is the purpose of `access modifiers`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Access modifiers control the visibility and accessibility of members of a class. They define where members can be accessed from, such as `public`, `private`, `protected`, and `internal`.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">36. What are `constructors` and `destructors`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Constructors are special methods used to initialize new objects. Destructors are used to perform cleanup before an object is destroyed, but they are not explicitly defined in C# since garbage collection handles object destruction.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">37. How do `interfaces` differ from `abstract` classes?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Interfaces define a contract without any implementation, while abstract classes can provide some implementation. A class can implement multiple interfaces but can only inherit from one abstract class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">38. What are `generics` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Generics allow you to define classes, methods, and interfaces with a placeholder for the data type. They provide type safety and performance benefits by allowing code to be written without specifying a concrete data type.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">39. What is a `struct` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `struct` is a value type that is used to encapsulate related variables. It is typically used for small, lightweight objects that do not require inheritance.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">40. What is the `base` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `base` keyword is used to access members of the base class from within a derived class. It is commonly used to call base class constructors and methods.</p>
+            </div>
+        </div>
+
+        <!-- Continue adding questions up to 100 -->
+
+        <div class="question-card">
+            <div class="question-header">41. What are `collections` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Collections are objects that hold groups of related objects. They provide methods to manage, sort, and manipulate data. Common collection types include arrays, lists, dictionaries, and queues.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">42. What is a `delegate` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `delegate` is a type that represents references to methods with a specific parameter list and return type. Delegates are used for event handling and callback methods.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">43. What is the `is` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `is` keyword is used to check if an object is compatible with a given type or if it is derived from a specific type.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">44. What is the purpose of the `override` keyword?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `override` keyword is used to modify the implementation of a virtual method or property defined in a base class. It allows derived classes to provide specific behavior.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">45. What is `boxing` and `unboxing`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>`Boxing` is the process of converting a value type to an object type. `Unboxing` is the reverse process, where an object type is converted back to a value type.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">46. What is the `params` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `params` keyword allows a method to accept a variable number of arguments of a specified type. It enables flexibility in method calls without requiring an array.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">47. What are `anonymous types` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Anonymous types are types that are created without a named class. They are used for creating objects with read-only properties on the fly, particularly useful in LINQ queries.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">48. What is `reflection` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Reflection allows inspection of types, methods, properties, and other metadata at runtime. It is used for dynamic type discovery, late binding, and accessing information about assemblies and modules.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">49. What is `yield` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `yield` keyword is used to define an iterator. It allows a method to return an IEnumerable or IEnumerator in a more readable and maintainable way, without needing to create a temporary collection.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">50. What is the `default` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `default` keyword returns the default value of a type. For value types, it returns the zero-initialized value, and for reference types, it returns `null`.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">51. What is `lazy initialization`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Lazy initialization is a technique where an object's creation is deferred until it is actually needed. It helps improve performance by avoiding unnecessary initialization of objects.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">52. What is `dependency inversion`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Dependency inversion is a principle that suggests high-level modules should not depend on low-level modules, but both should depend on abstractions. It helps reduce coupling and increase code flexibility.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">53. What is `serialization`?</div>
+            <div class="answer">
+                <p><
+
+strong>Answer:</strong></p>
+                <p>Serialization is the process of converting an object into a format that can be easily stored or transmitted, such as binary or XML. Deserialization is the reverse process, converting the data back into an object.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">54. What is `deserialization`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Deserialization is the process of converting serialized data back into an object. It allows for the restoration of object state from a stored format.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">55. What is `method overloading`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Method overloading allows multiple methods in the same class to have the same name but different parameter lists. It provides flexibility in method calls and improves code readability.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">56. What is `method overriding`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Method overriding allows a derived class to provide a specific implementation for a method that is already defined in its base class. It is achieved using the `override` keyword.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">57. What is the `using` statement used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `using` statement is used to ensure that resources are disposed of properly when they are no longer needed. It is commonly used with objects that implement the `IDisposable` interface to handle resource cleanup.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">58. What is `method chaining`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Method chaining is a technique where multiple methods are called on the same object in a single statement. It is often used to improve code readability and to create fluent interfaces.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">59. What is the `async` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `async` keyword is used to declare a method as asynchronous. It allows the use of the `await` keyword within the method to perform asynchronous operations without blocking the calling thread.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">60. What is the `await` keyword used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `await` keyword is used to asynchronously wait for the completion of a task. It allows the method to pause execution until the awaited task is finished, improving performance and responsiveness.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">61. What is `LINQ` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Language Integrated Query (LINQ) is a set of methods and syntax provided by C# to perform queries on data sources like arrays, collections, and databases. It allows querying in a declarative manner.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">62. What are `lambda expressions`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Lambda expressions are anonymous methods that can be used to create delegates or expression trees. They provide a concise way to represent anonymous methods and are often used in LINQ queries.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">63. What is `method hiding`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Method hiding is a technique where a method in a derived class has the same name as a method in its base class but does not override it. It is achieved using the `new` keyword, and the base class method is hidden in the derived class.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">64. What are `extension methods`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Extension methods allow you to add new methods to existing types without modifying their source code. They are defined in static classes and use the `this` keyword to extend the functionality of the type.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">65. What is the `default` parameter value?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Default parameter values allow you to specify default values for method parameters. If a caller does not provide a value for a parameter, the default value is used.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">66. What is a `readonly` field?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A `readonly` field can only be assigned a value during its declaration or in the constructor of the class. It cannot be modified elsewhere in the code, making it immutable after construction.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">67. What is the purpose of the `params` keyword?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `params` keyword allows a method to accept a variable number of arguments of a specified type. It is used to pass an arbitrary number of arguments to a method in a flexible way.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">68. What is `garbage collection`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Garbage collection is an automatic memory management process that reclaims memory occupied by objects that are no longer in use. It helps to prevent memory leaks and optimize memory usage.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">69. What is a `singleton` pattern?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance. It is used to manage a single shared resource.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">70. What is `explicit` and `implicit` conversion?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Explicit conversion requires a cast to convert between types, while implicit conversion is performed automatically by the compiler when converting between compatible types.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">71. What is `tuples` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Tuples are data structures that can hold a fixed number of elements of different types. They are used to return multiple values from a method without needing to define a separate class or struct.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">72. What is the `continue` statement used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `continue` statement skips the remaining code inside a loop for the current iteration and proceeds to the next iteration. It is used to bypass certain conditions or iterations.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">73. What is `pattern matching`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Pattern matching is a feature that allows you to check and extract values from an object based on its shape or type. It simplifies conditional logic and improves code readability.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">74. What are `attributes` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Attributes are special types of metadata that
+
+ can be applied to various program elements such as classes, methods, and properties. They provide additional information that can be used for reflection or custom behavior.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">75. What is `dependency injection`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Dependency injection is a design pattern that allows for the injection of dependencies (e.g., services or objects) into a class rather than the class creating the dependencies itself. It promotes loose coupling and enhances testability.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">76. What is `dynamic` type in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `dynamic` type allows for dynamic typing, where type checking is deferred until runtime. It is used for scenarios where the type is not known at compile time or when interacting with dynamic languages.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">77. What is `nameof` operator in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `nameof` operator returns the name of a variable, type, or member as a string. It is useful for avoiding hard-coded strings and for maintaining code refactorability.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">78. What is the `lock` statement used for?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `lock` statement is used to ensure that a block of code is accessed by only one thread at a time. It helps to prevent race conditions and maintain thread safety in concurrent programming.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">79. What is `value type` and `reference type`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Value types hold their data directly and are typically stored on the stack, such as `int` and `struct`. Reference types store references to their data, which is stored on the heap, such as `class` and `string`.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">80. What is `default interface implementation`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Default interface implementation allows interfaces to provide a default implementation for methods. It enables adding new methods to interfaces without breaking existing implementations.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">81. What are `nullable types`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Nullable types allow value types to represent an additional `null` value, which is useful when dealing with databases or scenarios where a value might be absent. They are defined using `Nullable<T>` or the `?` syntax.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">82. What is `async/await` pattern?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The `async/await` pattern is used to simplify asynchronous programming. The `async` keyword is applied to methods to enable the use of the `await` keyword inside, which makes asynchronous operations easier to write and maintain.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">83. What is `threading` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Threading is a technique for running multiple operations concurrently. It allows a program to perform several tasks simultaneously, improving performance and responsiveness. C# provides various threading constructs like `Thread`, `Task`, and `Parallel` for managing concurrency.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">84. What is `interoperability` in C#?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Interoperability in C# refers to the ability to interact with code written in other languages, such as C++ or COM components. It allows for integration with legacy systems or external libraries.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">85. What are `unit tests`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Unit tests are automated tests that verify the correctness of individual units or components of a software application. They help ensure that each part of the code behaves as expected, facilitating maintenance and refactoring.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">86. What is `code coverage`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Code coverage measures the percentage of code that is exercised by tests. It helps identify untested parts of the codebase, improving the effectiveness of the testing process.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">87. What is `dependency resolution`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Dependency resolution is the process of determining which dependencies a class or component needs and how to provide them. It is often managed by dependency injection frameworks to ensure that all required dependencies are supplied.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">88. What is the `value tuple` type?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A value tuple is a lightweight data structure that can hold multiple values of different types. Unlike regular tuples, value tuples are value types and are more efficient in terms of memory and performance.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">89. What is `async` programming?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Asynchronous programming is a paradigm that allows for non-blocking operations, where tasks can run concurrently without waiting for other tasks to complete. It improves application responsiveness and performance by avoiding blocking the main thread.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">90. What is `task-based asynchronous pattern` (TAP)?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The Task-based Asynchronous Pattern (TAP) is an approach to asynchronous programming that uses the `Task` class to represent asynchronous operations. It provides a standardized way to handle async operations in .NET and is used with `async` and `await` keywords.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">91. What is `concurrency`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Concurrency is the ability of a system to handle multiple tasks or processes simultaneously. It involves managing the execution of multiple threads or tasks to improve the performance and responsiveness of an application.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">92. What is `thread synchronization`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Thread synchronization is the coordination of concurrent threads to ensure they operate correctly without interfering with each other. It involves techniques such as locks, mutexes, and semaphores to manage access to shared resources.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">93. What is `deadlock`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Deadlock occurs when two or more threads are waiting for each other to release resources, causing all threads involved to remain blocked indefinitely. It typically results from improper handling of resource locks.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">94. What is `thread starvation`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Thread starvation happens when a thread is perpetually denied access to resources it needs for execution, usually due to high-priority threads continuously consuming resources. It prevents the starved thread from making progress.</p>
+
+
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">95. What is `race condition`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A race condition occurs when two or more threads or processes attempt to change shared data simultaneously, leading to unpredictable results. Proper synchronization is required to prevent race conditions.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">96. What is `atomic operation`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>An atomic operation is an operation that runs completely independently of any other operations and is uninterruptible. It ensures that the operation is completed fully without being stopped or interfered with.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">97. What is `task cancellation`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Task cancellation is the process of stopping a running task before it completes. It can be done using cancellation tokens to signal a task to stop execution in a cooperative manner.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">98. What is `thread pool`?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>A thread pool is a collection of pre-created threads that can be reused to perform tasks. It helps to manage the overhead of thread creation and destruction, improving the efficiency of thread management in an application.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">99. What is `task parallel library` (TPL)?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>The Task Parallel Library (TPL) provides a set of APIs for parallel programming and task-based asynchronous operations. It simplifies parallelism by allowing developers to create and manage tasks with minimal code.</p>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">100. What is `asynchronous programming` in .NET?</div>
+            <div class="answer">
+                <p><strong>Answer:</strong></p>
+                <p>Asynchronous programming in .NET allows for performing operations asynchronously, without blocking the main thread. It utilizes constructs such as `async` and `await` keywords, `Task`, and `Task<T>` to manage and execute asynchronous operations efficiently.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

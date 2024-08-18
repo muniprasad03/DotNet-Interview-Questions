@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 JavaScript and jQuery Interview Questions and Answers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { width: 80%; margin: 0 auto; }
+        h1 { text-align: center; }
+        .question { margin: 20px 0; }
+        .question h2 { font-size: 1.2em; }
+        .answer { margin: 10px 0 20px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        code { font-family: monospace; }
+        .nav { text-align: center; margin: 20px 0; }
+        .nav a { text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">Back to Home</a>
+        </div>
+        <h1>Top 100 JavaScript and jQuery Interview Questions and Answers</h1>
+        
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>1. What is JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It is commonly used for adding interactive features to web pages, making it essential for modern web development.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>2. What is the difference between `var`, `let`, and `const`?</h2>
+        </div>
+        <div class="answer">
+            <p>In JavaScript:</p>
+            <ul>
+                <li><code>var</code>: Declares a variable that is function-scoped or globally-scoped, and can be re-assigned.</li>
+                <li><code>let</code>: Declares a block-scoped variable that can be re-assigned.</li>
+                <li><code>const</code>: Declares a block-scoped variable that cannot be re-assigned once initialized.</li>
+            </ul>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>3. What are JavaScript data types?</h2>
+        </div>
+        <div class="answer">
+            <p>JavaScript has two types of data types:</p>
+            <ul>
+                <li>Primitive types: <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>number</code>, <code>string</code>, <code>symbol</code> (introduced in ES6), and <code>bigint</code> (introduced in ES11).</li>
+                <li>Reference types: Objects, Arrays, Functions, Dates, etc.</li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>4. What is a closure in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. Closures allow functions to have "private" variables.</p>
+            <p>Example:</p>
+            <pre><code>function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+</code></pre>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>5. What is the difference between `==` and `===`?</h2>
+        </div>
+        <div class="answer">
+            <p><code>==</code> is the equality operator that performs type coercion before comparing values. <code>===</code> is the strict equality operator that compares both value and type without type coercion.</p>
+            <p>Example:</p>
+            <pre><code>console.log(5 == '5');  // true
+console.log(5 === '5'); // false
+</code></pre>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>6. What is the purpose of `this` keyword in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>this</code> keyword refers to the object that is currently executing the code. Its value is determined by the context in which a function is called.</p>
+            <p>Example:</p>
+            <pre><code>const person = {
+    name: 'John',
+    greet: function() {
+        console.log('Hello, ' + this.name);
+    }
+};
+person.greet(); // Hello, John
+</code></pre>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>7. What is event delegation in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Event delegation is a technique where you use a single event listener on a parent element to manage events for multiple child elements. It leverages event bubbling to catch events on elements that are dynamically added or removed.</p>
+            <p>Example:</p>
+            <pre><code>document.getElementById('parent').addEventListener('click', function(event) {
+    if (event.target && event.target.matches('button.child')) {
+        console.log('Child button clicked');
+    }
+});
+</code></pre>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>8. What is `async` and `await` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p><code>async</code> is a keyword that marks a function as asynchronous, allowing it to use <code>await</code> inside. <code>await</code> pauses the execution of the function until a Promise is resolved or rejected.</p>
+            <p>Example:</p>
+            <pre><code>async function fetchData() {
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+}
+fetchData();
+</code></pre>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>9. What is a Promise in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected.</p>
+            <p>Example:</p>
+            <pre><code>let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Done'), 1000);
+});
+promise.then(result => console.log(result)); // Done
+</code></pre>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>10. What is the purpose of `bind` method in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>bind</code> method creates a new function that, when called, has its <code>this</code> keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.</p>
+            <p>Example:</p>
+            <pre><code>function greet(greeting, name) {
+    console.log(greeting + ', ' + name);
+}
+const greetHello = greet.bind(null, 'Hello');
+greetHello('John'); // Hello, John
+</code></pre>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <h2>11. What is the `call` method in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>call</code> method calls a function with a given <code>this</code> value and arguments provided individually.</p>
+            <p>Example:</p>
+            <pre><code>function greet(greeting, name) {
+    console.log(greeting + ', ' + name);
+}
+greet.call(null, 'Hello', 'John'); // Hello, John
+</code></pre>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <h2>12. What is the `apply` method in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>apply</code> method calls a function with a given <code>this</code> value and arguments provided as an array or array-like object.</p>
+            <p>Example:</p>
+            <pre><code>function greet(greeting, name) {
+    console.log(greeting + ', ' + name);
+}
+greet.apply(null, ['Hello', 'John']); // Hello, John
+</code></pre>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <h2>13. What is the difference between `null` and `undefined`?</h2>
+        </div>
+        <div class="answer">
+            <p><code>null</code> is an assignment value that represents no value or object. <code>undefined</code> means a variable has been declared but has not yet been assigned a value.</p>
+            <p>Example:</p>
+            <pre><code>let a = null;
+let b;
+console.log(a); // null
+console.log(b); // undefined
+</code></pre>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h2>14. What is the difference between `forEach` and `map`?</h2>
+        </div>
+        <div class="answer">
+            <p><code>forEach</code> executes a provided function once for each array element, but does not return a new array. <code>map</code> creates a new array with the results of calling a provided function on every element in the calling array.</p>
+            <p>Example:</p>
+            <pre><code>let numbers = [1, 2, 3];
+numbers.forEach(n => console.log(n)); // 1 2 3
+let doubled = numbers.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]
+</code></pre>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h2>15. What is `event bubbling`?</h2>
+        </div>
+        <div class="answer">
+            <p>Event bubbling is a type of event propagation in the DOM where the event starts at the target element and bubbles up to the root of the DOM tree. It allows event handlers to be attached to parent elements to handle events for child elements.</p>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h2>16. What is `event capturing`?</h2>
+        </div>
+        <div class="answer">
+            <p>Event capturing (or trickling) is the opposite of event bubbling. The event starts from the root and propagates down to the target element. It can be used by specifying the third parameter as <code>true</code> in <code>addEventListener</code>.</p>
+            <p>Example:</p>
+            <pre><code>document.getElementById('parent').addEventListener('click', function() {
+    console.log('Captured!');
+}, true);
+</code></pre>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <h2>17. What is `debouncing` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Debouncing is a technique used to ensure that a function is only executed after a certain period of inactivity. It is commonly used to limit the rate at which a function is executed, such as in the case of handling user input events.</p>
+            <p>Example:</p>
+            <pre><code>function debounce(func, delay) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+</code></pre>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <h2>18. What is `throttling` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Throttling is a technique used to limit the rate at which a function is executed by ensuring that the function is called at most once within a specified time interval.</p>
+            <p>Example:</p>
+            <pre><code>function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function(...args) {
+        const context = this;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+}
+</code></pre>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <h2>19. What is `hoisting` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compile phase. This means you can use variables and functions before they are declared.</p>
+            <p>Example:</p>
+            <pre><code>console.log(x); // undefined
+var x = 5;
+</code></pre>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <h2>20. What is `prototype` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Every JavaScript object has a prototype. A prototype is an object that is associated with every function and object by default. It is used to add properties and methods to objects and functions.</p>
+            <p>Example:</p>
+            <pre><code>function Person(name) {
+    this.name = name;
+}
+Person.prototype.sayHello = function() {
+    console.log('Hello, ' + this.name);
+};
+const person = new Person('Alice');
+person.sayHello(); // Hello, Alice
+</code></pre>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="question">
+            <h2>21. What is `JavaScript event loop`?</h2>
+        </div>
+        <div class="answer">
+            <p>The JavaScript event loop is a mechanism that allows JavaScript to perform non-blocking operations by using an event-driven, single-threaded model. It continuously checks the call stack and the task queue, executing tasks from the queue when the call stack is empty.</p>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <h2>22. What is `this` binding in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The value of <code>this</code> in JavaScript depends on how a function is called. It can be explicitly set using methods like <code>bind</code>, <code>call</code>, and <code>apply</code>, or it can be implicitly set based on the execution context.</p>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question">
+            <h2>23. What is `setTimeout` and `setInterval`?</h2>
+        </div>
+        <div class="answer">
+            <p><code>setTimeout</code> schedules a function to be executed after a specified delay, while <code>setInterval</code> repeatedly calls a function at specified intervals.</p>
+            <p>Example:</p>
+            <pre><code>setTimeout(() => console.log('Executed after 1 second'), 1000);
+setInterval(() => console.log('Executed every 2 seconds'), 2000);
+</code></pre>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question">
+            <h2>24. What is the `fetch` API?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>fetch</code> API is a modern interface for making network requests. It provides a more powerful and flexible feature set compared to the older <code>XMLHttpRequest</code>.</p>
+            <p>Example:</p>
+            <pre><code>fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+</code></pre>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="question">
+            <h2>25. What are `Promises` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Promises are objects representing the eventual completion or failure of an asynchronous operation. They have three states: pending, fulfilled, and rejected. They provide a way to handle asynchronous operations in a more readable and maintainable way.</p>
+            <p>Example:</p>
+            <pre><code>let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Success'), 1000);
+});
+promise.then(result => console.log(result)); // Success
+</code></pre>
+        </div>
+
+        <!-- Question 26 -->
+        <div class="question">
+            <h2>26. What is `strict mode` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Strict mode is a way to opt into a restricted variant of JavaScript. It helps in catching common coding mistakes and unsafe actions, such as defining global variables unintentionally.</p>
+            <p>Example:</p>
+            <pre><code>'use strict';
+x = 10; // ReferenceError: x is not defined
+</code></pre>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="question">
+            <h2>27. What is `destructuring` in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>Destructuring is a convenient way of extracting values from arrays or properties from objects into distinct variables.</p>
+            <p>Example:</p>
+            <pre><code>const [a, b] = [1, 2];
+const {name, age} = {name: 'John', age: 30};
+console.log(a); // 1
+console.log(name); // John
+</code></pre>
+        </div>
+
+        <!-- Question 28 -->
+        <div class="question">
+            <h2>28. What are JavaScript modules?</h2>
+        </div>
+        <div class="answer">
+            <p>JavaScript modules allow you to break up your code into separate files and manage dependencies between them. They can be imported and exported using <code>import</code> and <code>export</code> statements.</p>
+            <p>Example:</p>
+            <pre><code>// module.js
+export const greet = name => `Hello, ${name}`;
+
+// main.js
+import { greet } from './module.js';
+console.log(greet('Alice')); // Hello, Alice
+</code></pre>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="question">
+            <h2>29. What is the `bind` method used for in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>bind</code> method creates a new function that, when called, has its <code>this</code> keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.</p>
+            <p>Example:</p>
+            <pre><code>function greet(greeting, name) {
+    console.log(greeting + ', ' + name);
+}
+const greetHello = greet.bind(null, 'Hello');
+greetHello('John'); // Hello, John
+</code></pre>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="question">
+            <h2>30. What is the `class` keyword in JavaScript?</h2>
+        </div>
+        <div class="answer">
+            <p>The <code>class</code> keyword in JavaScript is used to create classes, which are templates for creating objects with shared properties and methods. Classes are a syntactical sugar over JavaScript's existing prototype-based inheritance.</p>
+            <p>Example:</p>
+            <pre><code>class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    greet() {
+        console.log('Hello, ' + this.name);
+    }
+}
+const person = new Person('Alice');
+person.greet(); // Hello, Alice
+</code></pre>
+        </div>
+
+        <!-- Question 31 -->
+        <div class="question">
+            <h2>31. What is `jQuery`?</h2>
+        </div>
+        <div class="answer">
+            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies things like HTML document traversal and manipulation, event handling, and animation, and it is designed to work seamlessly across different browsers.</p>
+        </div>
+
+        <!-- Question 32 -->
+        <div class="question">
+            <h2>32. How do you include jQuery in a web page?</h2>
+        </div>
+        <div class="answer">
+            <p>You can include jQuery in a web page by adding a <code>&lt;script&gt;</code> tag that references the jQuery library from a CDN or by downloading the library and including it locally.</p>
+            <p>Example:</p>
+            <pre><code>&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+
+        <!-- Question 33 -->
+        <div class="question">
+            <h2>33. How do you select an element using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can select elements using jQuery by passing a CSS selector to the <code>$</code> function.</p>
+            <p>Example:</p>
+            <pre><code>$(document).ready(function() {
+    $('#myElement').text('Hello, World!');
+});
+</code></pre>
+        </div>
+
+        <!-- Question 34 -->
+        <div class="question">
+            <h2>34. How do you handle events using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can handle events in jQuery by using event methods such as <code>click</code>, <code>on</code>, and <code>off</code>. The <code>on</code> method is preferred for handling events as it supports event delegation.</p>
+            <p>Example:</p>
+            <pre><code>$(document).ready(function() {
+    $('#myButton').on('click', function() {
+        alert('Button clicked!');
+    });
+});
+</code></pre>
+        </div>
+
+        <!-- Question 35 -->
+        <div class="question">
+            <h2>35. What is the difference between `$(this)` and `this` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>In jQuery, <code>$(this)</code> wraps the DOM element referenced by <code>this</code> in a jQuery object, providing access to jQuery methods. <code>this</code> refers to the raw DOM element.</p>
+            <p>Example:</p>
+            <pre><code>$(document).ready(function() {
+    $('#myButton').on('click', function() {
+        console.log(this); // Raw DOM element
+        console.log($(this)); // jQuery object
+    });
+});
+</code></pre>
+        </div>
+
+        <!-- Question 36 -->
+        <div class="question">
+            <h2>36. How do you perform an AJAX request using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can perform an AJAX request in jQuery using the <code>$.ajax</code> method, or by using shorthand methods such as <code>$.get</code> and <code>$.post</code>.</p>
+            <p>Example:</p>
+            <pre><code>$.ajax({
+    url: 'https://api.example.com/data',
+    method: 'GET',
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(error) {
+        console.error('Error:', error);
+    }
+});
+</code></pre>
+        </div>
+
+        <!-- Question 37 -->
+        <div class="question">
+            <h2>37. How do you chain jQuery methods?</h2>
+        </div>
+        <div class="answer">
+            <p>You can chain jQuery methods by calling one method after another on the same jQuery object. This is possible because jQuery methods return the jQuery object itself.</p>
+            <p>Example:</p>
+            <pre><code>$('#myElement').css('color', 'red').slideUp(2000).slideDown(2000);
+</code></pre>
+        </div>
+
+        <!-- Question 38 -->
+        <div class="question">
+            <h2>38. What is `$.each` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.each</code> is a method used to iterate over arrays and objects in jQuery. It can be used to perform a function for each element or property.</p>
+            <p>Example:</p>
+            <pre><code>$.each([1, 2, 3], function(index, value) {
+    console.log(index, value);
+});
+</code></pre>
+        </div>
+
+        <!-- Question 39 -->
+        <div class="question">
+            <h2>39. How do you get and set attributes using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can get or set attributes of an element using the <code>attr</code> method. Passing one argument gets the attribute value, while passing two arguments sets the attribute value.</p>
+            <p>Example:</p>
+            <pre><code>let src = $('#myImage').attr('src');
+$('#myImage').attr('src', 'new-image.jpg');
+</code></pre>
+        </div>
+
+        <!-- Question 40 -->
+        <div class="question">
+            <h2>40. What is `$.data` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.data</code> is a method used to associate data with DOM elements. It provides a way to store arbitrary data on elements without affecting the DOM structure.</p>
+            <p>Example:</p>
+            <pre><code>$('#myElement').data('key', 'value');
+console.log($('#myElement').data('key')); // value
+</code></pre>
+        </div>
+
+        <!-- Question 41 -->
+        <div class="question">
+            <h2>41. How do you use `$.Deferred` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.Deferred</code> is used to create a new deferred object which represents a value that might not yet be available. You can attach callback functions to handle the resolved or rejected state of the deferred object.</p>
+            <p>Example:</p>
+            <pre><code>let deferred = $.Deferred();
+deferred.done(function(value) {
+    console.log('Resolved with value:', value);
+});
+deferred.resolve('Success');
+</code></pre>
+        </div>
+
+        <!-- Question 42 -->
+            <div class="question">
+            <h2>42. How do you add and remove classes using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can add and remove classes using the <code>addClass</code> and <code>removeClass</code> methods.</p>
+            <p>Example:</p>
+            <pre><code>$('#myElement').addClass('active');
+$('#myElement').removeClass('active');
+</code></pre>
+        </div>
+
+        <!-- Question 43 -->
+        <div class="question">
+            <h2>43. What is the `$.when` method used for in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.when</code> is used to manage multiple asynchronous operations. It takes one or more promises or deferred objects and returns a new promise that resolves when all the input promises are resolved.</p>
+            <p>Example:</p>
+            <pre><code>$.when($.ajax('url1'), $.ajax('url2')).done(function(response1, response2) {
+    console.log('Both requests completed');
+});
+</code></pre>
+        </div>
+
+        <!-- Question 44 -->
+        <div class="question">
+            <h2>44. What is `$.extend` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.extend</code> is a method used to merge the contents of two or more objects into the first object. It is often used to clone objects or to merge options into a configuration object.</p>
+            <p>Example:</p>
+            <pre><code>let obj1 = {a: 1};
+let obj2 = {b: 2};
+$.extend(obj1, obj2);
+console.log(obj1); // {a: 1, b: 2}
+</code></pre>
+        </div>
+
+        <!-- Question 45 -->
+        <div class="question">
+            <h2>45. What is `$.proxy` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.proxy</code> is used to change the context of a function to a specified object. This is useful when you need to ensure that the <code>this</code> value inside a function is bound to a specific object.</p>
+            <p>Example:</p>
+            <pre><code>function greet() {
+    console.log(this.message);
+}
+let obj = { message: 'Hello' };
+let proxiedGreet = $.proxy(greet, obj);
+proxiedGreet(); // Hello
+</code></pre>
+        </div>
+
+        <!-- Question 46 -->
+        <div class="question">
+            <h2>46. How do you handle form submissions using jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p>You can handle form submissions in jQuery by using the <code>submit</code> event. To prevent the default form submission behavior, use <code>event.preventDefault()</code>.</p>
+            <p>Example:</p>
+            <pre><code>$('#myForm').on('submit', function(event) {
+    event.preventDefault();
+    // Handle form submission here
+});
+</code></pre>
+        </div>
+
+        <!-- Question 47 -->
+        <div class="question">
+            <h2>47. What is `$.fn` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.fn</code> is a shorthand for <code>jQuery.prototype</code>. It allows you to extend jQuery with custom methods that can be used on jQuery objects.</p>
+            <p>Example:</p>
+            <pre><code>$.fn.highlight = function(color) {
+    this.css('background-color', color);
+    return this;
+};
+$('#myElement').highlight('yellow');
+</code></pre>
+        </div>
+
+        <!-- Question 48 -->
+        <div class="question">
+            <h2>48. What is `$.map` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.map</code> is a method used to translate all items in an array or object to new array values using a callback function.</p>
+            <p>Example:</p>
+            <pre><code>let numbers = [1, 2, 3];
+let doubled = $.map(numbers, function(n) {
+    return n * 2;
+});
+console.log(doubled); // [2, 4, 6]
+</code></pre>
+        </div>
+
+        <!-- Question 49 -->
+        <div class="question">
+            <h2>49. What is `$.grep` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.grep</code> is used to filter elements from an array based on a predicate function, returning a new array with only the elements that pass the test.</p>
+            <p>Example:</p>
+            <pre><code>let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = $.grep(numbers, function(n) {
+    return n % 2 === 0;
+});
+console.log(evenNumbers); // [2, 4]
+</code></pre>
+        </div>
+
+        <!-- Question 50 -->
+        <div class="question">
+            <h2>50. What is `$.fn.each` in jQuery?</h2>
+        </div>
+        <div class="answer">
+            <p><code>$.fn.each</code> is used to iterate over a jQuery object, executing a function for each matched element.</p>
+            <p>Example:</p>
+            <pre><code>$('.item').each(function(index, element) {
+    console.log(index, element);
+});
+</code></pre>
+        </div>
+<!-- Question 51 -->
+<div class="question">
+    <h2>51. What is `$.fn.append` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.append</code> is used to insert content at the end of each element in the set of matched elements. It can be used to add new elements to the DOM.</p>
+    <p>Example:</p>
+    <pre><code>$('#myList').append('<li>New Item</li>');
+</code></pre>
+</div>
+
+<!-- Question 52 -->
+<div class="question">
+    <h2>52. What is `$.fn.prepend` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.prepend</code> is used to insert content at the beginning of each element in the set of matched elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myList').prepend('<li>First Item</li>');
+</code></pre>
+</div>
+
+<!-- Question 53 -->
+<div class="question">
+    <h2>53. How do you toggle classes in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can toggle classes using the <code>toggleClass</code> method. It adds or removes one or more classes from each element in the set of matched elements, depending on whether the class is already present.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').toggleClass('active');
+</code></pre>
+</div>
+
+<!-- Question 54 -->
+<div class="question">
+    <h2>54. What is `$.fn.slideUp` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.slideUp</code> is used to hide an element by sliding it up, effectively reducing its height to zero.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').slideUp();
+</code></pre>
+</div>
+
+<!-- Question 55 -->
+<div class="question">
+    <h2>55. What is `$.fn.slideDown` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.slideDown</code> is used to show an element by sliding it down, effectively increasing its height from zero.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').slideDown();
+</code></pre>
+</div>
+
+<!-- Question 56 -->
+<div class="question">
+    <h2>56. What is `$.fn.fadeIn` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.fadeIn</code> is used to gradually change the opacity of an element to make it visible.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').fadeIn();
+</code></pre>
+</div>
+
+<!-- Question 57 -->
+<div class="question">
+    <h2>57. What is `$.fn.fadeOut` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.fadeOut</code> is used to gradually change the opacity of an element to make it invisible.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').fadeOut();
+</code></pre>
+</div>
+
+<!-- Question 58 -->
+<div class="question">
+    <h2>58. What is `$.fn.animate` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.animate</code> is used to create custom animations by changing CSS properties of elements over time.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').animate({ height: 'toggle' }, 1000);
+</code></pre>
+</div>
+
+<!-- Question 59 -->
+<div class="question">
+    <h2>59. What is the difference between `$.on` and `$.click`?</h2>
+</div>
+<div class="answer">
+    <p><code>$.click</code> is a shorthand method for binding a click event handler. <code>$.on</code> is a more general method that can bind any event type and supports event delegation.</p>
+    <p>Example:</p>
+    <pre><code>$('#myButton').on('click', function() {
+alert('Button clicked!');
+});
+</code></pre>
+</div>
+
+<!-- Question 60 -->
+<div class="question">
+    <h2>60. What is `$.ajaxSetup` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.ajaxSetup</code> is used to set default values for future AJAX requests, allowing you to configure global AJAX settings.</p>
+    <p>Example:</p>
+    <pre><code>$.ajaxSetup({
+timeout: 5000
+});
+</code></pre>
+</div>
+
+<!-- Question 61 -->
+<div class="question">
+    <h2>61. How do you get the value of a form input using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can get the value of a form input using the <code>val</code> method.</p>
+    <p>Example:</p>
+    <pre><code>let inputValue = $('#myInput').val();
+</code></pre>
+</div>
+
+<!-- Question 62 -->
+<div class="question">
+    <h2>62. How do you set the value of a form input using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can set the value of a form input using the <code>val</code> method with a value argument.</p>
+    <p>Example:</p>
+    <pre><code>$('#myInput').val('New Value');
+</code></pre>
+</div>
+
+<!-- Question 63 -->
+<div class="question">
+    <h2>63. What is `$.fn.each` used for in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.each</code> is used to iterate over a jQuery object, executing a function for each matched element.</p>
+    <p>Example:</p>
+    <pre><code>$('.item').each(function(index, element) {
+console.log(index, element);
+});
+</code></pre>
+</div>
+
+<!-- Question 64 -->
+<div class="question">
+    <h2>64. What is `$.fn.html` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.html</code> is used to get or set the HTML content of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>let htmlContent = $('#myElement').html();
+$('#myElement').html('<p>New Content</p>');
+</code></pre>
+</div>
+
+<!-- Question 65 -->
+<div class="question">
+    <h2>65. What is `$.fn.text` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.text</code> is used to get or set the text content of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>let textContent = $('#myElement').text();
+$('#myElement').text('New Text');
+</code></pre>
+</div>
+
+<!-- Question 66 -->
+<div class="question">
+    <h2>66. How do you remove elements using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can remove elements using the <code>remove</code> method. It removes the matched elements from the DOM.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').remove();
+</code></pre>
+</div>
+
+<!-- Question 67 -->
+<div class="question">
+    <h2>67. What is `$.fn.empty` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.empty</code> is used to remove all child elements from the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').empty();
+</code></pre>
+</div>
+
+<!-- Question 68 -->
+<div class="question">
+    <h2>68. How do you handle events in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>Events can be handled using methods such as <code>on</code>, <code>off</code>, and shorthand methods like <code>click</code> and <code>submit</code>.</p>
+    <p>Example:</p>
+    <pre><code>$('#myButton').on('click', function() {
+alert('Button clicked!');
+});
+</code></pre>
+</div>
+
+<!-- Question 69 -->
+<div class="question">
+    <h2>69. How do you check if an element has a class in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can check if an element has a class using the <code>hasClass</code> method.</p>
+    <p>Example:</p>
+    <pre><code>if ($('#myElement').hasClass('active')) {
+console.log('Element has class "active"');
+}
+</code></pre>
+</div>
+
+<!-- Question 70 -->
+<div class="question">
+    <h2>70. What is `$.fn.attr` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.attr</code> is used to get or set attributes of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>let hrefValue = $('#myLink').attr('href');
+$('#myLink').attr('href', 'https://www.example.com');
+</code></pre>
+</div>
+
+<!-- Question 71 -->
+<div class="question">
+    <h2>71. What is `$.fn.val` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.val</code> is used to get or set the value of form elements like input, select, and textarea.</p>
+    <p>Example:</p>
+    <pre><code>let inputValue = $('#myInput').val();
+$('#myInput').val('New Value');
+</code></pre>
+</div>
+
+<!-- Question 72 -->
+<div class="question">
+    <h2>72. How do you bind multiple event handlers to the same element in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can bind multiple event handlers to the same element using the <code>on</code> method.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').on('click mouseenter', function() {
+console.log('Element clicked or mouse entered');
+});
+</code></pre>
+</div>
+
+<!-- Question 73 -->
+<div class="question">
+    <h2>73. What is `$.fn.trigger` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.trigger</code> is used to manually trigger events on the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myButton').trigger('click');
+</code></pre>
+</div>
+
+<!-- Question 74 -->
+<div class="question">
+    <h2>74. How do you create a custom event in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can create and trigger custom events using the <code>$.event</code> methods.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').on('customEvent', function() {
+console.log('Custom event triggered');
+});
+$('#myElement').trigger('customEvent');
+</code></pre>
+</div>
+
+<!-- Question 75 -->
+<div class="question">
+    <h2>75. What is `$.fn.wrap` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.wrap</code> is used to wrap an HTML structure around each element in the set of matched elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').wrap('<div class="wrapper"></div>');
+</code></pre>
+</div>
+
+<!-- Question 76 -->
+<div class="question">
+    <h2>76. What is `$.fn.unwrap` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.unwrap</code> is used to remove the parent element of each element in the set of matched elements, while keeping the child elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').unwrap();
+</code></pre>
+</div>
+
+<!-- Question 77 -->
+<div class="question">
+    <h2>77. What is `$.fn.replaceWith` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.replaceWith</code> is used to replace each element in the set of matched elements with new content.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').replaceWith('<p>New Content</p>');
+</code></pre>
+</div>
+
+<!-- Question 78 -->
+<div class="question">
+    <h2>78. What is `$.fn.clone` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.clone</code> is used to create a copy of each element in the set of matched elements. It can also optionally include child elements and data.</p>
+    <p>Example:</p>
+    <pre><code>let clonedElement = $('#myElement').clone();
+</code></pre>
+</div>
+
+<!-- Question 79 -->
+<div class="question">
+    <h2>79. What is `$.fn.detach` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.detach</code> is used to remove the selected elements from the DOM but keep all jQuery data associated with the elements. It is useful for reusing elements later.</p>
+    <p>Example:</p>
+    <pre><code>let detachedElement = $('#myElement').detach();
+</code></pre>
+</div>
+
+<!-- Question 80 -->
+<div class="question">
+    <h2>80. How do you get the HTML content of an element using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can get the HTML content of an element using the <code>html</code> method.</p>
+    <p>Example:</p>
+    <pre><code>let htmlContent = $('#myElement').html();
+</code></pre>
+</div>
+
+<!-- Question 81 -->
+<div class="question">
+    <h2>81. How do you add a new element to the DOM using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can add a new element to the DOM using methods such as <code>append</code>, <code>prepend</code>, <code>before</code>, and <code>after</code>.</p>
+    <p>Example:</p>
+    <pre><code>$('#myContainer').append('<p>New Element</p>');
+</code></pre>
+</div>
+
+<!-- Question 82 -->
+<div class="question">
+    <h2>82. What is `$.fn.css` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.css</code> is used to get or set CSS properties for the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').css('color', 'red');
+let color = $('#myElement').css('color');
+</code></pre>
+</div>
+
+<!-- Question 83 -->
+<div class="question">
+    <h2>83. How do you get the value of an input field using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can get the value of an input field using the <code>val</code> method.</p>
+    <p>Example:</p>
+    <pre><code>let inputValue = $('#myInput').val();
+</code></pre>
+</div>
+
+<!-- Question 84 -->
+<div class="question">
+    <h2>84. What is `$.fn.data` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.data</code> is used to store and retrieve arbitrary data associated with elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').data('key', 'value');
+let dataValue = $('#myElement').data('key');
+</code></pre>
+</div>
+
+<!-- Question 85 -->
+<div class="question">
+    <h2>85. How do you handle Ajax requests in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can handle Ajax requests using the <code>$.ajax</code> method or its shorthand methods like <code>$.get</code> and <code>$.post</code>.</p>
+    <p>Example:</p>
+    <pre><code>$.ajax({
+url: 'my-url',
+type: 'GET',
+success: function(data) {
+console.log(data);
+}
+});
+</code></pre>
+</div>
+
+<!-- Question 86 -->
+<div class="question">
+    <h2>86. What is the difference between `$.get` and `$.post` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.get</code> is used to perform HTTP GET requests, while <code>$.post</code> is used to perform HTTP POST requests. GET requests are generally used to retrieve data, while POST requests are used to send data to the server.</p>
+    <p>Example:</p>
+    <pre><code>$.get('my-url', function(data) {
+console.log(data);
+});
+
+$.post('my-url', {key: 'value'}, function(response) {
+console.log(response);
+});
+</code></pre>
+</div>
+
+<!-- Question 87 -->
+<div class="question">
+    <h2>87. What is `$.fn.show` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.show</code> is used to display hidden elements by setting their display property to the default value.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').show();
+</code></pre>
+</div>
+
+<!-- Question 88 -->
+<div class="question">
+    <h2>88. What is `$.fn.hide` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.hide</code> is used to hide elements by setting their display property to none.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').hide();
+</code></pre>
+</div>
+
+<!-- Question 89 -->
+<div class="question">
+    <h2>89. How do you check if an element is visible using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can check if an element is visible using the <code>is(':visible')</code> method.</p>
+    <p>Example:</p>
+    <pre><code>if ($('#myElement').is(':visible')) {
+console.log('Element is visible');
+}
+</code></pre>
+</div>
+
+<!-- Question 90 -->
+<div class="question">
+    <h2>90. What is `$.fn.offset` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.offset</code> is used to get the current coordinates of the element relative to the document.</p>
+    <p>Example:</p>
+    <pre><code>let offset = $('#myElement').offset();
+console.log(offset.top, offset.left);
+</code></pre>
+</div>
+
+<!-- Question 91 -->
+<div class="question">
+    <h2>91. What is `$.fn.position` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.position</code> is used to get the current position of the element relative to its offset parent.</p>
+    <p>Example:</p>
+    <pre><code>let position = $('#myElement').position();
+console.log(position.top, position.left);
+</code></pre>
+</div>
+
+<!-- Question 92 -->
+<div class="question">
+    <h2>92. What is the purpose of `$.fn.addClass` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.addClass</code> is used to add one or more classes to the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').addClass('newClass');
+</code></pre>
+</div>
+
+<!-- Question 93 -->
+<div class="question">
+    <h2>93. What is the purpose of `$.fn.removeClass` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.removeClass</code> is used to remove one or more classes from the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').removeClass('oldClass');
+</code></pre>
+</div>
+
+<!-- Question 94 -->
+<div class="question">
+    <h2>94. How do you find elements within a parent using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can find elements within a parent using the <code>find</code> method.</p>
+    <p>Example:</p>
+    <pre><code>$('#parent').find('.child');
+</code></pre>
+</div>
+
+<!-- Question 95 -->
+<div class="question">
+    <h2>95. What is `$.fn.children` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.children</code> is used to get the immediate children of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#parent').children('.child');
+</code></pre>
+</div>
+
+<!-- Question 96 -->
+<div class="question">
+    <h2>96. What is `$.fn.siblings` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.siblings</code> is used to get all sibling elements of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').siblings();
+</code></pre>
+</div>
+
+<!-- Question 97 -->
+<div class="question">
+    <h2>97. How do you select elements based on attribute values in jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can select elements based on attribute values using attribute selectors.</p>
+    <p>Example:</p>
+    <pre><code>$('[data-custom="value"]');
+</code></pre>
+</div>
+
+<!-- Question 98 -->
+<div class="question">
+    <h2>98. What is `$.fn.attr` used for in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.attr</code> is used to get or set attributes of the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').attr('id', 'newId');
+</code></pre>
+</div>
+
+<!-- Question 99 -->
+<div class="question">
+    <h2>99. What is `$.fn.removeAttr` in jQuery?</h2>
+</div>
+<div class="answer">
+    <p><code>$.fn.removeAttr</code> is used to remove an attribute from the selected elements.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').removeAttr('disabled');
+</code></pre>
+</div>
+
+<!-- Question 100 -->
+<div class="question">
+    <h2>100. How do you animate an element's CSS properties using jQuery?</h2>
+</div>
+<div class="answer">
+    <p>You can animate an element's CSS properties using the <code>animate</code> method.</p>
+    <p>Example:</p>
+    <pre><code>$('#myElement').animate({
+width: 'toggle'
+}, 1000);
+</code></pre>
+</div>
+    </div>
+</body>
+</html>

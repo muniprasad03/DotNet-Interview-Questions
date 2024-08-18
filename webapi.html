@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Core and Web API Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .qa {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+        .qa h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #555;
+        }
+        .qa p {
+            margin: 10px 0;
+            color: #666;
+        }
+        .back-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            background: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>.NET Core and Web API Interview Questions and Answers</h1>
+
+        <a href="index.html" class="back-button">Back to Home</a>
+
+        <!-- Questions 1-10 -->
+        <div class="qa">
+            <h2>1. What is .NET Core?</h2>
+            <p>.NET Core is a cross-platform, open-source framework developed by Microsoft. It is used for building modern, cloud-based, and internet-connected applications. It supports Windows, macOS, and Linux platforms.</p>
+        </div>
+
+        <div class="qa">
+            <h2>2. What are the main differences between .NET Core and .NET Framework?</h2>
+            <p>.NET Core is cross-platform and open-source, whereas .NET Framework is limited to Windows and is closed-source. .NET Core is modular and has a smaller footprint, while .NET Framework includes a larger set of libraries and components. .NET Core also provides better performance and flexibility in deployment.</p>
+        </div>
+
+        <div class="qa">
+            <h2>3. What is ASP.NET Core?</h2>
+            <p>ASP.NET Core is a framework for building modern, high-performance, and cross-platform web applications. It is a part of .NET Core and includes features for web APIs, MVC, and Razor pages.</p>
+        </div>
+
+        <div class="qa">
+            <h2>4. What is a Middleware in ASP.NET Core?</h2>
+            <p>Middleware is a software component that is assembled into an application pipeline to handle requests and responses. Each component in the pipeline can perform operations before and after the next component in the pipeline.</p>
+        </div>
+
+        <div class="qa">
+            <h2>5. What is Dependency Injection in ASP.NET Core?</h2>
+            <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. ASP.NET Core has built-in support for DI, allowing you to inject services into your classes through constructors or methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>6. How does routing work in ASP.NET Core?</h2>
+            <p>Routing in ASP.NET Core maps incoming requests to the appropriate controller actions or endpoints. It is configured using route templates in the Startup class, and supports attribute routing and conventional routing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>7. What is Entity Framework Core?</h2>
+            <p>Entity Framework Core (EF Core) is an object-relational mapper (ORM) that provides a high-level abstraction over database interactions. It allows you to work with databases using .NET objects and LINQ queries.</p>
+        </div>
+
+        <div class="qa">
+            <h2>8. How do you handle configuration in .NET Core?</h2>
+            <p>Configuration in .NET Core is handled using the Configuration API, which supports various sources such as JSON files, environment variables, command-line arguments, and user secrets. Configuration settings are accessed via the IConfiguration interface.</p>
+        </div>
+
+        <div class="qa">
+            <h2>9. What is JWT?</h2>
+            <p>JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as a JSON object. It is commonly used for authentication and authorization purposes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>10. What is the purpose of JWT in Web API?</h2>
+            <p>JWT is used in Web API to authenticate users and authorize their access to resources. It allows stateless authentication, where the token contains the user's identity and claims, eliminating the need for server-side session storage.</p>
+        </div>
+
+        <!-- Questions 11-20 -->
+        <div class="qa">
+            <h2>11. How do you configure JWT authentication in ASP.NET Core?</h2>
+            <p>JWT authentication in ASP.NET Core is configured in the Startup class using the AddAuthentication and AddJwtBearer methods. You need to specify the token validation parameters, including the issuer, audience, and signing key.</p>
+        </div>
+
+        <div class="qa">
+            <h2>12. What are the key components of a JWT?</h2>
+            <p>A JWT consists of three parts: the header, the payload, and the signature. The header contains metadata about the token, the payload contains claims or data, and the signature ensures the integrity of the token and verifies its authenticity.</p>
+        </div>
+
+        <div class="qa">
+            <h2>13. What is the difference between Authentication and Authorization?</h2>
+            <p>Authentication is the process of verifying the identity of a user, while Authorization determines what actions or resources the authenticated user is permitted to access. Authentication occurs before authorization in the security process.</p>
+        </div>
+
+        <div class="qa">
+            <h2>14. How do you generate a JWT token in ASP.NET Core?</h2>
+            <p>JWT tokens are generated using the JwtSecurityToken class and the JwtSecurityTokenHandler. You create a token with the desired claims and expiration, then serialize it to a string and return it to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>15. What are Claims in a JWT?</h2>
+            <p>Claims are pieces of information encoded in a JWT payload that represent user attributes or roles. They can include standard claims (e.g., sub for subject) or custom claims specific to the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>16. How do you validate a JWT token?</h2>
+            <p>JWT tokens are validated using the JwtBearer middleware, which checks the token's signature, issuer, audience, and expiration date. The token's claims are also validated based on configured validation parameters.</p>
+        </div>
+
+        <div class="qa">
+            <h2>17. What is ASP.NET Core Identity?</h2>
+            <p>ASP.NET Core Identity is a membership system that provides functionality for user registration, authentication, and authorization. It includes features for managing users, roles, and claims, and integrates with ASP.NET Core's authentication system.</p>
+        </div>
+
+        <div class="qa">
+            <h2>18. What is the role of the Startup class in ASP.NET Core?</h2>
+            <p>The Startup class is used to configure the application's services and middleware. It contains the ConfigureServices method for setting up services and the Configure method for configuring the application's request pipeline.</p>
+        </div>
+
+        <div class="qa">
+            <h2>19. What are Middleware Components in ASP.NET Core?</h2>
+            <p>Middleware components are components in the request pipeline that handle HTTP requests and responses. They are added to the pipeline in a specific order and can perform tasks such as authentication, logging, and exception handling.</p>
+        </div>
+
+        <div class="qa">
+            <h2>20. What is the purpose of the `ConfigureServices` method?</h2>
+            <p>The `ConfigureServices` method in the Startup class is used to register services with the Dependency Injection (DI) container. It is where you configure and add services that are needed by the application, such as database contexts, authentication, and MVC services.</p>
+        </div>
+
+        <!-- Questions 21-30 -->
+        <div class="qa">
+            <h2>21. What is `Configure` method in ASP.NET Core?</h2>
+            <p>The `Configure` method in the Startup class is used to define the application's request pipeline. It specifies how requests are handled and which middleware components are used in processing the requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>22. What are Razor Pages in ASP.NET Core?</h2>
+            <p>Razor Pages are a feature of ASP.NET Core that allows you to build dynamic web pages with a page-centric programming model. Each page is represented by a .cshtml file, which contains both the HTML markup and Razor code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>23. How do you handle exception handling in ASP.NET Core?</h2>
+            <p>Exception handling in ASP.NET Core is typically managed using middleware. You can use the built-in ExceptionHandlerMiddleware to catch and handle exceptions globally and return user-friendly error responses.</p>
+        </div>
+
+        <div class="qa">
+            <h2>24. What is the purpose of `app.UseStaticFiles()` method?</h2>
+            <p>The `app.UseStaticFiles()` method is used to enable the serving of static files (e.g., images, CSS, JavaScript) from the wwwroot folder or other specified locations in an ASP.NET Core application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>25. What is `app.UseRouting()` in ASP.NET Core?</h2>
+            <p>The `app.UseRouting()` method is used to add routing to the application's request pipeline. It enables the use of endpoint routing to match incoming requests to route templates and endpoint handlers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>26. What is the difference between `IActionResult` and `ActionResult`?</h2>
+            <p>`IActionResult` is an interface representing a result of an action method, while `ActionResult` is a concrete class that implements `IActionResult`. `ActionResult` provides additional convenience methods for returning different types of responses.</p>
+        </div>
+
+        <div class="qa">
+            <h2>27. What is the purpose of `app.UseEndpoints()`?</h2>
+            <p>The `app.UseEndpoints()` method is used to configure the endpoints in the request pipeline. It sets up endpoint routing and maps the endpoints to their respective request handlers or controllers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>28. How do you implement custom middleware in ASP.NET Core?</h2>
+            <p>Custom middleware can be implemented by creating a class with a `Invoke` or `InvokeAsync` method that takes an `HttpContext` parameter. You then register the middleware in the application's request pipeline using the `app.UseMiddleware` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>29. What is `IConfiguration` in ASP.NET Core?</h2>
+            <p>`IConfiguration` is an interface that provides access to configuration settings in an ASP.NET Core application. It allows you to retrieve configuration values from various sources, such as JSON files, environment variables, and command-line arguments.</p>
+        </div>
+
+        <div class="qa">
+            <h2>30. What are `IOptions` and `IOptionsSnapshot` in ASP.NET Core?</h2>
+            <p>`IOptions` provides a way to access configuration settings as strongly-typed objects. `IOptionsSnapshot` provides a way to access configuration settings with support for reloading values when the configuration changes.</p>
+        </div>
+
+        <!-- Questions 31-40 -->
+        <div class="qa">
+            <h2>31. What is a `DbContext` in Entity Framework Core?</h2>
+            <p>`DbContext` is a class that represents a session with the database and provides methods for querying and saving data. It is the primary class for interacting with the database in Entity Framework Core.</p>
+        </div>
+
+        <div class="qa">
+            <h2>32. What is `OnModelCreating` in Entity Framework Core?</h2>
+            <p>The `OnModelCreating` method in `DbContext` is used to configure the model and relationships between entities using the Fluent API. It allows for detailed configuration of entity mappings, constraints, and relationships.</p>
+        </div>
+
+        <div class="qa">
+            <h2>33. How do you perform database migrations in Entity Framework Core?</h2>
+            <p>Database migrations in Entity Framework Core are performed using the `dotnet ef` command-line tool. You create a migration with `dotnet ef migrations add <MigrationName>`, and apply it to the database with `dotnet ef database update`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>34. What is the role of `appsettings.json` in ASP.NET Core?</h2>
+            <p>`appsettings.json` is a configuration file used to store application settings and configuration values. It is automatically loaded and can be accessed via the `IConfiguration` interface to retrieve settings for the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>35. What is the purpose of `app.UseAuthentication()`?</h2>
+            <p>The `app.UseAuthentication()` method adds authentication middleware to the request pipeline. It ensures that authentication is processed for each request and sets the user principal on the `HttpContext`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>36. What is the role of `app.UseAuthorization()`?</h2>
+            <p>The `app.UseAuthorization()` method adds authorization middleware to the request pipeline. It ensures that authorization policies and requirements are evaluated for each request to determine if the user has access to the requested resource.</p>
+        </div>
+
+        <div class="qa">
+            <h2>37. How do you implement JWT Bearer Authentication in .NET Core?</h2>
+            <p>JWT Bearer Authentication is implemented by adding authentication services in the `ConfigureServices` method with `AddAuthentication` and `AddJwtBearer`. Configure JWT options such as the issuer, audience, and validation parameters.</p>
+        </div>
+
+        <div class="qa">
+            <h2>38. What is the purpose of `app.UseCors()` in ASP.NET Core?</h2>
+            <p>The `app.UseCors()` method is used to enable Cross-Origin Resource Sharing (CORS) in the application. It allows you to specify policies for handling cross-origin requests from different domains.</p>
+        </div>
+
+        <div class="qa">
+            <h2>39. How do you configure CORS in ASP.NET Core?</h2>
+            <p>CORS is configured in the `ConfigureServices` method using `AddCors`. You define CORS policies specifying allowed origins, methods, headers, and other settings. Then, use `app.UseCors()` to apply the policies in the request pipeline.</p>
+        </div>
+
+        <div class="qa">
+            <h2>40. What is `IServiceCollection` in ASP.NET Core?</h2>
+            <p>`IServiceCollection` is an interface used to register services with the Dependency Injection (DI) container. It provides methods for adding and configuring services that are used throughout the application.</p>
+        </div>
+
+        <!-- Questions 41-50 -->
+        <div class="qa">
+            <h2>41. What is `IServiceProvider` in ASP.NET Core?</h2>
+            <p>`IServiceProvider` is an interface used to resolve services from the DI container. It is responsible for providing instances of registered services based on their service type or lifetime.</p>
+        </div>
+
+        <div class="qa">
+            <h2>42. What is a `Controller` in ASP.NET Core MVC?</h2>
+            <p>A `Controller` in ASP.NET Core MVC is a class that handles incoming HTTP requests, processes them, and returns a response. It contains action methods that correspond to different routes and actions in the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>43. What are `ViewModels` in ASP.NET Core MVC?</h2>
+            <p>`ViewModels` are classes that represent the data required by a view. They encapsulate data from multiple models or sources and provide a simplified structure for the view to use.</p>
+        </div>
+
+        <div class="qa">
+            <h2>44. What is `ModelState` in ASP.NET Core MVC?</h2>
+            <p>`ModelState` is a dictionary that contains the state of the model binding and validation process. It holds information about validation errors and the state of model properties during form submissions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>45. How do you handle exceptions globally in ASP.NET Core?</h2>
+            <p>Global exception handling in ASP.NET Core can be achieved using middleware such as ExceptionHandlerMiddleware. You can configure global error handling in the `Configure` method of the Startup class to catch and process unhandled exceptions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>46. What is `IActionResult` in ASP.NET Core MVC?</h2>
+            <p>`IActionResult` is an interface that represents the result of an action method. It allows returning various types of responses, such as views, JSON data, or file downloads, from an action method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>47. What is `Content Negotiation` in Web API?</h2>
+            <p>Content Negotiation is the process by which a server determines the best format for the response based on the client's request. It involves selecting the appropriate media type (e.g., JSON, XML) and formatting the response accordingly.</p>
+        </div>
+
+        <div class="qa">
+            <h2>48. What is `Model Binding` in ASP.NET Core MVC?</h2>
+            <p>Model Binding is the process of mapping data from HTTP requests (such as query strings, form data, and route data) to action method parameters or model properties. It allows for automatic population of data from the request into the model.</p>
+        </div>
+
+        <div class="qa">
+            <h2>49. How do you secure Web APIs in .NET Core?</h2>
+            <p>Web APIs in .NET Core can be secured using various methods such as JWT Bearer Authentication, OAuth2, and API keys. You configure security policies and middleware to ensure that only authorized users can access the API endpoints.</p>
+        </div>
+
+        <div class="qa">
+            <h2>50. What is `Authorization Policy` in ASP.NET Core?</h2>
+            <p>An Authorization Policy is a set of requirements that a user must meet to access a resource or perform an action. Policies are used to define complex authorization rules and are evaluated by the authorization middleware during request processing.</p>
+        </div>
+
+        <!-- Questions 51-60 -->
+        <div class="qa">
+            <h2>51. How do you use `Authorize` attribute in ASP.NET Core?</h2>
+            <p>The `Authorize` attribute is used to restrict access to controllers or action methods based on user roles or policies. It ensures that only authenticated and authorized users can access the protected resources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>52. What is `Claims-based Authorization`?</h2>
+            <p>Claims-based Authorization is a method of controlling access to resources based on the claims associated with a user's identity. Claims are pieces of information about the user that can be used to make authorization decisions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>53. What is `IdentityServer4`?</h2>
+            <p>IdentityServer4 is an open-source framework for implementing OpenID Connect and OAuth 2.0 in .NET Core applications. It provides a way to manage authentication, authorization, and token issuance for your applications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>54. How do you configure logging in ASP.NET Core?</h2>
+            <p>Logging in ASP.NET Core is configured using the built-in logging framework. You can configure logging providers (e.g., Console, Debug, File) in the `ConfigureServices` method and set logging levels for different categories and sources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>55. What is `HttpClient` and how do you use it?</h2>
+            <p>`HttpClient` is a class used to send HTTP requests and receive responses from a remote server. It is typically used for making API calls or consuming web services. It supports various methods for sending requests, such as GET, POST, PUT, and DELETE.</p>
+        </div>
+
+        <div class="qa">
+            <h2>56. What is `Swagger` and how is it used in ASP.NET Core?</h2>
+            <p>Swagger is a tool for generating interactive API documentation. In ASP.NET Core, Swagger is used with the Swashbuckle package to automatically generate and display API documentation, which can be used for testing and exploring API endpoints.</p>
+        </div>
+
+        <div class="qa">
+            <h2>57. What is `Health Checks` in ASP.NET Core?</h2>
+            <p>Health Checks is a feature in ASP.NET Core that allows you to monitor the health and status of your application and its dependencies. It provides endpoints that can be used by monitoring systems to check the health of the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>58. How do you implement Rate Limiting in ASP.NET Core?</h2>
+            <p>Rate Limiting can be implemented using middleware or third-party libraries that restrict the number of requests a client can make within a certain time period. You can use libraries such as AspNetCoreRateLimit to configure and enforce rate limits.</p>
+        </div>
+
+        <div class="qa">
+            <h2>59. What are `Action Filters` in ASP.NET Core?</h2>
+            <p>Action Filters are attributes that can be applied to controllers or action methods to execute code before or after the action method runs. They are used to perform cross-cutting concerns such as logging, validation, and caching.</p>
+        </div>
+
+        <div class="qa">
+            <h2>60. What is the purpose of `app.UseMvc()`?</h2>
+            <p>The `app.UseMvc()` method is used to configure the MVC middleware in the request pipeline. It sets up routing, model binding, and action execution for MVC applications. In newer versions of ASP.NET Core, it is often replaced with `app.UseEndpoints()` for endpoint routing.</p>
+        </div>
+
+        <!-- Questions 61-70 -->
+        <div class="qa">
+            <h2>61. What is `Data Annotation` in ASP.NET Core?</h2>
+            <p>Data Annotations are attributes that can be applied to model properties to enforce validation rules and specify metadata. They provide a way to validate data and define display attributes directly on model classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>62. How do you use `Fluent Validation` in ASP.NET Core?</h2>
+            <p>Fluent Validation is a library for building strongly-typed validation rules using a fluent interface. It can be integrated with ASP.NET Core applications to provide more flexible and extensible validation compared to data annotations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>63. What is `Session State` in ASP.NET Core?</h2>
+            <p>Session State is a feature that allows you to store user-specific data across multiple requests. It is used to maintain stateful information between HTTP requests for a user session. In ASP.NET Core, session state is configured and managed using the `ISession` interface.</p>
+        </div>
+
+        <div class="qa">
+            <h2>64. What is `Caching` in ASP.NET Core?</h2>
+            <p>Caching is a technique used to store frequently accessed data in memory to improve performance and reduce the load on resources. ASP.NET Core provides built-in support for various caching strategies, including in-memory caching and distributed caching.</p>
+        </div>
+
+        <div class="qa">
+            <h2>65. What are `View Components` in ASP.NET Core MVC?</h2>
+            <p>View Components are reusable components that encapsulate rendering logic and can be used within views or other view components. They are similar to partial views but provide a more powerful and flexible approach for creating dynamic content.</p>
+        </div>
+
+        <div class="qa">
+            <h2>66. What is `Tag Helpers` in ASP.NET Core?</h2>
+            <p>Tag Helpers are a feature in ASP.NET Core that allows you to add server-side logic to HTML tags in Razor views. They enable you to generate dynamic content and interact with HTML elements in a more intuitive way compared to traditional HTML helpers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>67. What is `Dependency Injection` and how is it used in .NET Core?</h2>
+            <p>Dependency Injection (DI) is a design pattern that allows for the inversion of control by injecting dependencies into classes rather than creating them internally. .NET Core has built-in support for DI, enabling you to manage and resolve services throughout the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>68. What is `Middleware` in ASP.NET Core?</h2>
+            <p>Middleware is software that is assembled into an application pipeline to handle requests and responses. It can perform operations such as logging, authentication, and response modification before and after the next component in the pipeline.</p>
+        </div>
+
+        <div class="qa">
+            <h2>69. How do you perform `Database Seeding` in Entity Framework Core?</h2>
+            <p>Database Seeding is the process of populating the database with initial data. In Entity Framework Core, seeding is typically done by overriding the `OnModelCreating` method in the `DbContext` class and using the `HasData` method to specify the seed data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>70. What is `App Insights` and how is it used in ASP.NET Core?</h2>
+            <p>Application Insights (App Insights) is an application performance management (APM) service that provides monitoring and diagnostic capabilities for applications. In ASP.NET Core, it can be integrated to collect telemetry data, such as request rates, response times, and exceptions.</p>
+        </div>
+
+        <!-- Questions 71-80 -->
+        <div class="qa">
+            <h2>71. How do you implement `Global Exception Handling` in ASP.NET Core?</h2>
+            <p>Global Exception Handling can be implemented by adding exception handling middleware in the `Configure` method of the Startup class. You can use `app.UseExceptionHandler` to handle exceptions globally and provide custom error responses or log the errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>72. What is `Entity Framework Core` and how does it differ from `Entity Framework`?</h2>
+            <p>Entity Framework Core (EF Core) is a lightweight, cross-platform version of Entity Framework that is designed to work with .NET Core and .NET Framework. It offers new features and improvements compared to the older Entity Framework, including better performance and support for different database providers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>73. How do you configure `API Versioning` in ASP.NET Core?</h2>
+            <p>API Versioning in ASP.NET Core can be configured using the `Microsoft.AspNetCore.Mvc.Versioning` package. You define versioning policies, such as query string, URL path, or header versioning, and configure versioning services in the `ConfigureServices` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>74. What is `Model Validation` in ASP.NET Core MVC?</h2>
+            <p>Model Validation is the process of ensuring that the data provided by the user meets the required criteria before processing it. ASP.NET Core MVC uses data annotations, custom validation attributes, and validation frameworks to perform model validation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>75. What is `Dependency Injection` and how is it used in ASP.NET Core?</h2>
+            <p>Dependency Injection (DI) is a design pattern that allows for the inversion of control by injecting dependencies into classes rather than creating them internally. ASP.NET Core has built-in support for DI, making it easy to manage service lifetimes and resolve dependencies throughout the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>76. What is `App Settings` in ASP.NET Core?</h2>
+            <p>`App Settings` refers to configuration settings that are used to configure various aspects of an ASP.NET Core application. These settings are typically stored in `appsettings.json` and can be accessed through the `IConfiguration` interface.</p>
+        </div>
+
+        <div class="qa">
+            <h2>77. What is `ASP.NET Core SignalR`?</h2>
+            <p>ASP.NET Core SignalR is a library for adding real-time web functionality to applications. It allows server-side code to push content to connected clients instantly and is used for scenarios such as chat applications, live notifications, and real-time updates.</p>
+        </div>
+
+        <div class="qa">
+            <h2>78. What are `WebSockets` and how are they used in ASP.NET Core?</h2>
+            <p>WebSockets is a protocol for full-duplex communication channels over a single TCP connection. In ASP.NET Core, WebSockets can be used to implement real-time communication features. You enable WebSockets in the `Configure` method and handle WebSocket requests using middleware or custom code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>79. How do you use `Data Protection` in ASP.NET Core?</h2>
+            <p>Data Protection in ASP.NET Core is a framework for protecting data, such as encrypting and decrypting sensitive information. It is used for tasks like securing cookies, tokens, and other data. Data Protection services are configured in the `ConfigureServices` method and used throughout the application to secure data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>80. What is `Dependency Injection` and how is it used in ASP.NET Core?</h2>
+            <p>Dependency Injection (DI) is a design pattern that allows for the injection of dependencies into classes rather than having them create dependencies internally. In ASP.NET Core, DI is built-in and used to manage service lifetimes, resolve services, and promote loose coupling between components.</p>
+        </div>
+
+        <!-- Questions 81-90 -->
+        <div class="qa">
+            <h2>81. What is `Request Pipeline` in ASP.NET Core?</h2>
+            <p>The Request Pipeline in ASP.NET Core is the sequence of middleware components that process HTTP requests and responses. Each component in the pipeline performs specific tasks, such as authentication, routing, and response generation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>82. What is `HTTP Request` and `HTTP Response` in ASP.NET Core?</h2>
+            <p>An HTTP Request is a message sent by a client to a server, asking for resources or information. An HTTP Response is the message sent by the server back to the client, containing the requested resources or information, along with status codes and headers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>83. How do you implement `Custom Validation` in ASP.NET Core?</h2>
+            <p>Custom Validation in ASP.NET Core can be implemented by creating a custom validation attribute that inherits from `ValidationAttribute` and overrides the `IsValid` method. You can then apply this attribute to model properties to enforce custom validation rules.</p>
+        </div>
+
+        <div class="qa">
+            <h2>84. What is `Partial View` in ASP.NET Core MVC?</h2>
+            <p>A Partial View is a reusable view component that can be included in other views. It allows you to render a portion of a view or page, making it possible to create modular and maintainable UI components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>85. What is `ViewData` in ASP.NET Core MVC?</h2>
+            <p>`ViewData` is a dictionary object used to pass data from a controller to a view. It allows you to transfer data in a key-value format, which can be accessed in the view to render dynamic content.</p>
+        </div>
+
+        <div class="qa">
+            <h2>86. What is `ViewBag` in ASP.NET Core MVC?</h2>
+            <p>`ViewBag` is a dynamic object used to pass data from a controller to a view. It provides a way to send data without needing to define a strongly-typed view model, using dynamic properties for data transfer.</p>
+        </div>
+
+        <div class="qa">
+            <h2>87. What is `TempData` in ASP.NET Core MVC?</h2>
+            <p>`TempData` is a dictionary object used to store data that is only needed for the duration of a single request. It is often used to pass data between actions or to display temporary messages to users.</p>
+        </div>
+
+        <div class="qa">
+            <h2>88. What is `HTML Helpers` in ASP.NET Core MVC?</h2>
+            <p>`HTML Helpers` are methods that generate HTML markup from the server side. They simplify the creation of HTML elements, such as form fields, links, and validation messages, within Razor views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>89. What are `Asynchronous Action Methods` in ASP.NET Core MVC?</h2>
+            <p>`Asynchronous Action Methods` are methods in ASP.NET Core MVC that return a `Task` or `Task<IActionResult>` instead of a synchronous result. They allow for non-blocking operations and improved scalability by handling requests asynchronously.</p>
+        </div>
+
+        <div class="qa">
+            <h2>90. What is `Dynamic Data` in ASP.NET Core MVC?</h2>
+            <p>`Dynamic Data` refers to data that is not statically defined but is generated or retrieved at runtime. In ASP.NET Core MVC, it often involves working with data sources, querying, and presenting data that may change based on user interactions or external inputs.</p>
+        </div>
+
+        <!-- Questions 91-100 -->
+        <div class="qa">
+            <h2>91. What is `Model Binding` and how does it work?</h2>
+            <p>Model Binding is the process of mapping data from HTTP requests to action method parameters or model properties. It works by extracting values from request data (query strings, form data, route data) and binding them to the model or action parameters.</p>
+        </div>
+
+        <div class="qa">
+            <h2>92. What are `Action Results` and how are they used in ASP.NET Core?</h2>
+            <p>`Action Results` are objects returned by action methods that represent the result of the action. They can include various types of responses such as views, JSON data, redirects, or HTTP status codes, allowing flexible responses based on the request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>93. What is `Request Validation` in ASP.NET Core?</h2>
+            <p>`Request Validation` is a security feature that helps prevent the submission of potentially dangerous content (such as HTML or JavaScript) in form data and query strings. It ensures that the incoming data does not pose a security risk to the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>94. How do you use `IEnumerable` and `IQueryable` in ASP.NET Core?</h2>
+            <p>`IEnumerable` and `IQueryable` are interfaces used for querying collections in .NET. `IEnumerable` is used for in-memory collections, while `IQueryable` is used for querying data from an external data source like a database. `IQueryable` allows for deferred execution and can translate queries into SQL for efficient data retrieval.</p>
+        </div>
+
+        <div class="qa">
+            <h2>95. What is `Database First` approach in Entity Framework Core?</h2>
+            <p>The `Database First` approach is a technique in Entity Framework Core where you start with an existing database and generate the model classes based on the database schema. It allows you to work with a pre-existing database and automatically generate the context and entity classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>96. What is `Code First` approach in Entity Framework Core?</h2>
+            <p>The `Code First` approach is a technique in Entity Framework Core where you define your model classes first and then generate the database schema based on these classes. It allows you to use code to define your data models and apply migrations to create or update the database schema.</p>
+        </div>
+
+        <div class="qa">
+            <h2>97. How do you use `Migrations` in Entity Framework Core?</h2>
+            <p>`Migrations` are used to update the database schema to match changes in the model classes. You use commands like `Add-Migration` to create a new migration and `Update-Database` to apply the migration to the database. Migrations keep track of schema changes over time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>98. What is `DbContext` in Entity Framework Core?</h2>
+            <p>`DbContext` is a class in Entity Framework Core that manages the connection to the database and provides methods for querying and saving data. It acts as a bridge between the database and the application's model classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>99. How do you use `Fluent API` in Entity Framework Core?</h2>
+            <p>The `Fluent API` in Entity Framework Core is used to configure the model and relationships using code rather than data annotations. It provides a more flexible and powerful way to configure entity mappings, constraints, and relationships in the `OnModelCreating` method of `DbContext`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>100. What is `Data Annotations` and how are they used in ASP.NET Core?</h2>
+            <p>`Data Annotations` are attributes applied to model properties to enforce validation rules, define metadata, and customize how the data is displayed. They provide a way to add validation and formatting rules directly within the model classes.</p>
+        </div>
+
+        <!-- Questions 101-110 -->
+        <div class="qa">
+            <h2>101. What is `Route Data` in ASP.NET Core?</h2>
+            <p>`Route Data` is information about the route that was used to handle an HTTP request. It includes values extracted from the URL, such as route parameters and constraints. Route Data is used to route requests to the appropriate controller and action methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>102. How do you configure `Routing` in ASP.NET Core?</h2>
+            <p>Routing in ASP.NET Core is configured using the `UseRouting` and `UseEndpoints` methods in the `Configure` method of the `Startup` class. You define routes and their corresponding endpoints, such as controllers and action methods, to handle incoming requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>103. What is `Endpoint Routing`?</h2>
+            <p>Endpoint Routing is a routing system in ASP.NET Core that allows you to define routes and map them to endpoints. It decouples routing from middleware, providing a more flexible and powerful way to handle routing, including support for route patterns, constraints, and route-specific middleware.</p>
+        </div>
+
+        <div class="qa">
+            <h2>104. What is `Authorization` and how is it different from `Authentication`?</h2>
+            <p>Authorization is the process of determining whether a user has permission to access a resource or perform an action. Authentication is the process of verifying the identity of a user. While authentication confirms who the user is, authorization determines what the user is allowed to do.</p>
+        </div>
+
+        <div class="qa">
+            <h2>105. How do you use `JWT` tokens for authentication in ASP.NET Core?</h2>
+            <p>JWT (JSON Web Tokens) are used for stateless authentication. In ASP.NET Core, you can use the `Microsoft.AspNetCore.Authentication.JwtBearer` package to configure JWT authentication. You set up JWT bearer authentication in the `ConfigureServices` method and validate the token in the middleware.</p>
+        </div>
+
+        <div class="qa">
+            <h2>106. What is `OAuth2` and how is it used in ASP.NET Core?</h2>
+            <p>OAuth2 is an authorization framework that allows applications to obtain limited access to user resources on behalf of the user. In ASP.NET Core, you can use OAuth2 for securing APIs and integrating with external identity providers. You configure OAuth2 using middleware and authentication schemes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>107. What is `OpenID Connect`?</h2>
+            <p>OpenID Connect is an identity layer on top of OAuth2 that provides authentication. It allows applications to verify the identity of the user and obtain basic profile information. In ASP.NET Core, OpenID Connect can be integrated using middleware to handle authentication and identity management.</p>
+        </div>
+
+        <div class="qa">
+            <h2>108. What is `CORS` and how do you configure it in ASP.NET Core?</h2>
+            <p>CORS (Cross-Origin Resource Sharing) is a security feature that allows or restricts resources to be requested from another domain. In ASP.NET Core, you configure CORS using the `UseCors` method in the `Configure` method of the `Startup` class. You define policies specifying which domains are allowed to access your API.</p>
+        </div>
+
+        <div class="qa">
+            <h2>109. How do you use `Data Protection API` in ASP.NET Core?</h2>
+            <p>The Data Protection API in ASP.NET Core is used to protect and encrypt sensitive data, such as cookies and tokens. It provides services for encrypting, decrypting, and managing data protection keys. You configure and use the Data Protection API in the `ConfigureServices` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>110. What is `Caching` and how do you implement it in ASP.NET Core?</h2>
+            <p>Caching is a technique used to store frequently accessed data in memory to improve performance. In ASP.NET Core, you can implement caching using in-memory caching, distributed caching, or response caching. You configure caching services in the `ConfigureServices` method and use caching attributes or middleware to apply caching policies.</p>
+        </div>
+
+        <!-- Questions 111-120 -->
+        <div class="qa">
+            <h2>111. How do you configure `Database Connections` in ASP.NET Core?</h2>
+            <p>Database connections in ASP.NET Core are configured using the `IConfiguration` interface to read connection strings from configuration files, such as `appsettings.json`. You set up the database context and connection string in the `ConfigureServices` method of the `Startup` class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>112. What is `Entity Framework Core` and how is it used for data access?</h2>
+            <p>Entity Framework Core (EF Core) is an Object-Relational Mapper (ORM) that simplifies data access by mapping database tables to .NET classes. It supports CRUD operations, migrations, and LINQ queries. You use EF Core by defining `DbContext` and entity classes and configuring the context in the `ConfigureServices` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>113. How do you use `Migrations` in Entity Framework Core?</h2>
+            <p>Migrations are used to manage changes to the database schema over time. In EF Core, you create migrations using the `Add-Migration` command and apply them using the `Update-Database` command. Migrations help you keep the database schema in sync with your model classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>114. What is `In-Memory Database` and how is it used for testing in ASP.NET Core?</h2>
+            <p>An In-Memory Database is a database that resides in memory rather than on disk. It is used for testing and development purposes to avoid the need for a real database. In ASP.NET Core, you can use the `InMemory` provider with EF Core for unit tests and integration tests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>115. What is `DbContext` and how is it used in ASP.NET Core?</h2>
+            <p>`DbContext` is a class in EF Core that manages the connection to the database and provides methods for querying and saving data. It acts as a bridge between the database and the application's entity classes. You configure `DbContext` in the `ConfigureServices` method and use it to perform data operations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>116. What is `Asynchronous Programming` and how is it used in ASP.NET Core?</h2>
+            <p>Asynchronous programming allows for non-blocking operations, improving scalability and performance. In ASP.NET Core, you use `async` and `await` keywords to perform asynchronous operations, such as database queries and HTTP requests, to avoid blocking the main thread and enhance application responsiveness.</p>
+        </div>
+
+        <div class="qa">
+            <h2>117. What is `Middleware` and how is it used in ASP.NET Core?</h2>
+            <p>`Middleware` is software that is assembled into an application pipeline to handle requests and responses. Each piece of middleware can perform operations such as logging, authentication, and response modification. Middleware components are configured in the `Configure` method of the `Startup` class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>118. What is `Dependency Injection` and how is it used in ASP.NET Core?</h2>
+            <p>`Dependency Injection` (DI) is a design pattern that allows you to inject dependencies into classes rather than creating them internally. ASP.NET Core has built-in support for DI, enabling you to register services, manage service lifetimes, and resolve dependencies throughout the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>119. What is `SignalR` and how is it used in ASP.NET Core?</h2>
+            <p>`SignalR` is a library for adding real-time web functionality to applications. It allows server-side code to push content to connected clients instantly. In ASP.NET Core, you can use SignalR to implement features like chat applications, live notifications, and real-time updates.</p>
+        </div>
+
+        <div class="qa">
+            <h2>120. What is `WebSockets` and how is it used in ASP.NET Core?</h2>
+            <p>`WebSockets` is a protocol for full-duplex communication channels over a single TCP connection. In ASP.NET Core, you can use WebSockets to implement real-time communication features. You enable WebSockets in the `Configure` method and handle WebSocket requests using middleware or custom code.</p>
+        </div>
+
+        <!-- Questions 121-130 -->
+        <div class="qa">
+            <h2>121. How do you use `Configuration` in ASP.NET Core?</h2>
+            <p>Configuration in ASP.NET Core is managed through the `IConfiguration` interface, which reads settings from various sources, such as configuration files (e.g., `appsettings.json`), environment variables, and command-line arguments. You configure and access settings in the `ConfigureServices` method and throughout the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>122. What is `Model Binding` and how is it used in ASP.NET Core?</h2>
+            <p>`Model Binding` is the process of mapping data from HTTP requests to action method parameters or model properties. It works by extracting values from request data (such as query strings, form data, and route data) and binding them to the model or action parameters.</p>
+        </div>
+
+        <div class="qa">
+            <h2>123. What is `Model Validation` and how is it used in ASP.NET Core?</h2>
+            <p>`Model Validation` ensures that data provided by users meets the required criteria before processing. In ASP.NET Core, model validation is performed using data annotations, custom validation attributes, and validation frameworks. It ensures data integrity and prevents invalid data from being processed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>124. How do you use `Razor Pages` in ASP.NET Core?</h2>
+            <p>`Razor Pages` is a feature in ASP.NET Core that allows for building page-focused web applications. It simplifies the development of web pages by combining the page's view and code-behind into a single file or a pair of files. Razor Pages are an alternative to MVC controllers and views.</p>
+        </div>
+
+        <div class="qa">
+            <h2>125. What is `Tag Helpers` in ASP.NET Core?</h2>
+            <p>`Tag Helpers` are components that enable server-side code to participate in creating and rendering HTML elements in Razor views. They simplify HTML generation and can be used to create reusable UI components, such as form elements, links, and custom HTML elements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>126. What is `View Components` in ASP.NET Core MVC?</h2>
+            <p>`View Components` are reusable components in ASP.NET Core MVC that encapsulate rendering logic and can be invoked from views. They are similar to partial views but offer more flexibility and support for complex rendering scenarios and data processing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>127. How do you implement `Exception Handling` in ASP.NET Core?</h2>
+            <p>Exception Handling in ASP.NET Core can be implemented using middleware in the request pipeline. You can use the `UseExceptionHandler` middleware to handle exceptions globally and provide custom error pages or responses. Additionally, you can implement custom exception filters for finer control over error handling.</p>
+        </div>
+
+        <div class="qa">
+            <h2>128. What is `Static Files Middleware` and how is it used in ASP.NET Core?</h2>
+            <p>`Static Files Middleware` is used to serve static files, such as HTML, CSS, and JavaScript, from the wwwroot folder of an ASP.NET Core application. It is configured using the `UseStaticFiles` method in the `Configure` method of the `Startup` class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>129. What is `Background Services` in ASP.NET Core?</h2>
+            <p>`Background Services` are long-running tasks that run in the background of an ASP.NET Core application. They are implemented using `IHostedService` or `BackgroundService` classes, which allow you to perform background processing, such as scheduled tasks or background data processing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>130. What is `Health Checks` and how is it used in ASP.NET Core?</h2>
+            <p>`Health Checks` are used to monitor the health of an application and its dependencies. In ASP.NET Core, you can configure health checks using the `Microsoft.Extensions.Diagnostics.HealthChecks` package. Health checks can be used to ensure that the application and its services are running properly and respond to requests.</p>
+        </div>
+
+        <!-- Questions 131-140 -->
+        <div class="qa">
+            <h2>131. What is `Custom Middleware` and how do you create it?</h2>
+            <p>`Custom Middleware` is a piece of code that handles requests and responses in the request pipeline. You create custom middleware by implementing a delegate that takes `HttpContext` as a parameter and performs operations on the request or response. You then add this middleware to the pipeline using the `Use` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>132. What is `Dependency Injection` and how is it used in ASP.NET Core?</h2>
+            <p>`Dependency Injection` (DI) is a design pattern that allows for the injection of dependencies into classes rather than creating them internally. ASP.NET Core has built-in support for DI, which simplifies managing dependencies and promotes loose coupling between components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>133. What is `Configuration` and how is it used in ASP.NET Core?</h2>
+            <p>`Configuration` in ASP.NET Core is managed through the `IConfiguration` interface, which allows you to access configuration settings from various sources, such as `appsettings.json`, environment variables, and command-line arguments. Configuration settings are used to control application behavior and access data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>134. What is `Logging` in ASP.NET Core and how is it configured?</h2>
+            <p>`Logging` in ASP.NET Core is a built-in feature that provides a way to record application events and diagnostics. You configure logging in the `ConfigureServices` method using the `ILoggerFactory` interface. Logging providers, such as Console, Debug, and File, can be added to capture logs at different levels.</p>
+        </div>
+
+        <div class="qa">
+            <h2>135. What is `Session State` and how is it used in ASP.NET Core?</h2>
+            <p>`Session State` is a feature that allows you to store user-specific data across multiple requests. In ASP.NET Core, session state is implemented using middleware that stores session data in-memory or in a distributed cache. You configure session state in the `ConfigureServices` method and use it throughout the application to store and retrieve user data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>136. What is `Routing` and how is it configured in ASP.NET Core?</h2>
+            <p>`Routing` is the process of mapping incoming HTTP requests to appropriate handlers, such as controllers and action methods. In ASP.NET Core, routing is configured using the `UseRouting` and `UseEndpoints` methods in the `Configure` method of the `Startup` class. You define routes and endpoints to handle requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>137. What is `ApiController` and how does it differ from a regular `Controller`?</h2>
+            <p>The `ApiController` attribute in ASP.NET Core is used to denote that a controller responds to API requests and provides additional features for working with APIs. It includes automatic model validation, problem details, and content negotiation. It differs from a regular `Controller`, which is typically used for rendering views in MVC applications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>138. What is `Content Negotiation` in ASP.NET Core?</h2>
+            <p>`Content Negotiation` is the process of selecting the appropriate response format based on the request's `Accept` header or other criteria. ASP.NET Core uses content negotiation to determine the format of the response (such as JSON or XML) and serialize data accordingly.</p>
+        </div>
+
+        <div class="qa">
+            <h2>139. What is `Request Filtering` and how is it used in ASP.NET Core?</h2>
+            <p>`Request Filtering` is used to control which requests are allowed or denied based on certain criteria, such as URL patterns, HTTP methods, or request headers. In ASP.NET Core, you can use middleware to implement request filtering and protect your application from unwanted or malicious requests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>140. What is `Tag Helpers` and how do you use them in Razor Views?</h2>
+            <p>`Tag Helpers` are components in ASP.NET Core that enable server-side code to participate in creating and rendering HTML elements in Razor views. They simplify the process of generating HTML and allow you to create reusable UI components by extending standard HTML tags with server-side functionality.</p>
+        </div>
+
+        <!-- Questions 141-150 -->
+        <div class="qa">
+            <h2>141. What is `Data Transfer Object (DTO)` and how is it used in ASP.NET Core?</h2>
+            <p>`Data Transfer Objects (DTOs)` are objects used to transfer data between processes, often used to shape data for APIs. In ASP.NET Core, DTOs help to decouple data models from the data exposed to clients and can be used to ensure that only the necessary data is sent or received.</p>
+        </div>
+
+        <div class="qa">
+            <h2>142. What is `Model Binding` in ASP.NET Core and how does it work?</h2>
+            <p>`Model Binding` is a process that maps data from HTTP requests to action method parameters or model properties. ASP.NET Core automatically binds request data from sources such as query strings, form fields, and route data to the model or action parameters based on their names and types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>143. How do you implement `Authorization Policies` in ASP.NET Core?</h2>
+            <p>`Authorization Policies` in ASP.NET Core define requirements that must be met for a user to access a resource. You configure policies in the `ConfigureServices` method using the `AuthorizationOptions` class. Policies can include requirements such as roles, claims, or custom requirements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>144. What is `API Versioning` and how is it implemented in ASP.NET Core?</h2>
+            <p>`API Versioning` allows you to manage different versions of your API to ensure backward compatibility. In ASP.NET Core, API versioning is implemented using the `Microsoft.AspNetCore.Mvc.Versioning` package, which allows you to specify version information in routes, headers, or query parameters.</p>
+        </div>
+
+        <div class="qa">
+            <h2>145. How do you handle `File Uploads` in ASP.NET Core?</h2>
+            <p>`File Uploads` in ASP.NET Core are handled using `IFormFile` interface, which represents a file sent with the HTTP request. You can access file data from form submissions, process the file on the server, and save it to a local or cloud storage location.</p>
+        </div>
+
+        <div class="qa">
+            <h2>146. What is `Response Compression` and how is it used in ASP.NET Core?</h2>
+            <p>`Response Compression` is a technique used to reduce the size of HTTP responses sent from the server to the client, improving performance and reducing bandwidth usage. In ASP.NET Core, you can enable response compression using the `Microsoft.AspNetCore.ResponseCompression` package and configure it in the `ConfigureServices` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>147. What is `Global Error Handling` and how is it configured in ASP.NET Core?</h2>
+            <p>`Global Error Handling` in ASP.NET Core is configured using middleware to catch and handle exceptions globally across the application. You can use the `UseExceptionHandler` middleware to provide custom error handling logic and return appropriate error responses or pages to the client.</p>
+        </div>
+
+        <div class="qa">
+            <h2>148. How do you implement `Rate Limiting` in ASP.NET Core?</h2>
+            <p>`Rate Limiting` is a technique used to control the number of requests a client can make to an API within a specific time period. In ASP.NET Core, you can implement rate limiting using middleware or third-party libraries that manage request quotas and limits to prevent abuse and ensure fair usage.</p>
+        </div>
+
+        <div class="qa">
+            <h2>149. What is `Service Lifetime` and what are the different lifetimes in ASP.NET Core?</h2>
+            <p>`Service Lifetime` determines how long a service instance is kept alive in the application's dependency injection container. ASP.NET Core supports three lifetimes: `Transient` (new instance for each request), `Scoped` (instance per request within a scope), and `Singleton` (single instance for the entire application).</p>
+        </div>
+
+        <div class="qa">
+            <h2>150. What is `Attribute Routing` and how is it used in ASP.NET Core?</h2>
+            <p>`Attribute Routing` allows you to define routes using attributes directly on controller actions or controllers. It provides more control over the routing configuration compared to conventional routing and enables you to specify route patterns, constraints, and parameters in a more declarative way.</p>
+        </div>
+
+        <!-- Questions 151-160 -->
+        <div class="qa">
+            <h2>151. How do you handle `Concurrency` in ASP.NET Core applications?</h2>
+            <p>Concurrency in ASP.NET Core applications can be managed using techniques such as optimistic concurrency control, where conflicts are detected and resolved during data updates. Entity Framework Core supports concurrency tokens (e.g., row versioning) to handle concurrent updates and prevent data inconsistencies.</p>
+        </div>
+
+        <div class="qa">
+            <h2>152. What is `Custom Model Binding` and how do you create it?</h2>
+            <p>`Custom Model Binding` allows you to implement custom logic to bind request data to model properties or action parameters. You create custom model binders by implementing the `IModelBinder` interface and register them in the `ConfigureServices` method to handle specific types of data or binding scenarios.</p>
+        </div>
+
+        <div class="qa">
+            <h2>153. What is `Model Metadata` and how is it used in ASP.NET Core?</h2>
+            <p>`Model Metadata` provides information about the model properties, such as display names, data types, and validation rules. In ASP.NET Core, you can use model metadata to customize how data is displayed, validated, and processed in views, forms, and APIs.</p>
+        </div>
+
+        <div class="qa">
+            <h2>154. How do you implement `Custom Validation Attributes` in ASP.NET Core?</h2>
+            <p>`Custom Validation Attributes` allow you to create custom validation logic for model properties. You implement custom validation attributes by inheriting from `ValidationAttribute` and overriding the `IsValid` method to define your validation rules. You then apply these attributes to model properties to enforce validation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>155. What is `Response Caching` and how is it used in ASP.NET Core?</h2>
+            <p>`Response Caching` is used to cache responses to improve performance and reduce server load. In ASP.NET Core, you configure response caching using middleware and cache responses based on caching policies, such as cache duration and cache control headers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>156. What is `Query Parameters` and how are they used in ASP.NET Core?</h2>
+            <p>`Query Parameters` are used to pass data in the URL of an HTTP request. In ASP.NET Core, you can access query parameters from the `HttpContext.Request.Query` collection and use them to filter, sort, or customize the data returned by your API or application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>157. What is `Action Filters` and how are they used in ASP.NET Core MVC?</h2>
+            <p>`Action Filters` are attributes that allow you to execute code before or after an action method is invoked. They are used to perform tasks such as logging, authentication, and validation. You implement action filters by inheriting from `ActionFilterAttribute` and overriding the appropriate methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>158. How do you implement `Authorization Filters` in ASP.NET Core MVC?</h2>
+            <p>`Authorization Filters` are used to handle authorization logic before an action method is executed. They ensure that a user meets specific authorization requirements before accessing a resource. You implement authorization filters by inheriting from `IAuthorizationFilter` and applying the filter to controllers or actions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>159. What is `Resource-Based Authorization` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Resource-Based Authorization` is a model where authorization decisions are made based on the resource being accessed. It allows you to control access to specific resources by implementing custom authorization handlers that check permissions and policies for individual resources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>160. How do you use `Policy-Based Authorization` in ASP.NET Core?</h2>
+            <p>`Policy-Based Authorization` allows you to define authorization policies that specify requirements for accessing resources. In ASP.NET Core, you create policies using the `AuthorizationOptions` class and apply them to controllers or actions using the `Authorize` attribute with policy names.</p>
+        </div>
+
+        <!-- Questions 161-170 -->
+        <div class="qa">
+            <h2>161. What is `Request Delegation` and how is it used in ASP.NET Core?</h2>
+            <p>`Request Delegation` refers to the practice of passing an HTTP request from one middleware component to another within the application pipeline. It allows you to create a chain of middleware components that handle different aspects of request processing and response generation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>162. How do you implement `Custom Middleware` in ASP.NET Core?</h2>
+            <p>To implement `Custom Middleware` in ASP.NET Core, you create a class with a method that takes `HttpContext` and a `RequestDelegate` as parameters. The method performs operations on the request or response and calls the `RequestDelegate` to pass the request to the next middleware component in the pipeline.</p>
+        </div>
+
+        <div class="qa">
+            <h2>163. What is `Exception Handling Middleware` and how is it used in ASP.NET Core?</h2>
+            <p>`Exception Handling Middleware` is a component used to handle exceptions globally in ASP.NET Core applications. It catches exceptions thrown during request processing and allows you to provide custom error responses or pages. You configure it using the `UseExceptionHandler` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>164. What is `Service Registration` and how is it done in ASP.NET Core?</h2>
+            <p>`Service Registration` involves adding services to the application's dependency injection container. In ASP.NET Core, you register services in the `ConfigureServices` method using methods such as `AddTransient`, `AddScoped`, and `AddSingleton`, depending on the desired service lifetime.</p>
+        </div>
+
+        <div class="qa">
+            <h2>165. How do you configure `Endpoints` in ASP.NET Core?</h2>
+            <p>`Endpoints` define the handlers for incoming HTTP requests in ASP.NET Core. You configure endpoints using the `UseRouting` and `UseEndpoints` methods in the `Configure` method of the `Startup` class. Endpoints can be mapped to controllers, Razor Pages, or custom handlers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>166. What is `Dynamic Data` and how is it used in ASP.NET Core?</h2>
+            <p>`Dynamic Data` refers to data that changes at runtime and can be used to create flexible and responsive applications. In ASP.NET Core, dynamic data can be accessed and manipulated through various means, such as database queries, APIs, and user input.</p>
+        </div>
+
+        <div class="qa">
+            <h2>167. What is `Client-Side Validation` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Client-Side Validation` involves performing validation on the client side before sending data to the server. In ASP.NET Core, client-side validation is implemented using JavaScript libraries such as jQuery Validation, which work in conjunction with server-side validation attributes to ensure data integrity.</p>
+        </div>
+
+        <div class="qa">
+            <h2>168. How do you handle `Cross-Origin Requests` (CORS) in ASP.NET Core?</h2>
+            <p>`Cross-Origin Requests` (CORS) allow web applications to request resources from different origins. In ASP.NET Core, you handle CORS by configuring policies using the `AddCors` method in the `ConfigureServices` method and applying them using the `UseCors` middleware in the `Configure` method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>169. What is `Resource Management` and how is it handled in ASP.NET Core?</h2>
+            <p>`Resource Management` involves handling and optimizing the use of resources such as memory, CPU, and network bandwidth. In ASP.NET Core, resource management is achieved through practices like efficient data access, caching, and asynchronous programming to ensure optimal performance and scalability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>170. How do you implement `Localization` in ASP.NET Core?</h2>
+            <p>`Localization` involves providing content in multiple languages to support users from different regions. In ASP.NET Core, you implement localization using the `Microsoft.Extensions.Localization` package, configuring localization services in the `ConfigureServices` method and using resource files to store localized strings.</p>
+        </div>
+
+        <!-- Questions 171-180 -->
+        <div class="qa">
+            <h2>171. What is `IdentityServer` and how is it used in ASP.NET Core?</h2>
+            <p>`IdentityServer` is an open-source framework for implementing authentication and authorization in ASP.NET Core applications. It provides support for OAuth 2.0 and OpenID Connect, enabling you to secure APIs and provide single sign-on (SSO) capabilities. It is configured using the `IdentityServer4` package.</p>
+        </div>
+
+        <div class="qa">
+            <h2>172. How do you use `Data Protection` in ASP.NET Core?</h2>
+            <p>`Data Protection` is a feature that provides encryption and secure data storage for sensitive information. In ASP.NET Core, data protection is implemented using the `Microsoft.AspNetCore.DataProtection` package, which offers APIs for encrypting and decrypting data, managing keys, and configuring protection settings.</p>
+        </div>
+
+        <div class="qa">
+            <h2>173. What is `OpenAPI` and how is it used in ASP.NET Core?</h2>
+            <p>`OpenAPI` (formerly known as Swagger) is a specification for defining and documenting RESTful APIs. In ASP.NET Core, you use the `Swashbuckle.AspNetCore` package to generate OpenAPI documentation for your APIs, providing interactive API documentation and enabling clients to explore and test API endpoints.</p>
+        </div>
+
+        <div class="qa">
+            <h2>174. How do you handle `Token Authentication` in ASP.NET Core?</h2>
+            <p>`Token Authentication` involves using tokens, such as JWT (JSON Web Tokens), to authenticate users and authorize access to resources. In ASP.NET Core, you configure token authentication using the `Microsoft.AspNetCore.Authentication.JwtBearer` package, which handles token validation and authentication middleware.</p>
+        </div>
+
+        <div class="qa">
+            <h2>175. What is `OpenID Connect` and how is it used in ASP.NET Core?</h2>
+            <p>`OpenID Connect` is an authentication layer built on top of OAuth 2.0, providing user authentication and profile information. In ASP.NET Core, you use the `Microsoft.AspNetCore.Authentication.OpenIdConnect` package to integrate OpenID Connect with your application, enabling single sign-on and user authentication.</p>
+        </div>
+
+        <div class="qa">
+            <h2>176. How do you use `SignalR` in ASP.NET Core?</h2>
+            <p>`SignalR` is a library for adding real-time web functionality to applications. In ASP.NET Core, you use the `Microsoft.AspNetCore.SignalR` package to create hubs and manage real-time connections, enabling features such as chat, live notifications, and real-time data updates.</p>
+        </div>
+
+        <div class="qa">
+            <h2>177. What is `Health Monitoring` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Health Monitoring` involves checking the health and status of an application and its dependencies. In ASP.NET Core, you implement health monitoring using the `Microsoft.Extensions.Diagnostics.HealthChecks` package, configuring health check endpoints to provide status information and integration with monitoring systems.</p>
+        </div>
+
+        <div class="qa">
+            <h2>178. How do you use `Azure App Services` with ASP.NET Core?</h2>
+            <p>`Azure App Services` provides a cloud-based platform for hosting web applications, APIs, and mobile backends. To use Azure App Services with ASP.NET Core, you deploy your application to an Azure App Service instance, configure application settings, and use Azure features such as scaling and monitoring.</p>
+        </div>
+
+        <div class="qa">
+            <h2>179. What is `Server-Sent Events (SSE)` and how is it used in ASP.NET Core?</h2>
+            <p>`Server-Sent Events (SSE)` is a standard for allowing servers to push updates to clients over an HTTP connection. In ASP.NET Core, you can implement SSE by creating an endpoint that sends events to clients in a continuous stream, enabling real-time updates and notifications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>180. How do you implement `Custom Authentication` in ASP.NET Core?</h2>
+            <p>`Custom Authentication` involves creating your own authentication mechanisms rather than using built-in providers. In ASP.NET Core, you implement custom authentication by creating a custom `AuthenticationHandler`, registering it with the authentication services, and configuring the authentication middleware to use your custom handler.</p>
+        </div>
+
+        <!-- Questions 181-190 -->
+        <div class="qa">
+            <h2>181. What is `Microservices Architecture` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Microservices Architecture` involves breaking an application into smaller, loosely-coupled services that can be developed, deployed, and scaled independently. In ASP.NET Core, you implement microservices by creating multiple web APIs or services, using technologies such as Docker and Kubernetes, and managing service communication and orchestration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>182. What is `API Gateway` and how is it used in ASP.NET Core?</h2>
+            <p>`API Gateway` is a pattern used to manage and route requests to various microservices or APIs. In ASP.NET Core, you can implement an API Gateway using frameworks like Ocelot, which provides routing, request aggregation, and other features to simplify communication between clients and backend services.</p>
+        </div>
+
+        <div class="qa">
+            <h2>183. How do you use `Docker` with ASP.NET Core?</h2>
+            <p>`Docker` is a platform for creating and managing containerized applications. To use Docker with ASP.NET Core, you create a Dockerfile to define the application's container image, build the image using Docker CLI, and run the container in a Docker environment, facilitating deployment and scaling.</p>
+        </div>
+
+        <div class="qa">
+            <h2>184. What is `Continuous Integration (CI)` and how is it used with ASP.NET Core?</h2>
+            <p>`Continuous Integration (CI)` is a development practice where code changes are automatically tested and integrated into the main codebase. In ASP.NET Core, CI is implemented using tools like Azure DevOps, GitHub Actions, or Jenkins to automate the build, test, and deployment processes for your application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>185. How do you implement `Continuous Deployment (CD)` in ASP.NET Core?</h2>
+            <p>`Continuous Deployment (CD)` is the practice of automatically deploying code changes to production after passing CI tests. In ASP.NET Core, CD can be implemented using deployment pipelines in tools like Azure DevOps or GitHub Actions, which automate the release process and ensure that changes are delivered to users quickly and reliably.</p>
+        </div>
+
+        <div class="qa">
+            <h2>186. What is `Service Discovery` and how is it used in microservices with ASP.NET Core?</h2>
+            <p>`Service Discovery` is a mechanism for automatically locating and accessing microservices in a distributed system. In ASP.NET Core, service discovery can be implemented using tools like Consul or Eureka, which allow services to register themselves and discover other services dynamically for communication.</p>
+        </div>
+
+        <div class="qa">
+            <h2>187. How do you implement `Circuit Breaker` pattern in ASP.NET Core?</h2>
+            <p>`Circuit Breaker` pattern helps to handle faults and prevent cascading failures by temporarily stopping requests to a failing service. In ASP.NET Core, you can implement the Circuit Breaker pattern using libraries like Polly, which provides policies for fault tolerance, retries, and circuit breaking in HTTP requests and other operations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>188. What is `Logging` and how is it configured in ASP.NET Core?</h2>
+            <p>`Logging` is the process of recording application events, errors, and information for debugging and monitoring. In ASP.NET Core, logging is configured using the built-in `ILogger` interface and `LoggerFactory`, and can be extended to use various logging providers such as Console, Debug, and third-party services.</p>
+        </div>
+
+        <div class="qa">
+            <h2>189. How do you use `Feature Flags` in ASP.NET Core?</h2>
+            <p>`Feature Flags` are used to enable or disable application features at runtime without deploying new code. In ASP.NET Core, you can implement feature flags using libraries or services like LaunchDarkly or feature management libraries, allowing you to control feature availability based on configuration settings or user conditions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>190. What is `Dependency Injection` and how is it used in ASP.NET Core?</h2>
+            <p>`Dependency Injection` (DI) is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into a class rather than creating them within the class. In ASP.NET Core, DI is built into the framework and used to manage service lifetimes, configuration, and application dependencies, improving modularity and testability.</p>
+        </div>
+
+        <!-- Questions 191-200 -->
+        <div class="qa">
+            <h2>191. What is `Feature Toggle` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Feature Toggle` allows you to turn features on or off without changing the codebase or redeploying the application. In ASP.NET Core, you can implement feature toggles using configuration settings, feature management libraries, or custom logic to enable or disable features dynamically based on conditions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>192. How do you implement `Versioning` in ASP.NET Core APIs?</h2>
+            <p>`Versioning` in ASP.NET Core APIs allows you to manage multiple versions of an API to maintain compatibility with different clients. You can implement API versioning using libraries like `Microsoft.AspNetCore.Mvc.Versioning`, which supports versioning strategies such as query parameters, URL segments, and custom headers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>193. What is `Content Negotiation` and how is it handled in ASP.NET Core?</h2>
+            <p>`Content Negotiation` is the process of determining the format of the response based on the client's request. In ASP.NET Core, content negotiation is handled automatically by the framework, which uses media type formatters to serialize responses into the requested format (e.g., JSON, XML) based on the `Accept` header.</p>
+        </div>
+
+        <div class="qa">
+            <h2>194. How do you handle `Long-Running Requests` in ASP.NET Core?</h2>
+            <p>`Long-Running Requests` can impact application performance and responsiveness. In ASP.NET Core, you can handle long-running requests by implementing asynchronous programming, using background processing with libraries like Hangfire or Azure Functions, and employing appropriate timeout and cancellation mechanisms.</p>
+        </div>
+
+        <div class="qa">
+            <h2>195. What is `Caching` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Caching` improves performance by storing frequently accessed data to reduce retrieval time and server load. In ASP.NET Core, caching is implemented using various techniques, including in-memory caching, distributed caching (e.g., Redis), and response caching middleware to store and serve data efficiently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>196. How do you use `Async/Await` in ASP.NET Core?</h2>
+            <p>`Async/Await` is used to perform asynchronous operations without blocking the execution thread. In ASP.NET Core, you use `async` and `await` keywords to handle asynchronous I/O operations, improve scalability, and ensure non-blocking behavior for web requests and background tasks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>197. What is `In-Memory Database` and how is it used in ASP.NET Core?</h2>
+            <p>`In-Memory Database` is a lightweight database used for testing and development purposes. In ASP.NET Core, you can use the `Microsoft.EntityFrameworkCore.InMemory` package to create an in-memory database for unit testing or prototyping, which allows you to simulate database interactions without using a real database.</p>
+        </div>
+
+        <div class="qa">
+            <h2>198. How do you implement `Background Services` in ASP.NET Core?</h2>
+            <p>`Background Services` are used to run long-running tasks or periodic jobs in the background. In ASP.NET Core, you can implement background services by creating classes that inherit from `BackgroundService` or implementing `IHostedService` interface, and register them with the dependency injection container to run tasks on a background thread.</p>
+        </div>
+
+        <div class="qa">
+            <h2>199. What is `Request Logging` and how is it implemented in ASP.NET Core?</h2>
+            <p>`Request Logging` involves recording details of incoming HTTP requests for monitoring and troubleshooting. In ASP.NET Core, request logging is implemented using middleware that captures and logs request and response information, and integrates with logging frameworks to record and analyze log data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>200. How do you implement `Real-Time Communication` in ASP.NET Core?</h2>
+            <p>`Real-Time Communication` allows for instantaneous data exchange between the server and clients. In ASP.NET Core, you implement real-time communication using SignalR, which provides APIs for creating hubs and managing real-time connections, enabling features such as chat, live updates, and notifications.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            color: #fff;
+            background-color: #333;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 0.5em;
+        }
+        main {
+            padding: 1em;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .qa {
+            margin-bottom: 1.5em;
+        }
+        .qa h2 {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .qa p {
+            margin: 0;
+            padding: 0.5em 0;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>C# Basic to Advanced Questions and Answers</h1>
+        </header>
+        <nav>
+            <a href="index.html">Back to Home</a>
+        </nav>
+
+        
+
+        <!-- Questions and Answers -->
+        <div class="qa">
+            <h2>1. What is C#?</h2>
+            <p>C# is a modern, object-oriented programming language developed by Microsoft as part of the .NET framework. It is used for developing a wide range of applications from web services to desktop applications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>2. What is the difference between a class and an object in C#?</h2>
+            <p>A class is a blueprint or template for creating objects. It defines the data and behavior that the objects created from the class will have. An object is an instance of a class, created based on the class definition.</p>
+        </div>
+
+        <div class="qa">
+            <h2>3. Explain the concept of inheritance in C#.</h2>
+            <p>Inheritance is a fundamental concept in object-oriented programming where a new class (derived class) is based on an existing class (base class). The derived class inherits the fields and methods from the base class and can also have additional fields and methods of its own.</p>
+        </div>
+
+        <div class="qa">
+            <h2>4. What is the difference between "ref" and "out" parameters in C#?</h2>
+            <p>The "ref" keyword is used to pass a parameter by reference, allowing the method to modify the value of the parameter. The "out" keyword is similar but is used to indicate that the parameter will be assigned a value within the method, and it must be assigned before the method exits.</p>
+        </div>
+
+        <div class="qa">
+            <h2>5. What is the purpose of the "using" statement in C#?</h2>
+            <p>The "using" statement is used to ensure that resources are properly disposed of after they are no longer needed. It is typically used with objects that implement the IDisposable interface, such as file streams or database connections.</p>
+        </div>
+
+        <div class="qa">
+            <h2>6. What are delegates in C#?</h2>
+            <p>Delegates are objects that represent references to methods. They are used to pass methods as arguments to other methods and to define callback methods. Delegates are type-safe and secure function pointers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>7. What is a lambda expression in C#?</h2>
+            <p>A lambda expression is a concise way to represent an anonymous method. It is used primarily in LINQ queries and allows for the creation of inline delegate instances. Lambda expressions use the syntax `()=>{}` and can capture variables from their enclosing context.</p>
+        </div>
+
+        <div class="qa">
+            <h2>8. What is the difference between an interface and an abstract class in C#?</h2>
+            <p>An interface defines a contract that classes must implement, but it does not provide any implementation details. An abstract class, on the other hand, can provide some method implementations and can contain fields. Abstract classes are used when classes share common functionality, while interfaces are used to define a contract that multiple classes can implement.</p>
+        </div>
+
+        <div class="qa">
+            <h2>9. What are generics in C#?</h2>
+            <p>Generics allow you to define classes, interfaces, and methods with a placeholder for the type they operate on. This enables you to create type-safe data structures and methods without sacrificing performance or type safety. Generics are used to create collections and other types that work with any data type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>10. What is the difference between "async" and "await" in C#?</h2>
+            <p>The "async" keyword is used to define a method as asynchronous, allowing it to perform tasks without blocking the main thread. The "await" keyword is used within an "async" method to pause the execution until a task is completed, enabling asynchronous operations to be written in a synchronous-like manner.</p>
+        </div>
+
+        <div class="qa">
+            <h2>11. What is a "Task" in C# and how does it differ from a "Thread"?</h2>
+            <p>A "Task" represents an asynchronous operation that can be awaited and is part of the Task Parallel Library (TPL). It provides a higher-level abstraction for managing asynchronous operations compared to raw threads. A "Thread" represents a lower-level unit of execution and requires more manual management compared to Tasks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>12. How does dependency injection work in C#?</h2>
+            <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into a class rather than the class creating its own dependencies. In C#, DI is commonly used with frameworks like ASP.NET Core to manage service lifetimes and facilitate testing and maintainability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>13. What is the difference between "IEnumerable" and "IQueryable"?</h2>
+            <p"IEnumerable" is an interface that allows for iterating over a collection in a forward-only manner. It is typically used for in-memory collections. "IQueryable" extends "IEnumerable" and allows for querying against a data source, such as a database, using LINQ. It enables deferred execution and more efficient querying for data sources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>14. What are extension methods in C#?</h2>
+            <p>Extension methods allow you to add new methods to existing types without modifying the original type. They are defined as static methods in a static class but are called as if they were instance methods on the extended type. This is useful for adding functionality to classes for which you do not have access to the source code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>15. What is a "readonly" field in C#?</h2>
+            <p>A "readonly" field is a field that can only be assigned a value at the time of declaration or within the constructor of the class. Once assigned, its value cannot be changed. This is used to create immutable objects or constants that need to be set at runtime.</p>
+        </div>
+
+        <div class="qa">
+            <h2>16. What is a "property" in C#?</h2>
+            <p>A property in C# is a member of a class that provides a flexible mechanism to read, write, or compute the value of a private field. Properties are accessed using the get and set accessors and offer a way to encapsulate data and provide controlled access to it.</p>
+        </div>
+
+        <div class="qa">
+            <h2>17. Explain the concept of "boxing" and "unboxing" in C#.</h2>
+            <p"Boxing" is the process of converting a value type (such as int or float) to an object type. "Unboxing" is the reverse process, where an object type is converted back to a value type. Boxing and unboxing involve performance overhead and should be used cautiously.</p>
+        </div>
+
+        <div class="qa">
+            <h2>18. What is the purpose of the "dynamic" type in C#?</h2>
+            <p>The "dynamic" type in C# allows for operations on objects where the type is not known at compile time. It defers type checking until runtime, which can be useful for interacting with dynamic languages or performing operations on objects with unknown types. However, it comes with performance costs and potential runtime errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>19. What is a "static" class in C#?</h2>
+            <p>A "static" class in C# is a class that cannot be instantiated and can only contain static members. It is used to group related methods and properties that do not require an instance of the class to operate. Static classes are often used for utility or helper methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>20. How does exception handling work in C#?</h2>
+            <p>Exception handling in C# is achieved using try-catch-finally blocks. The "try" block contains code that may throw exceptions, the "catch" block handles exceptions that occur, and the "finally" block contains code that is executed regardless of whether an exception was thrown. This mechanism helps to manage and respond to runtime errors gracefully.</p>
+        </div>
+
+        <!-- More questions can be added here -->
+
+         <!-- Questions and Answers -->
+         <div class="qa">
+            <h2>21. What is a "constructor" in C#?</h2>
+            <p>A constructor is a special method in a class that is called when an object is instantiated. It is used to initialize the object's data and can be overloaded to provide multiple ways of initializing the object.</p>
+        </div>
+
+        <div class="qa">
+            <h2>22. What is method overloading in C#?</h2>
+            <p>Method overloading allows multiple methods to have the same name but different parameters within the same class. It is used to increase the readability of the program by allowing different ways to perform a similar operation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>23. What is method overriding in C#?</h2>
+            <p>Method overriding occurs when a derived class provides a specific implementation of a method that is already defined in its base class. It is used to achieve polymorphism in object-oriented programming.</p>
+        </div>
+
+        <div class="qa">
+            <h2>24. Explain the "sealed" keyword in C#.</h2>
+            <p>The "sealed" keyword is used to prevent a class from being inherited. It can also be applied to methods to prevent them from being overridden in derived classes. Sealing a class or method improves performance and maintains design constraints.</p>
+        </div>
+
+        <div class="qa">
+            <h2>25. What are "value types" and "reference types" in C#?</h2>
+            <p>Value types hold data directly and are typically stored on the stack (e.g., int, float, struct). Reference types hold a reference to the data, which is stored on the heap (e.g., class, string, array). Value types are usually faster but less flexible, while reference types offer more flexibility but can involve more overhead.</p>
+        </div>
+
+        <!-- Add more questions in the same format -->
+
+        <div class="qa">
+            <h2>26. What is a "static constructor" in C#?</h2>
+            <p>A static constructor is a constructor that is used to initialize the type itself rather than instances of the type. It is called automatically before any static members of the type are accessed or any static methods are invoked.</p>
+        </div>
+
+        <div class="qa">
+            <h2>27. What is the difference between "override" and "new" keywords in method hiding?</h2>
+            <p>The "override" keyword is used to extend or modify the abstract or virtual implementation of an inherited method. The "new" keyword is used to hide an inherited method and provide a new implementation in the derived class. "Override" maintains polymorphic behavior, while "new" does not.</p>
+        </div>
+
+        <div class="qa">
+            <h2>28. What is "enum" in C# and how is it used?</h2>
+            <p>An "enum" (short for enumeration) is a distinct value type that consists of a set of named constants called enumerators. Enums are used to represent a collection of related values in a readable and maintainable way.</p>
+        </div>
+
+        <div class="qa">
+            <h2>29. Explain "garbage collection" in C#.</h2>
+            <p>Garbage collection is an automatic memory management feature in .NET that reclaims memory occupied by objects that are no longer in use, preventing memory leaks and optimizing memory usage. The garbage collector runs periodically and cleans up objects that are no longer referenced by the application.</p>
+        </div>
+
+        <div class="qa">
+            <h2>30. What is the purpose of "LINQ" in C#?</h2>
+            <p>LINQ (Language Integrated Query) provides a unified query syntax to work with different types of data sources, including arrays, collections, databases, and XML. It allows for querying data in a more readable and expressive way using a consistent syntax integrated into the C# language.</p>
+        </div>
+
+        <!-- Continue with the rest of the questions in the same format -->
+        
+        <div class="qa">
+            <h2>31. What is the "volatile" keyword in C#?</h2>
+            <p>The "volatile" keyword is used to indicate that a field's value may be changed by different threads simultaneously. It ensures that the most up-to-date value of the field is always read from memory, rather than using a cached value, which is crucial for thread safety.</p>
+        </div>
+
+        <div class="qa">
+            <h2>32. How do "events" and "delegates" work together in C#?</h2>
+            <p>Events and delegates work together to provide a mechanism for event-driven programming. A delegate is a type-safe function pointer, while an event is a special kind of delegate that allows methods to be added or removed from its invocation list. Events provide a way for objects to notify other objects when something of interest occurs.</p>
+        </div>
+
+        <!-- Continue adding more questions -->
+
+        <div class="qa">
+            <h2>33. What are "attributes" in C#?</h2>
+            <p>Attributes in C# are metadata that can be added to assemblies, classes, methods, properties, and other program elements to provide additional information. They are used to modify or retrieve information at runtime through reflection and can influence program behavior or provide documentation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>34. What is the "async/await" pattern used for in C#?</h2>
+            <p>The "async/await" pattern is used to write asynchronous code in a more readable and maintainable way. The "async" keyword is applied to methods to indicate that they contain asynchronous operations, while "await" is used within these methods to pause execution until the awaited operation completes, improving responsiveness and scalability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>35. What is "deferred execution" in LINQ?</h2>
+            <p>Deferred execution means that the execution of a LINQ query is postponed until the query is actually enumerated or iterated over. This allows for queries to be built up dynamically and can result in more efficient execution by combining multiple queries into a single query executed against the data source.</p>
+        </div>
+        <!-- Previous Questions from 1-35 -->
+        
+        <div class="qa">
+            <h2>36. What is a "partial class" in C#?</h2>
+            <p>A partial class allows a class to be split into multiple files. Each file contains a part of the class's implementation. This is useful for managing large classes and separating auto-generated code from user-defined code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>37. What is a "constructor chaining" in C#?</h2>
+            <p>Constructor chaining is the practice of calling one constructor from another within the same class using the "this" keyword. This is useful for reusing constructor code and ensuring consistent initialization.</p>
+        </div>
+
+        <div class="qa">
+            <h2>38. Explain "property" initialization in C#.</h2>
+            <p>Property initialization allows you to initialize properties directly at the point of declaration. This feature, introduced in C# 6.0, simplifies object initialization and enhances code readability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>39. What is a "destructor" in C#?</h2>
+            <p>A destructor is a special method that is called when an object is being destroyed. It is used to release unmanaged resources held by the object. In C#, destructors are defined with a tilde (~) before the class name and are automatically called by the garbage collector.</p>
+        </div>
+
+        <div class="qa">
+            <h2>40. What is the "dynamic" type in C#?</h2>
+            <p>The "dynamic" type allows for dynamic type checking at runtime instead of compile-time. It can be used to work with objects where the type is not known until runtime, but it bypasses compile-time type checking, which may lead to runtime errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>41. What are "anonymous types" in C#?</h2>
+            <p>Anonymous types are types that are defined without a name. They are typically used for storing data in a lightweight way, especially when querying data with LINQ. The compiler generates the class and properties based on the provided initialization.</p>
+        </div>
+
+        <div class="qa">
+            <h2>42. What is the purpose of the "default" keyword in C#?</h2>
+            <p>The "default" keyword is used to obtain the default value of a type. For value types, it returns the zero-initialized value (e.g., 0 for integers, false for bool). For reference types, it returns null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>43. Explain the "using" directive and "using" statement in C#.</h2>
+            <p>The "using" directive is used to include namespaces in a C# file, making it easier to reference classes from those namespaces. The "using" statement is used to ensure that objects implementing IDisposable are properly disposed of when they are no longer needed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>44. What is "expression-bodied syntax" in C#?</h2>
+            <p>Expression-bodied syntax is a shorthand notation for defining methods, properties, and other members that consist of a single expression. It uses the "=>" syntax and simplifies the code by reducing boilerplate.</p>
+        </div>
+
+        <div class="qa">
+            <h2>45. What are "null-coalescing operators" in C#?</h2>
+            <p>Null-coalescing operators are used to provide a default value when dealing with null values. The "??" operator returns the value on its left if it is not null; otherwise, it returns the value on its right. The "??=" operator assigns the right-hand value to the left-hand variable only if the left-hand variable is null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>46. What is the "params" keyword in C#?</h2>
+            <p>The "params" keyword allows a method to accept a variable number of arguments. It is used to create methods that can take an arbitrary number of arguments of a specified type, which are treated as an array within the method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>47. What is the "yield" keyword in C#?</h2>
+            <p>The "yield" keyword is used in iterator methods to provide a value to the enumerator object or to signal the end of iteration. It simplifies the creation of custom iterators and allows for lazy evaluation of sequences.</p>
+        </div>
+
+        <div class="qa">
+            <h2>48. What are "local functions" in C#?</h2>
+            <p>Local functions are functions defined inside another method. They are used to encapsulate logic that is only relevant within the containing method, improving readability and maintainability by reducing the scope of the function.</p>
+        </div>
+
+        <div class="qa">
+            <h2>49. What is the difference between "async" and "await" keywords?</h2>
+            <p>The "async" keyword is used to mark a method as asynchronous, allowing it to use the "await" keyword inside its body. The "await" keyword is used to asynchronously wait for the completion of a task, enabling non-blocking operations and improving responsiveness.</p>
+        </div>
+
+        <div class="qa">
+            <h2>50. What is a "value tuple" in C#?</h2>
+            <p>A value tuple is a data structure that provides a lightweight way to store a set of values with different types. Unlike traditional tuples, value tuples can be created with named fields and are more performant due to their value type nature.</p>
+        </div>
+
+        <!-- Continue with additional questions up to 200 -->
+
+        <div class="qa">
+            <h2>51. What are "extension methods" in C#?</h2>
+            <p>Extension methods allow you to add new methods to existing types without modifying the original type. They are defined as static methods in a static class and are called as if they were instance methods on the extended type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>52. What is the "is" keyword used for in C#?</h2>
+            <p>The "is" keyword is used to check if an object is compatible with a given type or if it can be cast to that type. It is commonly used for type checking in conditional statements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>53. What is the "as" keyword in C#?</h2>
+            <p>The "as" keyword is used for safe type casting. It attempts to cast an object to a specified type and returns null if the cast fails, avoiding exceptions that would be thrown by a direct cast.</p>
+        </div>
+
+        <div class="qa">
+            <h2>54. What is the "object initializers" feature in C#?</h2>
+            <p>Object initializers allow you to set the values of an object's properties at the time of instantiation. This feature provides a concise way to initialize objects without needing to call a constructor or set each property separately.</p>
+        </div>
+
+        <div class="qa">
+            <h2>55. Explain "automatic properties" in C#.</h2>
+            <p>Automatic properties are a shorthand for defining properties that have no additional logic in their getters and setters. The compiler automatically creates a private backing field for the property.</p>
+        </div>
+
+        <div class="qa">
+            <h2>56. What are "indexers" in C#?</h2>
+            <p>Indexers allow objects to be indexed in a similar way to arrays. They enable you to define how the object responds to indexing operations, providing a way to access elements in the object using an index or key.</p>
+        </div>
+
+        <div class="qa">
+            <h2>57. What is a "delegate" in C#?</h2>
+            <p>A delegate is a type-safe function pointer that allows methods to be passed as parameters and assigned to variables. Delegates are used for callback methods and event handling in C#.</p>
+        </div>
+
+        <div class="qa">
+            <h2>58. How does the "event" keyword work in C#?</h2>
+            <p>The "event" keyword is used to declare an event, which is a special kind of delegate used for event-driven programming. Events provide a way for objects to notify other objects about changes or actions, and they can only be invoked by the class that declares them.</p>
+        </div>
+
+        <div class="qa">
+            <h2>59. What is the purpose of "reflection" in C#?</h2>
+            <p>Reflection is a feature that allows you to inspect and interact with object types and members at runtime. It is useful for scenarios where you need to dynamically access types, properties, methods, or attributes that are not known at compile time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>60. What is "dependency injection" in C#?</h2>
+            <p>Dependency injection is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into an object rather than having the object create them itself. This promotes loose coupling, easier testing, and improved code maintainability.</p>
+        </div>
+
+        <!-- Continue adding questions up to 200 -->
+
+        <div class="qa">
+            <h2>61. What is the difference between "abstract" and "interface" in C#?</h2>
+            <p>Abstract classes can provide both abstract methods (which must be implemented by derived classes) and concrete methods (with an implementation). Interfaces define a contract that implementing classes must fulfill but cannot provide any implementation themselves.</p>
+        </div>
+
+        <div class="qa">
+            <h2>62. What is "task parallelism" in C#?</h2>
+            <p>Task parallelism involves running multiple tasks concurrently to improve performance and responsiveness. It is achieved using the Task Parallel Library (TPL), which simplifies the creation, scheduling, and management of parallel tasks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>63. What is "thread safety" in C#?</h2>
+            <p>Thread safety ensures that a piece of code can be executed by multiple threads simultaneously without causing data corruption or inconsistent results. Techniques such as synchronization, locks, and concurrent collections are used to achieve thread safety.</p>
+        </div>
+
+        <div class="qa">
+            <h2>64. What is the "volatile" keyword used for?</h2>
+            <p>The "volatile" keyword is used to indicate that a field can be accessed by multiple threads and prevents the compiler from applying certain optimizations that assume the field does not change unexpectedly.</p>
+        </div>
+
+        <div class="qa">
+            <h2>65. What are "lambda expressions" in C#?</h2>
+            <p>Lambda expressions provide a concise way to represent anonymous methods using the "=>" syntax. They are used primarily in LINQ queries and can be assigned to delegates or used with LINQ methods to perform operations on collections.</p>
+        </div>
+
+        <div class="qa">
+            <h2>66. What is the "lock" statement used for?</h2>
+            <p>The "lock" statement is used to ensure that a block of code is executed by only one thread at a time. It prevents multiple threads from entering the critical section simultaneously, which helps to avoid race conditions and maintain thread safety.</p>
+        </div>
+
+        <div class="qa">
+            <h2>67. What is "boxing" and "unboxing" in C#?</h2>
+            <p>Boxing is the process of converting a value type to an object type, while unboxing is the reverse process of converting an object type back to a value type. Both processes involve performance overhead and should be used with consideration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>68. Explain the concept of "lazy initialization" in C#.</h2>
+            <p>Lazy initialization is a technique where the initialization of an object is deferred until it is actually needed. This can improve performance and resource utilization by avoiding unnecessary initialization until the object is first accessed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>69. What is the difference between "IEnumerable" and "IQueryable"?</h2>
+            <p>IEnumerable is used for in-memory data collections and provides basic querying capabilities. IQueryable is used for querying data from external sources, such as databases, and supports more advanced query capabilities and optimization through expression trees.</p>
+        </div>
+
+        <div class="qa">
+            <h2>70. What are "extension methods" in C#?</h2>
+            <p>Extension methods allow you to add new methods to existing types without modifying the original type. They are defined in static classes and provide a way to extend the functionality of types in a more flexible manner.</p>
+        </div>
+
+        <div class="qa">
+            <h2>71. What is "method hiding" in C#?</h2>
+            <p>Method hiding occurs when a derived class defines a method with the same name as a method in its base class, using the "new" keyword. This hides the base class method from being called, and the derived class method will be called instead when using the derived class instance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>72. Explain "object-oriented programming" principles.</h2>
+            <p>Object-oriented programming (OOP) principles include encapsulation (bundling data and methods), inheritance (creating new classes from existing ones), polymorphism (allowing methods to do different things based on the object), and abstraction (hiding complex implementation details).</p>
+        </div>
+
+        <div class="qa">
+            <h2>73. What is a "sealed class" in C#?</h2>
+            <p>A sealed class is a class that cannot be inherited. It is used to prevent other classes from deriving from it, which can be useful for security reasons or to ensure that the class's implementation remains unchanged.</p>
+        </div>
+
+        <div class="qa">
+            <h2>74. What is "implicit" and "explicit" type conversion in C#?</h2>
+            <p>Implicit type conversion is performed automatically by the compiler when converting from a smaller to a larger data type. Explicit type conversion requires the use of casting operators or conversion methods to convert between incompatible types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>75. Explain the "finalizer" in C#.</h2>
+            <p>A finalizer is a special method in C# that is used to perform cleanup operations on unmanaged resources before an object is reclaimed by the garbage collector. It is defined using a tilde (~) before the class name and is called automatically by the garbage collector.</p>
+        </div>
+
+        <div class="qa">
+            <h2>76. What are "dynamic" objects in C#?</h2>
+            <p>Dynamic objects are instances of the "dynamic" type, which bypass compile-time type checking and allow for operations that are resolved at runtime. This provides greater flexibility but can lead to runtime errors if operations are not supported.</p>
+        </div>
+
+        <div class="qa">
+            <h2>77. What is "method overloading" in C#?</h2>
+            <p>Method overloading allows multiple methods with the same name but different parameter lists within the same class. It enables different implementations of a method based on the number or type of arguments passed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>78. What is "method overriding" in C#?</h2>
+            <p>Method overriding occurs when a derived class provides a specific implementation for a method that is already defined in its base class. This allows derived classes to customize the behavior of inherited methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>79. What are "generic types" in C#?</h2>
+            <p>Generic types allow you to define classes, methods, and interfaces with a placeholder for the data type. This enables you to create flexible and reusable components that can work with any data type without sacrificing type safety.</p>
+        </div>
+
+        <div class="qa">
+            <h2>80. What is the "default" value of an enum in C#?</h2>
+            <p>The default value of an enum is the value associated with the zero integer value. If no explicit value is assigned to the zero value, it defaults to the first enumerator listed in the enum definition.</p>
+        </div>
+
+        <!-- Continue with questions up to 200 -->
+
+        <div class="qa">
+            <h2>81. What is the "default" keyword used for in C#?</h2>
+            <p>The "default" keyword is used to obtain the default value of a type. For value types, it returns the default zero-initialized value (e.g., 0 for integers, false for bool), and for reference types, it returns null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>82. Explain "nullable types" in C#.</h2>
+            <p>Nullable types allow value types (such as int, double, etc.) to represent an additional null value. This is useful for scenarios where a value type needs to be assigned a null to indicate the absence of a value.</p>
+        </div>
+
+        <div class="qa">
+            <h2>83. What is "LINQ" in C#?</h2>
+            <p>Language Integrated Query (LINQ) is a feature that allows querying of data from various sources (like collections, databases, XML) using a unified query syntax integrated into C#. LINQ queries can be written in query syntax or method syntax.</p>
+        </div>
+
+        <div class="qa">
+            <h2>84. What is "async/await" in C#?</h2>
+            <p>Async/await is a pattern for asynchronous programming in C#. The "async" keyword is used to define a method as asynchronous, allowing it to use the "await" keyword to asynchronously wait for the completion of tasks without blocking the main thread.</p>
+        </div>
+
+        <div class="qa">
+            <h2>85. What is "exception handling" in C#?</h2>
+            <p>Exception handling in C# is managed using try, catch, and finally blocks. Exceptions are used to handle runtime errors and other exceptional conditions. The try block contains code that might throw an exception, catch blocks handle the exceptions, and the finally block contains code that is executed regardless of whether an exception was thrown.</p>
+        </div>
+
+        <div class="qa">
+            <h2>86. What is "unit testing" in C#?</h2>
+            <p>Unit testing involves testing individual units or components of a software application to ensure they work as expected. In C#, unit tests are typically written using testing frameworks like MSTest, NUnit, or xUnit to validate the behavior of methods and classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>87. What are "attributes" in C#?</h2>
+            <p>Attributes are metadata that can be applied to various program elements (classes, methods, properties, etc.) to provide additional information or modify behavior. They are used to add declarative information that can be queried at runtime using reflection.</p>
+        </div>
+
+        <div class="qa">
+            <h2>88. What is "dependency injection" in C#?</h2>
+            <p>Dependency injection is a design pattern used to achieve Inversion of Control (IoC) by injecting dependencies into an object rather than having the object create them itself. This promotes loose coupling and easier testing.</p>
+        </div>
+
+        <div class="qa">
+            <h2>89. What are "anonymous methods" in C#?</h2>
+            <p>Anonymous methods are methods without a name that are defined inline. They are often used with delegates to provide a simple way to define methods on-the-fly without creating separate named methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>90. What is "method overriding" in C#?</h2>
+            <p>Method overriding allows a derived class to provide a specific implementation of a method that is already defined in its base class. This enables derived classes to modify or extend the behavior of base class methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>91. What is the "ref" keyword used for in C#?</h2>
+            <p>The "ref" keyword is used to indicate that a parameter is passed by reference. This allows the method to modify the argument's value and reflect those changes back to the caller.</p>
+        </div>
+
+        <div class="qa">
+            <h2>92. What is the "out" keyword used for in C#?</h2>
+            <p>The "out" keyword is used to indicate that a parameter is passed by reference and that the method will assign a value to it before returning. Unlike "ref", "out" parameters must be assigned a value before the method returns.</p>
+        </div>
+
+        <div class="qa">
+            <h2>93. What is "try-catch-finally" used for in C#?</h2>
+            <p>Try-catch-finally is used for exception handling. The try block contains code that might throw an exception, the catch block handles the exception, and the finally block contains code that is executed regardless of whether an exception was thrown, typically for cleanup purposes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>94. What is a "static class" in C#?</h2>
+            <p>A static class is a class that cannot be instantiated and can only contain static members. It is used to group related static methods and properties together, providing a convenient way to access functionality without creating objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>95. What is the difference between "public" and "private" access modifiers?</h2>
+            <p>Public access modifier allows members to be accessed from any code, while private access modifier restricts access to members within the same class. Public members are accessible from outside the class, whereas private members are only accessible within the class itself.</p>
+        </div>
+
+        <div class="qa">
+            <h2>96. What are "constructors" in C#?</h2>
+            <p>Constructors are special methods that are called when an object is created. They initialize the object's state and can be overloaded to provide different initialization scenarios. Constructors have the same name as the class and do not have a return type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>97. What is "inheritance" in C#?</h2>
+            <p>Inheritance is an OOP concept where a class (derived class) inherits properties and methods from another class (base class). This allows for code reuse and the creation of a hierarchical relationship between classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>98. What is "polymorphism" in C#?</h2>
+            <p>Polymorphism allows objects of different classes to be treated as objects of a common base class. It provides a way to perform a single action in different forms, usually through method overriding and method overloading.</p>
+        </div>
+
+        <div class="qa">
+            <h2>99. What are "enums" in C#?</h2>
+            <p>Enums (short for enumerations) are a distinct value type in C# that defines a set of named constants. They provide a way to group related values and enhance code readability by using meaningful names instead of numeric literals.</p>
+        </div>
+
+        <div class="qa">
+            <h2>100. What is the "foreach" loop used for in C#?</h2>
+            <p>The "foreach" loop is used to iterate over a collection, such as arrays or lists, without needing to manually manage the loop index. It provides a simple way to access each element in the collection sequentially.</p>
+        </div>
+
+        <!-- Continue adding questions up to 200 -->
+
+        <div class="qa">
+            <h2>101. What is the "switch" statement used for in C#?</h2>
+            <p>The "switch" statement is used to select one of many code blocks to execute based on the value of a variable or expression. It simplifies complex conditional logic by providing a clean and readable way to handle multiple cases.</p>
+        </div>
+
+        <div class="qa">
+            <h2>102. What is "method overloading"?</h2>
+            <p>Method overloading allows you to define multiple methods with the same name but different parameter lists within the same class. This provides flexibility in method usage and enables different behaviors based on the arguments provided.</p>
+        </div>
+
+        <div class="qa">
+            <h2>103. What is "method overriding"?</h2>
+            <p>Method overriding is a feature that allows a derived class to provide a specific implementation of a method that is already defined in its base class. It enables derived classes to customize or extend the behavior of inherited methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>104. What is the "params" keyword used for in C#?</h2>
+            <p>The "params" keyword allows a method to accept a variable number of arguments of a specified type. It enables you to pass a list of arguments to a method without having to specify the exact number of arguments.</p>
+        </div>
+
+        <div class="qa">
+            <h2>105. What is the "using" statement in C#?</h2>
+            <p>The "using" statement is used to ensure that objects that implement the IDisposable interface are properly disposed of when they are no longer needed. It provides a way to manage resources efficiently and prevent resource leaks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>106. What is the "try-catch" block used for?</h2>
+            <p>The "try-catch" block is used to handle exceptions that may occur during the execution of code. The "try" block contains code that might throw an exception, while the "catch" block contains code that handles the exception if it occurs.</p>
+        </div>
+
+        <div class="qa">
+            <h2>107. What is the purpose of the "finally" block?</h2>
+            <p>The "finally" block is used to execute code that must run regardless of whether an exception was thrown or not. It is commonly used for cleanup operations, such as closing files or releasing resources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>108. What is "asynchronous programming" in C#?</h2>
+            <p>Asynchronous programming allows you to perform tasks without blocking the main thread. In C#, it is achieved using the "async" and "await" keywords, enabling more responsive applications by allowing tasks to run concurrently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>109. What is the difference between "async" and "await" in C#?</h2>
+            <p>"async" is a keyword used to define a method as asynchronous, allowing it to use "await" inside. "await" is used within an "async" method to pause the execution of the method until the awaited task completes, without blocking the main thread.</p>
+        </div>
+
+        <div class="qa">
+            <h2>110. What is a "struct" in C#?</h2>
+            <p>A struct is a value type that is typically used to encapsulate small groups of related variables. Unlike classes, structs are value types and are stored on the stack, which can lead to performance benefits for small, immutable objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>111. What is the difference between "struct" and "class" in C#?</h2>
+            <p>Structs are value types and are stored on the stack, while classes are reference types and are stored on the heap. Structs are generally used for small, immutable objects, whereas classes are used for more complex data structures and support inheritance and polymorphism.</p>
+        </div>
+
+        <div class="qa">
+            <h2>112. What is the "new" keyword used for in C#?</h2>
+            <p>The "new" keyword is used to create instances of types (classes, structs, arrays) and also to hide inherited members in derived classes. When used with objects, it allocates memory and calls the constructor to initialize the new instance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>113. What is the purpose of the "base" keyword?</h2>
+            <p>The "base" keyword is used to access members of the base class from within a derived class. It allows derived classes to call base class methods, constructors, and properties, enabling access to inherited functionality.</p>
+        </div>
+
+        <div class="qa">
+            <h2>114. What is the "this" keyword used for?</h2>
+            <p>The "this" keyword refers to the current instance of the class. It is used to access members of the current object, distinguish between instance variables and parameters with the same name, and invoke other constructors within the same class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>115. What is a "constructor" in C#?</h2>
+            <p>A constructor is a special method that is automatically called when an object is created. It initializes the object and can be overloaded to provide different ways to initialize an instance of a class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>116. What is a "destructor" in C#?</h2>
+            <p>A destructor is a special method called when an object is being garbage collected. It is used to release unmanaged resources and perform cleanup operations. In C#, destructors are defined using a tilde (~) before the class name.</p>
+        </div>
+
+        <div class="qa">
+            <h2>117. What is "encapsulation" in C#?</h2>
+            <p>Encapsulation is an OOP principle that involves bundling data (fields) and methods (functions) into a single unit (class) and restricting access to some of the object's components. It helps to protect the internal state of an object and expose only necessary functionality.</p>
+        </div>
+
+        <div class="qa">
+            <h2>118. What is "inheritance" in C#?</h2>
+            <p>Inheritance is an OOP principle that allows a class to inherit members (fields, properties, methods) from another class. The derived class can reuse and extend the functionality of the base class, promoting code reuse and creating a hierarchical relationship between classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>119. What is "polymorphism" in C#?</h2>
+            <p>Polymorphism allows methods to be invoked on objects of different types through a common interface. It enables objects of different classes to be treated as objects of a common base class, facilitating flexible and reusable code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>120. What is "abstraction" in C#?</h2>
+            <p>Abstraction is an OOP principle that involves hiding the implementation details of an object and exposing only the relevant functionality. It allows you to focus on interactions with objects at a higher level while keeping the underlying implementation hidden.</p>
+        </div>
+
+        <!-- Continue with questions up to 200 -->
+
+        <div class="qa">
+            <h2>121. What is "interface inheritance" in C#?</h2>
+            <p>Interface inheritance allows a class to implement multiple interfaces, providing a way to inherit method signatures without inheriting implementation. A class can implement several interfaces, thus inheriting their contracts and combining their behaviors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>122. What are "access modifiers" in C#?</h2>
+            <p>Access modifiers determine the visibility and accessibility of classes, methods, and other members. Common access modifiers include "public", "private", "protected", and "internal", which control how and where members can be accessed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>123. What is the "static" keyword used for in C#?</h2>
+            <p>The "static" keyword indicates that a member or class belongs to the type itself rather than to any instance of the type. Static members are shared across all instances, and static classes cannot be instantiated.</p>
+        </div>
+
+        <div class="qa">
+            <h2>124. What is "object-oriented programming"?</h2>
+            <p>Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which combine data and methods. It includes principles like encapsulation, inheritance, polymorphism, and abstraction to model real-world entities and their interactions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>125. What is the "new" keyword used for in C#?</h2>
+            <p>The "new" keyword is used to create instances of objects or to hide members of a base class. When creating an object, it allocates memory and calls the constructor. When hiding members, it indicates that a derived class member is intended to hide a member with the same name in the base class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>126. What is "null-coalescing operator" in C#?</h2>
+            <p>The null-coalescing operator (??) provides a default value for a nullable expression if it evaluates to null. It allows you to simplify code that deals with null values by providing an alternative value to use when the expression is null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>127. What is the "null-conditional operator" in C#?</h2>
+            <p>The null-conditional operator (?.) is used to safely access members and methods of an object that might be null. It returns null if the object is null instead of throwing a NullReferenceException, which helps to avoid runtime errors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>128. What are "properties" in C#?</h2>
+            <p>Properties are members of a class that provide a flexible mechanism to read, write, or compute the values of private fields. They encapsulate data and provide controlled access through getters and setters, allowing for validation or other logic during access.</p>
+        </div>
+
+        <div class="qa">
+            <h2>129. What is the difference between "override" and "new" keywords in C#?</h2>
+            <p>The "override" keyword is used to extend or modify the implementation of an inherited method in a derived class, whereas the "new" keyword is used to hide a base class member with a new implementation in the derived class. The "override" keyword maintains polymorphic behavior, while "new" does not.</p>
+        </div>
+
+        <div class="qa">
+            <h2>130. What is the "default" keyword in C#?</h2>
+            <p>The "default" keyword is used to obtain the default value of a type. For value types, it returns the default zero-initialized value (e.g., 0 for integers, false for bool), and for reference types, it returns null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>131. What is "event handling" in C#?</h2>
+            <p>Event handling involves responding to events, such as user actions or system changes, by defining event handlers that are invoked when the event occurs. In C#, events are typically declared using the "event" keyword and handled with event handler methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>132. What is "delegates" in C#?</h2>
+            <p>Delegates are type-safe function pointers that can be used to pass methods as parameters, store methods as variables, or define callback mechanisms. They allow methods to be invoked indirectly and support multicast (invoking multiple methods) capabilities.</p>
+        </div>
+
+        <div class="qa">
+            <h2>133. What is the "default" value of a reference type in C#?</h2>
+            <p>The default value of a reference type is null. This means that if a reference type variable is not initialized, it will hold a null value indicating that it does not refer to any object.</p>
+        </div>
+
+        <div class="qa">
+            <h2>134. What are "indexers" in C#?</h2>
+            <p>Indexers allow objects to be indexed like arrays, providing a way to access elements of an object using an index. They are defined with the "this" keyword and can be used to get or set values in a class or struct based on the index provided.</p>
+        </div>
+
+        <div class="qa">
+            <h2>135. What is the "is" operator in C#?</h2>
+            <p>The "is" operator is used to check if an object is compatible with a given type or derives from it. It returns true if the object is of the specified type or a derived type; otherwise, it returns false.</p>
+        </div>
+
+        <div class="qa">
+            <h2>136. What is the "as" operator in C#?</h2>
+            <p>The "as" operator is used for safe type casting. It attempts to cast an object to a specified type and returns null if the cast is not possible, rather than throwing an exception. It is useful for scenarios where you want to check if an object can be cast to a type without risking a runtime error.</p>
+        </div>
+
+        <div class="qa">
+            <h2>137. What is the "lock" statement in C#?</h2>
+            <p>The "lock" statement is used to ensure that only one thread can access a critical section of code at a time. It prevents race conditions by locking a specified object, allowing synchronized access to shared resources or code blocks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>138. What are "attributes" in C#?</h2>
+            <p>Attributes are used to add metadata to program elements such as classes, methods, and properties. They provide additional information that can be queried at runtime using reflection, allowing for custom behavior or configuration.</p>
+        </div>
+
+        <div class="qa">
+            <h2>139. What is "reflection" in C#?</h2>
+            <p>Reflection is a feature that allows you to inspect and interact with the metadata of assemblies, modules, and types at runtime. It enables dynamic type discovery, method invocation, and property access, and is useful for scenarios like serialization, dependency injection, and dynamic code execution.</p>
+        </div>
+
+        <div class="qa">
+            <h2>140. What is "garbage collection" in C#?</h2>
+            <p>Garbage collection is an automatic memory management feature that reclaims memory occupied by objects that are no longer referenced. It helps prevent memory leaks and manage memory usage efficiently by automatically freeing up resources that are no longer needed.</p>
+        </div>
+
+        <div class="qa">
+            <h2>141. What is "boxing" and "unboxing" in C#?</h2>
+            <p>Boxing is the process of converting a value type (e.g., int) to a reference type (object), while unboxing is the process of converting a reference type back to a value type. Boxing and unboxing involve additional memory overhead and can impact performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>142. What is "extension methods" in C#?</h2>
+            <p>Extension methods allow you to add new methods to existing types without modifying their source code. They are defined as static methods in a static class and are called as if they were instance methods on the extended type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>143. What are "generic types" in C#?</h2>
+            <p>Generic types allow you to define classes, methods, and interfaces with a placeholder for the data type. This enables you to create flexible and reusable components that can work with any data type without sacrificing type safety.</p>
+        </div>
+
+        <div class="qa">
+            <h2>144. What is "method chaining" in C#?</h2>
+            <p>Method chaining involves calling multiple methods on the same object in a single statement. Each method returns the object itself or another object, allowing further methods to be called in a chain. This technique is often used to build fluent interfaces.</p>
+        </div>
+
+        <div class="qa">
+            <h2>145. What is the "yield" keyword in C#?</h2>
+            <p>The "yield" keyword is used to define an iterator block, which enables the iteration over a collection without creating a separate collection object. It allows you to return each element of a collection one at a time, improving performance and memory usage for large collections.</p>
+        </div>
+
+        <div class="qa">
+            <h2>146. What is "lazy initialization" in C#?</h2>
+            <p>Lazy initialization defers the creation or computation of an object until it is actually needed. It helps to optimize performance and resource usage by delaying expensive operations until their results are required. In C#, this is often implemented using the "Lazy<T>" class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>147. What is "dynamic typing" in C#?</h2>
+            <p>Dynamic typing allows variables to be typed at runtime rather than at compile time. The "dynamic" keyword enables this behavior, allowing objects to be operated on without compile-time type checking, which can be useful for scenarios like interoperability with COM objects or dynamic languages.</p>
+        </div>
+
+        <div class="qa">
+            <h2>148. What are "local functions" in C#?</h2>
+            <p>Local functions are functions defined within another method, allowing for encapsulation of helper methods that are only relevant to the containing method. They provide a way to organize code and improve readability by scoping methods to where they are used.</p>
+        </div>
+
+        <div class="qa">
+            <h2>149. What is the "nameof" operator in C#?</h2>
+            <p>The "nameof" operator returns the name of a variable, type, or member as a string. It is useful for refactoring, generating error messages, or implementing property change notifications, providing a way to avoid hard-coded strings in your code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>150. What are "partial classes" in C#?</h2>
+            <p>Partial classes allow the definition of a class to be split across multiple files. This can be useful for organizing code, separating auto-generated code from user-written code, and managing large classes by keeping related code in separate files.</p>
+        </div>
+
+        <!-- Continue with questions up to 200 -->
+        <div class="qa">
+            <h2>151. What are "partial methods" in C#?</h2>
+            <p>Partial methods are methods defined in partial classes or structs that can be optionally implemented. They allow you to define methods in one part of a partial class and provide an implementation in another part, with the requirement that the method signature must be the same.</p>
+        </div>
+
+        <div class="qa">
+            <h2>152. What is the "default" value of a value type in C#?</h2>
+            <p>The default value of a value type is the value produced by initializing the type's fields to their default values. For example, the default value for integers is 0, for booleans it is false, and for structs it is a zeroed-out instance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>153. What is "dynamic dispatch" in C#?</h2>
+            <p>Dynamic dispatch is the mechanism by which the method that gets called is determined at runtime rather than compile-time. It is used in conjunction with the "dynamic" keyword, allowing method calls to be resolved based on the actual object type at runtime.</p>
+        </div>
+
+        <div class="qa">
+            <h2>154. What is the "async" keyword used for in C#?</h2>
+            <p>The "async" keyword is used to mark a method as asynchronous. It allows the method to use the "await" keyword, enabling non-blocking operations and improving the responsiveness of applications by performing tasks concurrently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>155. What is the purpose of the "await" keyword in C#?</h2>
+            <p>The "await" keyword is used inside an "async" method to pause its execution until the awaited task is complete. It allows asynchronous operations to run without blocking the main thread, enhancing application performance and responsiveness.</p>
+        </div>
+
+        <div class="qa">
+            <h2>156. What is the "Task" class in C#?</h2>
+            <p>The "Task" class represents an asynchronous operation in C#. It is used to handle and manage tasks that run in the background, enabling you to write asynchronous code more easily and manage the completion of these tasks.</p>
+        </div>
+
+        <div class="qa">
+            <h2>157. What is the difference between "Task" and "Thread" in C#?</h2>
+            <p>"Task" represents an asynchronous operation and is a higher-level abstraction for handling background operations. "Thread" represents a lower-level operating system thread. Tasks are generally preferred for asynchronous programming due to their ease of use and better management capabilities.</p>
+        </div>
+
+        <div class="qa">
+            <h2>158. What is "yield return" used for in C#?</h2>
+            <p>"yield return" is used in iterator methods to return each element of a collection one at a time. It enables you to create an iterator without having to build a separate collection object, optimizing performance and memory usage.</p>
+        </div>
+
+        <div class="qa">
+            <h2>159. What is "LINQ" in C#?</h2>
+            <p>Language Integrated Query (LINQ) is a feature in C# that allows you to query and manipulate data from various sources (e.g., arrays, collections, databases) using a consistent syntax integrated into the language. It provides query capabilities directly in C# code.</p>
+        </div>
+
+        <div class="qa">
+            <h2>160. What is "query syntax" and "method syntax" in LINQ?</h2>
+            <p>Query syntax uses a SQL-like syntax to write queries in LINQ, whereas method syntax uses method chaining to write queries. Both syntaxes achieve the same results, and the choice between them depends on personal preference or readability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>161. What is the "Expression" class in C#?</h2>
+            <p>The "Expression" class represents code in a tree-like data structure, which can be compiled or executed. It is used for building dynamic queries and constructing expressions at runtime, particularly in LINQ providers and other scenarios requiring dynamic code generation.</p>
+        </div>
+
+        <div class="qa">
+            <h2>162. What is the "Predicate" delegate in C#?</h2>
+            <p>The "Predicate" delegate represents a method that defines a set of criteria and determines whether a particular object meets those criteria. It is commonly used with collection methods to filter or search for items that match specific conditions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>163. What is "dependency injection" in C#?</h2>
+            <p>Dependency injection is a design pattern used to manage dependencies between objects. It involves providing an object with its dependencies rather than creating them internally. This pattern improves testability, maintainability, and flexibility by decoupling components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>164. What is "inversion of control" (IoC) in C#?</h2>
+            <p>Inversion of Control (IoC) is a design principle where control over the flow of a program is inverted. Instead of a component calling other components, the control is handed over to a framework or container that manages the components and their interactions. Dependency injection is one way to achieve IoC.</p>
+        </div>
+
+        <div class="qa">
+            <h2>165. What is the "readonly" keyword in C#?</h2>
+            <p>The "readonly" keyword is used to declare fields that can only be assigned during their declaration or within the constructor of the class. Once set, the value of a readonly field cannot be changed, ensuring immutability after initialization.</p>
+        </div>
+
+        <div class="qa">
+            <h2>166. What is the "sealed" keyword in C#?</h2>
+            <p>The "sealed" keyword is used to prevent a class from being inherited. When a class is marked as sealed, it cannot be used as a base class, ensuring that its implementation is final and cannot be extended.</p>
+        </div>
+
+        <div class="qa">
+            <h2>167. What is the "abstract" keyword in C#?</h2>
+            <p>The "abstract" keyword is used to define a class or method that cannot be instantiated or directly used. Abstract classes can only be inherited, and abstract methods must be implemented by derived classes, providing a base for other classes to build upon.</p>
+        </div>
+
+        <div class="qa">
+            <h2>168. What is the "override" keyword in C#?</h2>
+            <p>The "override" keyword is used to extend or modify the implementation of a method inherited from a base class. It allows derived classes to provide a specific implementation of a method that is already defined in a base class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>169. What is the "virtual" keyword in C#?</h2>
+            <p>The "virtual" keyword is used to declare a method or property in a base class that can be overridden in derived classes. It allows the base class to provide a default implementation that can be modified or extended by subclasses.</p>
+        </div>
+
+        <div class="qa">
+            <h2>170. What is "method hiding" in C#?</h2>
+            <p>Method hiding occurs when a derived class defines a method with the same name as a method in its base class, using the "new" keyword. This hides the base class method and provides a new implementation, but does not override the base class method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>171. What is the "params" keyword in C#?</h2>
+            <p>The "params" keyword allows a method to accept a variable number of arguments of a specified type. It enables you to pass a comma-separated list of values or an array to a method, providing flexibility in method calls.</p>
+        </div>
+
+        <div class="qa">
+            <h2>172. What is the "using" statement in C#?</h2>
+            <p>The "using" statement ensures that an object is disposed of correctly after use. It is commonly used with objects that implement the "IDisposable" interface, such as file streams or database connections, to release unmanaged resources automatically.</p>
+        </div>
+
+        <div class="qa">
+            <h2>173. What is "string interpolation" in C#?</h2>
+            <p>String interpolation provides a way to embed expressions within string literals, making string formatting more readable and convenient. It is achieved using the "$" symbol followed by curly braces containing expressions inside the string.</p>
+        </div>
+
+        <div class="qa">
+            <h2>174. What is the "nameof" operator used for in C#?</h2>
+            <p>The "nameof" operator returns the name of a variable, type, or member as a string. It is useful for creating more maintainable and refactor-friendly code by avoiding hard-coded strings for property names or type names.</p>
+        </div>
+
+        <div class="qa">
+            <h2>175. What is "try-catch-finally" used for in C#?</h2>
+            <p>"try-catch-finally" is a construct used for exception handling. The "try" block contains code that might throw an exception, the "catch" block handles the exception if one is thrown, and the "finally" block contains code that executes regardless of whether an exception was thrown, typically for cleanup operations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>176. What is the "finally" block in exception handling?</h2>
+            <p>The "finally" block is used to execute code after the "try" and "catch" blocks, regardless of whether an exception was thrown or not. It is typically used for clean-up operations, such as closing files or releasing resources.</p>
+        </div>
+
+        <div class="qa">
+            <h2>177. What are "unit tests" in C#?</h2>
+            <p>Unit tests are automated tests that validate the functionality of individual components or methods in isolation. They are used to ensure that code behaves as expected and to detect bugs early in the development process. In C#, frameworks like MSTest, NUnit, and xUnit are commonly used for writing unit tests.</p>
+        </div>
+
+        <div class="qa">
+            <h2>178. What is "Test-Driven Development" (TDD) in C#?</h2>
+            <p>Test-Driven Development (TDD) is a software development process where tests are written before the actual code is implemented. The cycle involves writing a test, implementing the code to pass the test, and then refactoring. This approach helps ensure that code is well-tested and meets requirements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>179. What is "mocking" in unit testing?</h2>
+            <p>Mocking is a technique used in unit testing to create simulated objects or dependencies that mimic the behavior of real objects. It allows you to isolate the unit of code being tested from external dependencies, ensuring that tests focus on the code's logic rather than its interactions with other components.</p>
+        </div>
+
+        <div class="qa">
+            <h2>180. What is "dependency inversion principle" in C#?</h2>
+            <p>The Dependency Inversion Principle is a design principle that states high-level modules should not depend on low-level modules; both should depend on abstractions. It also states that abstractions should not depend on details; details should depend on abstractions. This principle promotes loose coupling and flexibility in software design.</p>
+        </div>
+
+        <div class="qa">
+            <h2>181. What is "null coalescing operator" in C#?</h2>
+            <p>The null-coalescing operator (??) is used to provide a default value when a nullable expression evaluates to null. It returns the value of the expression if it is not null; otherwise, it returns the default value specified after the operator.</p>
+        </div>
+
+        <div class="qa">
+            <h2>182. What is "null conditional operator" in C#?</h2>
+            <p>The null-conditional operator (?.) is used to safely access members of an object that might be null. It allows you to perform member access or method invocation on an object without causing a NullReferenceException, returning null if the object is null.</p>
+        </div>
+
+        <div class="qa">
+            <h2>183. What is "object initializers" in C#?</h2>
+            <p>Object initializers provide a way to initialize an object's properties or fields directly at the time of its creation. This syntax allows you to set multiple properties or fields in a single statement, improving code readability and reducing the need for additional constructors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>184. What is "collection initializer" in C#?</h2>
+            <p>Collection initializers allow you to add elements to a collection object at the time of its creation. Using a collection initializer syntax, you can add items to collections like lists or dictionaries in a single statement, simplifying code and improving readability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>185. What is "implicit" and "explicit" conversion in C#?</h2>
+            <p>Implicit conversion occurs automatically when converting between compatible types, while explicit conversion requires a cast operator. Implicit conversions are safe and do not lose information, whereas explicit conversions may result in data loss or require additional handling.</p>
+        </div>
+
+        <div class="qa">
+            <h2>186. What is "explicit interface implementation" in C#?</h2>
+            <p>Explicit interface implementation allows a class to provide a specific implementation for an interface member, which can only be accessed through the interface reference. This technique helps in resolving member name conflicts and ensures that the interface implementation is only accessible through the interface.</p>
+        </div>
+
+        <div class="qa">
+            <h2>187. What is the "volatile" keyword in C#?</h2>
+            <p>The "volatile" keyword indicates that a field can be accessed by multiple threads concurrently, and it tells the compiler and runtime not to optimize or cache the field. It ensures that the most recent value is always read from memory, avoiding issues with data visibility across threads.</p>
+        </div>
+
+        <div class="qa">
+            <h2>188. What is "ref" and "out" keyword in C#?</h2>
+            <p>The "ref" keyword is used to pass arguments by reference, allowing the method to modify the value of the argument. The "out" keyword is similar but requires that the method initializes the argument before returning. Both keywords allow methods to return multiple values.</p>
+        </div>
+
+        <div class="qa">
+            <h2>189. What is "stack" and "heap" in C#?</h2>
+            <p>The stack is a region of memory used for static memory allocation, where value types and method call information are stored. The heap is used for dynamic memory allocation, where reference types and objects are stored. Stack memory is managed automatically, while heap memory requires garbage collection.</p>
+        </div>
+
+        <div class="qa">
+            <h2>190. What is "attribute routing" in ASP.NET?</h2>
+            <p>Attribute routing allows you to define routes directly on controller actions using attributes, providing more control over routing compared to conventional routing. It enables you to specify route templates and constraints directly in the action methods or controllers.</p>
+        </div>
+
+        <div class="qa">
+            <h2>191. What is "conventional routing" in ASP.NET?</h2>
+            <p>Conventional routing defines routes based on a predefined pattern or convention, such as URL patterns and route templates. Routes are typically configured in the startup class or route configuration file, providing a centralized way to manage routing logic.</p>
+        </div>
+
+        <div class="qa">
+            <h2>192. What is "Model Binding" in ASP.NET?</h2>
+            <p>Model binding is the process of mapping HTTP request data to action method parameters or model properties in ASP.NET. It simplifies data extraction and validation by automatically converting request data into strongly-typed objects based on the method's parameters or model properties.</p>
+        </div>
+
+        <div class="qa">
+            <h2>193. What is "ActionResult" in ASP.NET MVC?</h2>
+            <p>ActionResult is a base class for all result types returned by controller actions in ASP.NET MVC. It represents the result of an action method and can be used to return different types of responses, such as views, JSON data, or file downloads.</p>
+        </div>
+
+        <div class="qa">
+            <h2>194. What is "ViewBag" in ASP.NET MVC?</h2>
+            <p>ViewBag is a dynamic property that allows you to pass data from a controller to a view. It provides a way to transfer data between components without using strongly-typed models, and the data is accessible only for the current request.</p>
+        </div>
+
+        <div class="qa">
+            <h2>195. What is "ViewData" in ASP.NET MVC?</h2>
+            <p>ViewData is a dictionary object used to pass data from a controller to a view. Unlike ViewBag, which uses dynamic properties, ViewData uses key-value pairs to store and retrieve data. It requires explicit type casting for complex types.</p>
+        </div>
+
+        <div class="qa">
+            <h2>196. What is "TempData" in ASP.NET MVC?</h2>
+            <p>TempData is a dictionary object used to pass data between actions during the current request and the subsequent request. It is useful for transferring data that is needed only temporarily, such as for redirect scenarios, and the data is automatically removed after being read.</p>
+        </div>
+
+        <div class="qa">
+            <h2>197. What is "Entity Framework"?</h2>
+            <p>Entity Framework (EF) is an object-relational mapper (ORM) that provides a higher-level abstraction for interacting with a database. It allows you to work with data using .NET objects and provides features such as change tracking, lazy loading, and query capabilities.</p>
+        </div>
+
+        <div class="qa">
+            <h2>198. What is "Code First" approach in Entity Framework?</h2>
+            <p>The Code First approach in Entity Framework allows you to define your database schema using C# code by creating classes and configuring mappings. EF will then generate the database schema based on these classes, providing more control over the database structure and design.</p>
+        </div>
+
+        <div class="qa">
+            <h2>199. What is "Database First" approach in Entity Framework?</h2>
+            <p>The Database First approach in Entity Framework involves generating entity classes and a DbContext based on an existing database schema. It is useful when working with an existing database where you want to create a model based on the current database structure.</p>
+        </div>
+
+        <div class="qa">
+            <h2>200. What is "Model First" approach in Entity Framework?</h2>
+            <p>The Model First approach in Entity Framework involves designing your data model using an Entity Framework Designer, and then generating the database schema from the model. This approach is useful for designing the database schema visually before generating the corresponding code.</p>
+        </div>
+        
+    </main>
+   
+</body>
+</html>
